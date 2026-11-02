@@ -528,8 +528,8 @@ export function Layout({ children, hideBottomNav, minimalChrome }: { children: R
                 href="/komunitas"
                 aria-label="Kala Muda Community"
                 title="Kala Muda Community"
-                className={`hidden sm:inline-flex items-center gap-1.5 rounded-full transition-colors hover:bg-white/25 ${
-                  isAppFrame ? "h-7 px-2.5" : "h-8 px-3"
+                className={`inline-flex items-center gap-1.5 rounded-full transition-colors hover:bg-white/25 ${
+                  isAppFrame ? "h-7 px-2 sm:px-2.5" : "h-8 px-2.5 sm:px-3"
                 }`}
                 style={{
                   background: "rgba(255,255,255,0.15)",
@@ -543,7 +543,8 @@ export function Layout({ children, hideBottomNav, minimalChrome }: { children: R
                 }}
               >
                 <Users className={isAppFrame ? "h-3 w-3" : "h-3.5 w-3.5"} />
-                Kala Muda Community
+                <span className="sm:hidden">Kala Muda</span>
+                <span className="hidden sm:inline">Kala Muda Community</span>
               </Link>
               <div className="relative">
                 <button
