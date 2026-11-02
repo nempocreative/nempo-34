@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { luminance, mix, paletteFromPixels, rgbToHex, saturation, type Rgb } from "./poster-palette";
+import { luminance, paletteFromPixels, rgbToHex, saturation, type Rgb } from "./poster-palette";
+
+const WHITE: Rgb = { r: 255, g: 255, b: 255 };
 
 /** Build RGBA pixel data from a list of [colour, how many pixels] pairs. */
 function swatch(pairs: Array<[Rgb, number]>): Uint8ClampedArray {
@@ -15,6 +17,20 @@ function swatch(pairs: Array<[Rgb, number]>): Uint8ClampedArray {
     }
   }
   return data;
+}
+
+function toRgb(hex: string): Rgb {
+  return {
+    r: parseInt(hex.slice(1, 3), 16),
+    g: parseInt(hex.slice(3, 5), 16),
+    b: parseInt(hex.slice(5, 7), 16),
+  };
+}
+
+function contrast(a: Rgb, b: Rgb): number {
+  const la = luminance(a);
+  const lb = luminance(b);
+  return (Math.max(la, lb) + 0.05) / (Math.min(la, lb) + 0.05);
 }
 
 // Sampled from the MusiComedy Night poster: maroon, gold, dark brown.
@@ -45,8 +61,11 @@ describe("paletteFromPixels", () => {
       swatch([[[245, 245, 245] as Rgb, 700], [[120, 170, 230] as Rgb, 300]]),
     );
     expect(palette).not.toBeNull();
-    expect(luminance({ r: parseInt(palette!.base.slice(1, 3), 16), g: parseInt(palette!.base.slice(3, 5), 16), b: parseInt(palette!.base.slice(5, 7), 16) })).toBeLessThan(0.5);
-    expect(palette!.cream).toBe("#ffffff");
+    // Panel must be readable with white text, but still the poster's own blue.
+    expect(contrast(toRgb(palette!.base), WHITE)).toBeGreaterThanOrEqual(4.5);
+    expect(toRgb(palette!.base).b).toBeGreaterThan(toRgb(palette!.base).r);
+    // The light tone is the poster's own near-white, not a made-up pure white.
+    expect(palette!.cream).toBe("#f5f5f5");
   });
 
   it("uses dark text when the accent tone is a light one", () => {
@@ -54,13 +73,8 @@ describe("paletteFromPixels", () => {
       swatch([[[30, 40, 60] as Rgb, 500], [[250, 220, 120] as Rgb, 500]]),
     );
     expect(palette).not.toBeNull();
-    const accent = {
-      r: parseInt(palette!.accent.slice(1, 3), 16),
-      g: parseInt(palette!.accent.slice(3, 5), 16),
-      b: parseInt(palette!.accent.slice(5, 7), 16),
-    };
-    expect(luminance(accent)).toBeGreaterThan(0.45);
-    expect(palette!.onAccent).toBe(rgbToHex(mix({ r: 0, g: 0, b: 0 }, accent, 0)));
+    expect(palette!.accent).toBe("#fadc78");
+    expect(contrast(toRgb(palette!.onAccent), toRgb(palette!.accent))).toBeGreaterThanOrEqual(4.5);
   });
 
   it("returns null when every pixel is transparent", () => {
