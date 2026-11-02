@@ -1580,6 +1580,19 @@ export default function EventDetail() {
     return () => obs.disconnect();
   }, [loading]);
 
+  // Warna bingkai acara diambil dari posternya sendiri, supaya panel keterangan
+  // ikut satu nada dengan poster dan tidak terlihat pudar di bawah lapisan hitam.
+  const posterRef = useRef<HTMLImageElement | null>(null);
+  const [posterPal, setPosterPal] = useState<PosterPalette | null>(null);
+
+  useEffect(() => {
+    setPosterPal(null);
+    const img = posterRef.current;
+    if (!img?.complete) return;
+    const palette = extractPosterPalette(img);
+    if (palette) setPosterPal(palette);
+  }, [event?.image]);
+
   if (loading) return (
     <Layout>
       <div className="flex items-center justify-center min-h-screen bg-gray-50">
