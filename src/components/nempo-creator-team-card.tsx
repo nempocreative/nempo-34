@@ -266,13 +266,13 @@ export function NempoCreatorTeamCard() {
                       loading="eager"
                       draggable={false}
                     />
-                    <span
-                      className="nempo-creator-team__role-flag"
-                      style={{ background: profile.color }}
-                    >
-                      {profile.field}
-                    </span>
                   </div>
+                  <span
+                    className="nempo-creator-team__role-flag"
+                    style={{ background: profile.color }}
+                  >
+                    {profile.field}
+                  </span>
                   <p className="nempo-creator-team__name">{profile.name}</p>
                 </article>
               );
