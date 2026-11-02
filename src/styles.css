@@ -5,6 +5,22 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* The venue reservation tool keeps its palette local to the event page. */
+.cafe-reservation {
+  --color-background: oklch(0.985 0.003 160);
+  --color-foreground: oklch(0.25 0.018 160);
+  --color-card: oklch(1 0 0);
+  --color-muted: oklch(0.96 0.008 160);
+  --color-muted-foreground: oklch(0.48 0.015 160);
+  --color-border: oklch(0.88 0.012 160);
+  --color-primary: oklch(0.38 0.055 160);
+  --color-primary-foreground: oklch(0.99 0.002 160);
+  --color-primary-border: var(--color-primary);
+  --color-ring: var(--color-primary);
+  --button-outline: var(--color-border);
+  letter-spacing: 0;
+}
+
 /* Design Creative uses a local editorial palette; other services retain their themes. */
 .design-creative {
   --color-background: oklch(0.985 0.002 155);
