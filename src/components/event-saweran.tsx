@@ -4,7 +4,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import qris from "@/assets/qris-nempo-garut-saweran.jpeg.asset.json";
 
 export function EventSaweran() {
-  return <section className="event-saweran border-y border-border bg-card text-foreground p-4 sm:p-6" aria-labelledby="saweran-title">
+  return <section id="saweran" tabIndex={-1} className="event-saweran scroll-mt-28 border-y border-border bg-card text-foreground p-4 sm:p-6" aria-labelledby="saweran-title">
     <div className="grid gap-6 sm:grid-cols-[1fr_220px] items-center">
       <div className="min-w-0">
         <HandHeart className="size-6 text-primary mb-3" />
