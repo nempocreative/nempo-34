@@ -1524,6 +1524,7 @@ export default function Home() {
         .home-section-events { order: 50; }
         .home-section-service-promos { order: 20; }
         .home-section-facts { order: 11; }
+        .home-section-upcoming { order: 12; }
         .home-section-partnership { order: 90; }
         .home-section-organizer { order: 110; }
         .home-section-partners { order: 120; }
@@ -1834,6 +1835,93 @@ export default function Home() {
 
         {/* ── Tahukah Anda ── */}
         <NempoFactsSection factIdx={factIdx} onFactChange={setFactIdx} />
+
+        {/* ── Event Mendatang spotlight ── */}
+        <section className="home-section-upcoming relative">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-10 h-10 rounded-2xl flex items-center justify-center shrink-0 bg-primary text-primary-foreground">
+              <CalendarDays className="w-5 h-5" strokeWidth={1.75} />
+            </div>
+            <div className="flex-1 min-w-0">
+              <h2 className="text-foreground font-black text-base leading-tight">Event Mendatang</h2>
+              <p className="text-muted-foreground text-[10px] font-bold uppercase tracking-[0.10em] mt-0.5">Catat tanggalnya, ayo datang bareng!</p>
+            </div>
+          </div>
+          <Link
+            href="/event/musicomedy-night"
+            className="group block w-full overflow-hidden rounded-3xl border border-border bg-card shadow-sm"
+          >
+            <div className="flex flex-col sm:h-[360px] sm:flex-row">
+              <div className="relative aspect-[3/4] w-full shrink-0 overflow-hidden sm:h-full sm:w-auto">
+                <img
+                  src={musicomedyPoster.url}
+                  alt="Poster MusiComedy Night"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  loading="lazy"
+                />
+              </div>
+              <div className="flex flex-1 flex-col justify-center gap-2 p-5 sm:gap-3 sm:p-8 lg:p-10">
+                <div className="flex flex-wrap items-center gap-2">
+                  <p className="text-xs font-bold uppercase tracking-wider text-primary">Rabu, 4 November 2026</p>
+                  <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[11px] font-black uppercase tracking-wider text-primary">Gratis</span>
+                </div>
+                <h3 className="text-2xl font-black leading-tight text-foreground sm:text-3xl lg:text-4xl">MusiComedy Night</h3>
+                <div className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/15 bg-primary/5 py-1 pl-1.5 pr-3.5">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                    <Mic className="h-3.5 w-3.5" strokeWidth={2} />
+                  </span>
+                  <p className="text-[13px] font-bold leading-tight text-foreground sm:text-sm">
+                    bersama <span className="font-black">Saduli Ragap</span>
+                  </p>
+                </div>
+
+                <p className="max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
+                  Malam musik dan komedi bareng NEMPO.ID × Kala Muda di Good Story Cafe.
+                </p>
+                <span className="mt-1 inline-flex w-fit items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-sm font-bold text-primary-foreground">
+                  Lihat detail event
+                  <ChevronRight className="h-4 w-4" />
+                </span>
+              </div>
+              <aside className="hidden w-[290px] shrink-0 flex-col justify-center gap-5 border-l border-border bg-muted/30 p-8 lg:flex">
+                <div className="flex items-start gap-3">
+                  <CalendarDays className="mt-0.5 h-5 w-5 shrink-0 text-primary" strokeWidth={1.75} />
+                  <div className="min-w-0">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">Tanggal</p>
+                    <p className="text-sm font-bold leading-snug text-foreground">Rabu, 4 November 2026</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary" strokeWidth={1.75} />
+                  <div className="min-w-0">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">Lokasi</p>
+                    <p className="text-sm font-bold leading-snug text-foreground">Good Story Cafe, Jl. Sudirman Copong No. 11, Garut</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Mic className="mt-0.5 h-5 w-5 shrink-0 text-primary" strokeWidth={1.75} />
+                  <div className="min-w-0">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">Bintang Tamu</p>
+                    <p className="text-sm font-bold leading-snug text-foreground">bersama Saduli Ragap</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+
+                  <Ticket className="mt-0.5 h-5 w-5 shrink-0 text-primary" strokeWidth={1.75} />
+                  <div className="min-w-0">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">Harga</p>
+                    <p className="text-sm font-bold leading-snug text-foreground">Gratis, langsung datang aja</p>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </Link>
+
+
+
+        </section>
+
+
 
         <section className="home-section-service-promos mt-2 sm:mt-0">
           <NempoPartnershipCarousel />
@@ -2155,92 +2243,6 @@ export default function Home() {
             </section>
           );
         })()}
-
-        {/* ── Event Mendatang spotlight ── */}
-        <section className="relative">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-10 h-10 rounded-2xl flex items-center justify-center shrink-0 bg-primary text-primary-foreground">
-              <CalendarDays className="w-5 h-5" strokeWidth={1.75} />
-            </div>
-            <div className="flex-1 min-w-0">
-              <h2 className="text-foreground font-black text-base leading-tight">Event Mendatang</h2>
-              <p className="text-muted-foreground text-[10px] font-bold uppercase tracking-[0.10em] mt-0.5">Catat tanggalnya, ayo datang bareng!</p>
-            </div>
-          </div>
-          <Link
-            href="/event/musicomedy-night"
-            className="group block w-full overflow-hidden rounded-3xl border border-border bg-card shadow-sm"
-          >
-            <div className="flex flex-col sm:h-[360px] sm:flex-row">
-              <div className="relative aspect-[3/4] w-full shrink-0 overflow-hidden sm:h-full sm:w-auto">
-                <img
-                  src={musicomedyPoster.url}
-                  alt="Poster MusiComedy Night"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                  loading="lazy"
-                />
-              </div>
-              <div className="flex flex-1 flex-col justify-center gap-2 p-5 sm:gap-3 sm:p-8 lg:p-10">
-                <div className="flex flex-wrap items-center gap-2">
-                  <p className="text-xs font-bold uppercase tracking-wider text-primary">Rabu, 4 November 2026</p>
-                  <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[11px] font-black uppercase tracking-wider text-primary">Gratis</span>
-                </div>
-                <h3 className="text-2xl font-black leading-tight text-foreground sm:text-3xl lg:text-4xl">MusiComedy Night</h3>
-                <div className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/15 bg-primary/5 py-1 pl-1.5 pr-3.5">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                    <Mic className="h-3.5 w-3.5" strokeWidth={2} />
-                  </span>
-                  <p className="text-[13px] font-bold leading-tight text-foreground sm:text-sm">
-                    bersama <span className="font-black">Saduli Ragap</span>
-                  </p>
-                </div>
-
-                <p className="max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
-                  Malam musik dan komedi bareng NEMPO.ID × Kala Muda di Good Story Cafe.
-                </p>
-                <span className="mt-1 inline-flex w-fit items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-sm font-bold text-primary-foreground">
-                  Lihat detail event
-                  <ChevronRight className="h-4 w-4" />
-                </span>
-              </div>
-              <aside className="hidden w-[290px] shrink-0 flex-col justify-center gap-5 border-l border-border bg-muted/30 p-8 lg:flex">
-                <div className="flex items-start gap-3">
-                  <CalendarDays className="mt-0.5 h-5 w-5 shrink-0 text-primary" strokeWidth={1.75} />
-                  <div className="min-w-0">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">Tanggal</p>
-                    <p className="text-sm font-bold leading-snug text-foreground">Rabu, 4 November 2026</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary" strokeWidth={1.75} />
-                  <div className="min-w-0">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">Lokasi</p>
-                    <p className="text-sm font-bold leading-snug text-foreground">Good Story Cafe, Jl. Sudirman Copong No. 11, Garut</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Mic className="mt-0.5 h-5 w-5 shrink-0 text-primary" strokeWidth={1.75} />
-                  <div className="min-w-0">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">Bintang Tamu</p>
-                    <p className="text-sm font-bold leading-snug text-foreground">bersama Saduli Ragap</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-
-                  <Ticket className="mt-0.5 h-5 w-5 shrink-0 text-primary" strokeWidth={1.75} />
-                  <div className="min-w-0">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">Harga</p>
-                    <p className="text-sm font-bold leading-snug text-foreground">Gratis, langsung datang aja</p>
-                  </div>
-                </div>
-              </aside>
-            </div>
-          </Link>
-
-
-
-        </section>
-
 
         {/* ── AI photo banners ── */}
         <div className="home-section-partnership">
