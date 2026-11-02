@@ -778,7 +778,7 @@ export function Layout({ children, hideBottomNav, minimalChrome }: { children: R
       </header>}
 
       {/* ── Page Content ── */}
-      <main key={location} className={`flex-1 w-full ${minimalChrome || isAppFrame ? "pb-20 md:pb-0" : "pb-0"} animate-in fade-in duration-300 overflow-x-clip`}>
+      <main key={location} className={`flex-1 w-full ${minimalChrome || isAppFrame ? "pb-20 lg:pb-0" : "pb-0"} animate-in fade-in duration-300 overflow-x-clip`}>
         {children}
       </main>
 
@@ -786,7 +786,7 @@ export function Layout({ children, hideBottomNav, minimalChrome }: { children: R
       {!minimalChrome && <footer className="relative overflow-hidden text-white" style={{ background: "linear-gradient(145deg, #0172B1 0%, #0194f3 55%, #1BA0E2 100%)" }}>
         <div className="pointer-events-none absolute -right-24 -top-28 h-80 w-80 rounded-full bg-sky-400/10 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-32 left-1/4 h-72 w-72 rounded-full bg-emerald-400/10 blur-3xl" />
-        <div className="nempo-footer-shell max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-24 md:pt-12 md:pb-8">
+        <div className="nempo-footer-shell max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-24 md:pt-12 lg:pb-8">
           <div className="grid grid-cols-1 gap-8 mb-8 md:mb-10 md:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] md:items-stretch md:gap-12">
             <div className="md:col-span-1">
               <div className="flex items-center gap-2.5 mb-4">
@@ -876,13 +876,13 @@ export function Layout({ children, hideBottomNav, minimalChrome }: { children: R
         const navActiveColor = "#0194f3";
         return (
           <nav
-            className={`md:hidden fixed bottom-0 left-0 right-0 z-50 ${isAppFrame ? "nempo-app-frame-bottom-nav" : ""}`}
+            className={`lg:hidden fixed bottom-0 left-0 right-0 z-50 ${isAppFrame ? "nempo-app-frame-bottom-nav" : ""}`}
             style={{
               background: "linear-gradient(to top, rgba(244,248,252,0.92), rgba(244,248,252,0))",
               padding: `8px 12px ${isAppFrame ? "max(8px, env(safe-area-inset-bottom))" : "max(10px, env(safe-area-inset-bottom))"}`,
             }}
           >
-            <div className="mx-auto flex max-w-md items-center justify-around gap-1 rounded-[22px] border border-[#e5edf4] bg-white/95 px-1.5 py-1.5 shadow-[0_10px_28px_rgba(21,48,74,0.14)] backdrop-blur-xl">
+            <div className="mx-auto flex max-w-md md:max-w-xl items-center justify-around gap-1 rounded-[22px] border border-[#e5edf4] bg-white/95 px-1.5 py-1.5 shadow-[0_10px_28px_rgba(21,48,74,0.14)] backdrop-blur-xl">
               {bottomNavItems.map((item) => {
                 const Icon = item.icon;
                 const active = isActive(item.href);
