@@ -10,6 +10,7 @@
 <!-- LOVABLE:END -->
 
 ## Architecture rules
+- Some subdirectories have their own `AGENTS.md`; read the nearest one before changing files there; why: those rules are scoped to that folder and keep this file short.
 - Event saweran uses the original uploaded QRIS asset in EventSaweran, scoped to MusiComedy Night, with same-origin download and enlargement; why: preserve payment-code integrity without implying automatic payment verification.
 - EventLocation renders provided map embeds with browser-safe venue destinations in event-location data; why: supplied venue links remain reproducible after remix without a new map provider.
 - Event sharing uses EventShare with native device sharing and explicit web destinations as fallback; why: sharing remains usable when the browser has no system share sheet.
@@ -35,7 +36,6 @@
 - tsconfig strict extras (noUncheckedIndexedAccess, exactOptionalPropertyTypes, etc.) are off; why: the imported code was written without them.
 - Other Replit artifacts live in `src/apps/<key>/` (own `@/apps/<key>/` imports, `entry.tsx`, public files under `public/<base>/`) and mount at `/<base>` via `src/routes/<base>.index.tsx` + `<base>.$.tsx` using `AppShell`; why: each was a separate Vite app and they must not collide.
 - Full-data JSON backup: `src/lib/backup.ts` lists every database table (a type check fails if a table is missing), `/api/backup` serves the file, and `/backup` is the download page; why: one source for "everything" so new tables can't silently drop out of backups.
-- Sub-app stylesheets (`src/apps/*/index.css`) can end up loaded on main-site pages, so they must never set shared theme variables (`--primary`, `--primary-foreground`, ...) to placeholder values; why: a leaked placeholder made white text on every main-site page fall back to dark.
 - Lazily loaded pages and apps use `lazyWithRetry` from `src/lib/lazy-with-retry.ts` instead of React `lazy`; why: a page file that fails to load after an update ("Importing a module script failed") otherwise blanks the whole screen — it retries once, then reloads once.
 - Nempo Feed slide 32's downloadable video is a prebuilt MP4 (1080×1440, 30 fps, 30 s) rendered frame-by-frame from the live page and shipped as a big-asset pointer at `src/assets/nempo-feed-slide-32.mp4.asset.json`; why: the 30-second CSS card animation must export at preview fidelity, and the file exceeds the repo's 10 MB per-file limit.
 - Each homepage "Event Kami · Portofolio" card uses its own pre-composed 720×1280 poster in `src/assets/event-<slug>-poster.jpg`, captured from that event's own Instagram post and fitted whole over a blurred backdrop, wired by stable event id in `src/pages/home.tsx`; why: cards must show the real poster complete with title and date legible, never a CSS-cropped or unrelated photo.
