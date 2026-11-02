@@ -125,13 +125,13 @@ export function paletteFromPixels(pixels: ArrayLike<number>): PosterPalette | nu
   return {
     base: rgbToHex(base),
     baseDeep: rgbToHex(baseDeep),
-    soft: rgbToHex(mix(base, cream, 0.14)),
+    soft: rgbToHex(mix(base, cream, 0.1)),
     accent: rgbToHex(accent),
     cream: rgbToHex(cream),
-    muted: rgbToHex(mix(base, cream, 0.72)),
+    muted: rgbToHex(mix(base, cream, 0.9)),
     onAccent: luminance(accent) > 0.45 ? rgbToHex(mix(baseDeep, BLACK, 0.2)) : "#ffffff",
     panel: `linear-gradient(150deg, ${rgbToHex(baseDeep)} 0%, ${rgbToHex(base)} 100%)`,
-    scrim: `linear-gradient(to bottom, ${rgba(baseDeep, 0.3)} 0%, transparent 42%, ${rgba(baseDeep, 0.78)} 100%)`,
+    scrim: `linear-gradient(to bottom, ${rgba(baseDeep, 0.45)} 0%, transparent 42%, ${rgba(baseDeep, 0.78)} 100%)`,
   };
 }
 

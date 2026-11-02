@@ -48,6 +48,13 @@ describe("paletteFromPixels", () => {
     expect(palette!.onAccent).toBe("#ffffff");
   });
 
+  it("keeps small card labels readable on the card background", () => {
+    const palette = paletteFromPixels(swatch([[MAROON, 600], [GOLD, 250], [BROWN, 150]]));
+    expect(palette).not.toBeNull();
+    expect(contrast(toRgb(palette!.muted), toRgb(palette!.soft))).toBeGreaterThanOrEqual(4.5);
+    expect(contrast(toRgb(palette!.cream), toRgb(palette!.base))).toBeGreaterThanOrEqual(4.5);
+  });
+
   it("tints the hero wash with the poster instead of plain black", () => {
     const palette = paletteFromPixels(swatch([[MAROON, 600], [GOLD, 250], [BROWN, 150]]));
     expect(palette!.scrim).toContain("rgba(50, 18, 14");
