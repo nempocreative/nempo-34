@@ -1,6 +1,7 @@
 # Roadmap
 
-- [ ] Perketat keamanan: batasi unduhan backup, tambahkan perlindungan browser, periksa akses data dan uji akses tanpa izin.
+- [x] Pengamanan awal: backup dikunci sampai otorisasi admin tersedia, pengaturan situs dan kontak pengirim berita tidak bisa dibaca publik, hanya tiket aktif dapat dibaca, unggahan pendaftaran langsung dikunci; perlindungan browser aktif, 8 tes lulus, akses tanpa izin ditolak dan beranda diperiksa.
+- [ ] Tinjau hasil pemeriksaan keamanan menyeluruh — menunggu hasil pemindaian yang sedang berjalan; dua peringatan baca publik (talent dan voucher) masih tercatat.
 
 - [ ] Kompres foto unggahan baru ke WebP dan periksa jalur unggahan serta ukuran hasilnya.
 
