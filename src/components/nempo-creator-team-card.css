@@ -121,23 +121,39 @@
 }
 
 .nempo-creator-team__card {
+  --role-color: linear-gradient(135deg, #0891b2, #0e7490);
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   flex: 0 0 calc((100cqw - 36px) / 4);
   min-width: 0;
-  padding: 6px;
+  padding: 7px;
   overflow: hidden;
   border: 1px solid var(--creator-line);
-  border-radius: 16px;
-  background: #fff;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff 0%, #f7fafb 100%);
   box-shadow: 0 6px 18px rgba(8, 47, 74, 0.07), 0 1px 2px rgba(8, 47, 74, 0.04);
-  transition: transform 200ms ease, box-shadow 200ms ease;
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+/* Garis aksen atas mengikuti warna peran. */
+.nempo-creator-team__card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 14px;
+  right: 14px;
+  height: 3px;
+  border-radius: 0 0 4px 4px;
+  background: var(--role-color);
+  opacity: 0.9;
 }
 
 .nempo-creator-team__card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(8, 47, 74, 0.11), 0 2px 4px rgba(8, 47, 74, 0.05);
+  transform: translateY(-4px);
+  border-color: rgba(8, 47, 74, 0.16);
+  box-shadow: 0 16px 32px rgba(8, 47, 74, 0.14), 0 3px 6px rgba(8, 47, 74, 0.06);
 }
 
 .nempo-creator-team__portrait {
@@ -145,8 +161,9 @@
   width: 100%;
   aspect-ratio: 0.86;
   overflow: hidden;
-  border-radius: 11px;
+  border-radius: 12px;
   background: #e8ece9;
+  box-shadow: inset 0 0 0 1px rgba(8, 47, 74, 0.06);
 }
 
 .nempo-creator-team__portrait img {
@@ -155,24 +172,42 @@
   height: 100%;
   object-fit: cover;
   object-position: center 36%;
+  transition: transform 350ms ease;
+}
+
+.nempo-creator-team__card:hover .nempo-creator-team__portrait img {
+  transform: scale(1.05);
 }
 
 .nempo-creator-team__role-flag {
   display: inline-flex;
-  margin: 8px 5px 0;
-  padding: 3px 9px;
+  align-items: center;
+  gap: 5px;
+  margin: 9px 5px 0;
+  padding: 4px 10px;
   border-radius: 999px;
   color: #fff;
   font-size: 10px;
   font-weight: 700;
+  letter-spacing: 0.02em;
   line-height: 1.3;
+  box-shadow: 0 3px 8px rgba(8, 47, 74, 0.18);
+}
+
+/* Titik kecil di kiri label peran. */
+.nempo-creator-team__role-flag::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
 }
 
 .nempo-creator-team__name {
-  margin: 5px 5px 3px;
+  margin: 6px 5px 4px;
   overflow: hidden;
   color: var(--creator-navy);
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.2;
