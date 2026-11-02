@@ -10,6 +10,7 @@
 <!-- LOVABLE:END -->
 
 ## Architecture rules
+- Good Story Cafe reservations use the existing browser-safe cafe layout module and WhatsApp contact source, with a locally scoped tool palette; why: table identities and reservation messages stay consistent without affecting other event themes.
 - Restored pointer media belongs to the current project; `src/data/media-archive.json` and the `media_archive` database record keep filenames, checksums, and source-domain download URLs; why: migration must copy original files as well as code, and public Cloud Storage is blocked by workspace policy.
 - Security headers are applied in Start request middleware; production sourcemaps are disabled; why: restrict hostile embedding and browser content interpretation without blocking accessibility or DevTools.
 - Public news reads use explicit non-contact columns and database column grants; site settings are private; backup exports fail closed until verified server-side administrator authorization exists; why: the imported app has no real administrator authentication and client-side gates cannot protect private data.

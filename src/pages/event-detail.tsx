@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout";
 import { CafeReservation } from "@/components/cafe-reservation";
+import { cafeJamRange } from "@/data/cafe-layout";
 import { SEO } from "@/components/seo";
 import { useState, useEffect, useRef } from "react";
 import { toSnake } from "@/lib/api-keys";
@@ -1835,11 +1836,7 @@ export default function EventDetail() {
                   <div className="min-w-0">
                     <p className="text-gray-400 text-[9px] font-bold uppercase tracking-wide">Jam Pelaksanaan</p>
                     <p className="text-gray-900 font-bold text-xs mt-0.5">
-                      {event.time_start && event.time_end
-                        ? `${event.time_start} – ${event.time_end}`
-                        : event.time_start
-                        ? `Mulai ${event.time_start}`
-                        : `s/d ${event.time_end}`}
+                      {cafeJamRange(event.time_start, event.time_end)}
                     </p>
                   </div>
                 </div>
@@ -1866,8 +1863,6 @@ export default function EventDetail() {
                   timeStart={event.time_start}
                   timeEnd={event.time_end}
                   location={event.location}
-                  accent={g.from}
-                  light={g.light}
                 />
               )}
 
