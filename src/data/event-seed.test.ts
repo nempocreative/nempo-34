@@ -14,6 +14,11 @@ describe("event seed data", () => {
     expect(event?.date).toBe("2026-11-04");
   });
 
+  it("keeps the announced event hours of 15.00 – 23.00", () => {
+    expect(event?.time_start).toBe("15:00");
+    expect(event?.time_end).toBe("23:00");
+  });
+
   it("keeps the event free", () => {
     expect(event?.price).toBe(0);
   });
