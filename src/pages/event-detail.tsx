@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout";
+import { CafeReservation } from "@/components/cafe-reservation";
 import { SEO } from "@/components/seo";
 import { useState, useEffect, useRef } from "react";
 import { toSnake } from "@/lib/api-keys";
@@ -1855,6 +1856,19 @@ export default function EventDetail() {
                     <p className="text-gray-900 font-bold text-sm mt-0.5">{event.organizer}</p>
                   </div>
                 </div>
+              )}
+
+              {/* Reservasi kursi & pilih meja (Good Story Cafe) */}
+              {!isPast && (event.location || "").toLowerCase().includes("good story cafe") && (
+                <CafeReservation
+                  eventName={event.name}
+                  eventDate={event.date}
+                  timeStart={event.time_start}
+                  timeEnd={event.time_end}
+                  location={event.location}
+                  accent={g.from}
+                  light={g.light}
+                />
               )}
 
               {/* ── Rundown Jadwal Acara (hanya Temu Tarung) ── */}

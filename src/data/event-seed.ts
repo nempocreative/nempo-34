@@ -9,6 +9,8 @@ export interface EventSeed {
   title: string;
   category: string;
   date: string;
+  time_start: string;
+  time_end: string;
   location: string;
   description: string;
   organizer: string;
