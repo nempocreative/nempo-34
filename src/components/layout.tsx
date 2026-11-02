@@ -523,6 +523,28 @@ export function Layout({ children, hideBottomNav, minimalChrome }: { children: R
 
             {/* Right actions */}
             <div className="flex items-center gap-2 ml-auto">
+              {/* Kala Muda Community badge */}
+              <Link
+                href="/komunitas"
+                aria-label="Kala Muda Community"
+                title="Kala Muda Community"
+                className={`hidden sm:inline-flex items-center gap-1.5 rounded-full transition-colors hover:bg-white/25 ${
+                  isAppFrame ? "h-7 px-2.5" : "h-8 px-3"
+                }`}
+                style={{
+                  background: "rgba(255,255,255,0.15)",
+                  border: "1px solid rgba(255,255,255,0.25)",
+                  fontFamily: "'Plus Jakarta Sans','Inter',sans-serif",
+                  fontWeight: 800,
+                  fontSize: isAppFrame ? 10 : 11,
+                  letterSpacing: "-0.01em",
+                  color: "#ffffff",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                <Users className={isAppFrame ? "h-3 w-3" : "h-3.5 w-3.5"} />
+                Kala Muda Community
+              </Link>
               <div className="relative">
                 <button
                    className={`relative ${isAppFrame ? "h-8 w-8" : "h-9 w-9"} rounded-2xl flex items-center justify-center transition-colors overflow-visible hover:bg-white/20`}
