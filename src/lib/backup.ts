@@ -13,6 +13,7 @@ export const BACKUP_TABLES = [
   "influencers",
   "kamus_sunda",
   "kuliner",
+  "media_archive",
   "partners",
   "penginapan",
   "perlombaan",
