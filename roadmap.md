@@ -1,5 +1,7 @@
 # Roadmap
 
+- [ ] Perketat keamanan: batasi unduhan backup, tambahkan perlindungan browser, periksa akses data dan uji akses tanpa izin.
+
 - [ ] Kompres foto unggahan baru ke WebP dan periksa jalur unggahan serta ukuran hasilnya.
 
 - [x] Pulihkan data MusiComedy Night setelah remix, betulkan alamat API dan daftar tiket; klik beranda → detail, banner, tanggal, Saduli Ragap serta daftar event berhasil diperiksa.
