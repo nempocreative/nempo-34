@@ -1,5 +1,7 @@
 # Roadmap
 
+- [ ] Kompres foto unggahan baru ke WebP dan periksa jalur unggahan serta ukuran hasilnya.
+
 - [x] Pulihkan data MusiComedy Night setelah remix, betulkan alamat API dan daftar tiket; klik beranda → detail, banner, tanggal, Saduli Ragap serta daftar event berhasil diperiksa.
 
 - [x] Business System: katalog resmi dipasang (7 sistem operasional, 8 sistem manajemen, 10 sistem industri, custom, 3 paket bundling, maintenance, ketentuan, FAQ, CTA WhatsApp); 43 tes lulus, tab, harga, dan tautan WhatsApp diperiksa di HP dan komputer.
