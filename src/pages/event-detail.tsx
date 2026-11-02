@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout";
 import { CafeReservation } from "@/components/cafe-reservation";
 import { EventShare } from "@/components/event-share";
 import { EventLocation } from "@/components/event-location";
+import { EventSaweran } from "@/components/event-saweran";
 import { GOOD_STORY_CAFE_MAP } from "@/data/event-location";
 import { cafeJamRange } from "@/data/cafe-layout";
 import { SEO } from "@/components/seo";
@@ -2108,6 +2109,8 @@ export default function EventDetail() {
                   </div>
                 </div>
               )}
+
+              {event.slug === "musicomedy-night" && <EventSaweran />}
 
               {/* Maps */}
               {(event.maps_url || event.slug === "musicomedy-night") && (
