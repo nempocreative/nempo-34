@@ -10,6 +10,8 @@
 <!-- LOVABLE:END -->
 
 ## Architecture rules
+- Security headers are applied in Start request middleware; production sourcemaps are disabled; why: restrict hostile embedding and browser content interpretation without blocking accessibility or DevTools.
+- Public news reads use explicit non-contact columns and database column grants; site settings are private; backup exports fail closed until verified server-side administrator authorization exists; why: the imported app has no real administrator authentication and client-side gates cannot protect private data.
 - Main-site API requests use the root-relative `/api` prefix; event ticket reads resolve the event slug or id before querying its tickets; why: inherited parent-directory URLs can fail in previews and tickets are keyed by numeric event id.
 - Graphic design prices and monthly limits live in `src/data/design-creative.ts`; WCC and LO packages live in dedicated browser-safe data modules displayed on their parent Wedding/EO pages; why: each service and its rule tests share one authoritative price source.
 - Current website packages, additional fees, exclusions and package-specific consultation links live in `src/data/web-development.ts`, separate from legacy digital services and business-system plans; why: website price updates must not silently change other service pages.

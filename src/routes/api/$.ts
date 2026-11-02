@@ -1,16 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { createClient } from "@supabase/supabase-js";
 import { buildNotifications } from "@/data/notifications";
+import { PUBLIC_NEWS_COLUMNS } from "@/lib/security-policy";
 
 // Public read-only bridge: old site endpoints (/api/wisata, ...) served from the database.
-const TABLES: Record<string, { table: string; order?: string; filter?: (q: any) => any }> = {
+const TABLES: Record<string, { table: string; columns?: string; order?: string; filter?: (q: any) => any }> = {
   wisata: { table: "wisata" },
   kuliner: { table: "kuliner" },
   cafe: { table: "kuliner", filter: (q) => q.ilike("category", "%cafe%") },
   penginapan: { table: "penginapan" },
   events: { table: "events" },
   "event-tickets": { table: "event_tickets", order: "sort_order" },
-  berita: { table: "berita", order: "published_at" },
+  berita: { table: "berita", columns: PUBLIC_NEWS_COLUMNS, order: "published_at" },
   banners: { table: "banners", order: "sort_order" },
   "promo-banners": { table: "promo_banners", order: "sort_order" },
   perlombaan: { table: "perlombaan" },
@@ -22,7 +23,6 @@ const TABLES: Record<string, { table: string; order?: string; filter?: (q: any) 
   influencers: { table: "influencers", order: "sort_order" },
   partners: { table: "partners", order: "sort_order" },
   "kamus-sunda": { table: "kamus_sunda" },
-  "site-settings": { table: "site_settings" },
 };
 
 const camel = (s: string) => s.replace(/_([a-z])/g, (_, c) => c.toUpperCase());
@@ -93,7 +93,7 @@ export const Route = createFileRoute("/api/$")({
           return json((data ?? []).map(toCamel));
         }
 
-        let q: any = sb.from(cfg.table).select("*");
+        let q: any = sb.from(cfg.table).select(cfg.columns ?? "*");
         if (cfg.filter) q = cfg.filter(q);
 
         if (idOrSlug && parts.length === 2) {
