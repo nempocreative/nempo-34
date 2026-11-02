@@ -9,6 +9,7 @@ import { cafeJamRange } from "@/data/cafe-layout";
 import { SEO } from "@/components/seo";
 import { useState, useEffect, useRef } from "react";
 import { toSnake } from "@/lib/api-keys";
+import { extractPosterPalette, type PosterPalette } from "@/lib/poster-palette";
 
 import { useRoute, Link } from "@/lib/wouter";
 import { getTypeLabel, getAgeLabel, TYPE_COLORS, getMatchJam, streetFightDay1, streetFightDay1Peserta, RUNDOWN_DAY1, RUNDOWN_DAY2 } from "@/data/temu-tarung";
@@ -1596,6 +1597,20 @@ export default function EventDetail() {
   );
 
   const g      = catMeta[event.category] ?? DEFAULT_G;
+
+  // Warna bingkai acara diambil dari posternya sendiri, supaya panel keterangan
+  // ikut satu nada dengan poster dan tidak terlihat pudar di bawah lapisan hitam.
+  const posterRef = useRef<HTMLImageElement | null>(null);
+  const [posterPal, setPosterPal] = useState<PosterPalette | null>(null);
+
+  useEffect(() => {
+    setPosterPal(null);
+    const img = posterRef.current;
+    if (img?.complete) {
+      const palette = extractPosterPalette(img);
+      if (palette) setPosterPal(palette);
+    }
+  }, [event.image]);
   const isTemuTarung = !!(event.name?.toLowerCase().includes("temu tarung") || event.name?.toLowerCase().includes("temu-tarung"));
 
   const _today = new Date().toISOString().slice(0, 10);
@@ -1641,7 +1656,7 @@ export default function EventDetail() {
       <div className="bg-gray-50 min-h-screen">
 
         {/* ── HERO ── */}
-        <div className="relative w-full overflow-hidden bg-gray-900" style={event.image ? undefined : { height: "58vw", maxHeight: 360, minHeight: 220 }}>
+        <div className="relative w-full overflow-hidden bg-gray-900" style={event.image ? (posterPal ? { background: posterPal.baseDeep } : undefined) : { height: "58vw", maxHeight: 360, minHeight: 220 }}>
           {event.image
             ? /* Poster di kiri, keterangan di kanan: poster tampil utuh (tidak dipotong),
                  sisi kanan diisi panel keterangan, dan di HP poster tetap lebar penuh. */
@@ -1653,9 +1668,14 @@ export default function EventDetail() {
                 />
                 <div className="relative flex h-full w-full flex-col sm:flex-row">
                   <img
+                    ref={posterRef}
                     src={event.image}
                     alt={event.name}
                     className="block h-auto w-full shrink-0 sm:h-full sm:w-auto"
+                    onLoad={(e) => {
+                      const palette = extractPosterPalette(e.currentTarget);
+                      if (palette) setPosterPal(palette);
+                    }}
                   />
                   <div className="hidden min-w-0 flex-1 flex-col justify-center gap-3 px-6 py-6 sm:flex lg:px-10">
                     <span
