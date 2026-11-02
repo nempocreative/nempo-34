@@ -1,5 +1,8 @@
 # Roadmap
 
+- [x] Pastikan semua berkas ikut ke GitHub: 1558 berkas terlacak, tidak ada yang diabaikan, tidak ada berkas 10 MB ke atas, 42 pointer gambar milik penyimpanan proyek ini; penjaga otomatis repo-completeness ditambahkan, catatan arsip 41 berkas dipulihkan ke database, dan kunci publik tidak bisa lagi mengubah data; 216 tes lulus.
+
+
 - [x] Perbaiki klik MusiComedy Night yang 404 karena tabel events kosong setelah impor; rincian dari beranda dipulihkan ke database, klik beranda → detail berhasil, gambar tampil, tanggal 4 November dan harga gratis terverifikasi, endpoint tiket 200 tanpa kuota rekaan.
 
 - [x] Pulihkan 39 gambar dan 2 media dari proyek lama ke penyimpanan gambar Lovable; semua 41 checksum cocok, poster beranda tampil, arsip tercatat di database dan 5 tes backup lulus. Bucket publik Cloud diblokir kebijakan workspace; saat pindah proyek berkas tetap harus ditransfer bersama arsip.
