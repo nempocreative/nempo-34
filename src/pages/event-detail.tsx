@@ -1677,18 +1677,21 @@ export default function EventDetail() {
                       if (palette) setPosterPal(palette);
                     }}
                   />
-                  <div className="hidden min-w-0 flex-1 flex-col justify-center gap-3 px-6 py-6 sm:flex lg:px-10">
+                  <div
+                    className="hidden min-w-0 flex-1 flex-col justify-center gap-3 px-6 py-6 sm:flex lg:px-10"
+                    style={posterPal ? { background: posterPal.panel } : undefined}
+                  >
                     <span
                       className="inline-block w-fit rounded-full px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wide text-white"
-                      style={{ background: `${g.from}cc` }}
+                      style={posterPal ? { background: posterPal.accent, color: posterPal.onAccent } : { background: `${g.from}cc` }}
                     >
                       {event.category}
                     </span>
-                    <h1 className="text-2xl font-extrabold leading-tight text-white drop-shadow-sm lg:text-4xl">
+                    <h1 className="text-2xl font-extrabold leading-tight text-white drop-shadow-sm lg:text-4xl" style={posterPal ? { color: posterPal.cream } : undefined}>
                       {event.name}
                     </h1>
                     {event.description && (
-                      <p className="line-clamp-3 max-w-md text-[13px] leading-relaxed text-white/75 lg:text-sm">
+                      <p className="line-clamp-3 max-w-md text-[13px] leading-relaxed text-white/75 lg:text-sm" style={posterPal ? { color: posterPal.cream, opacity: 0.92 } : undefined}>
                         {event.description}
                       </p>
                     )}
@@ -1701,11 +1704,15 @@ export default function EventDetail() {
                           : []),
                         { Icon: Ticket, label: "Harga", val: event.price === 0 ? "Gratis, langsung datang aja" : `Rp ${event.price.toLocaleString("id")}` },
                       ].map((row) => (
-                        <div key={row.label} className="flex items-start gap-2.5 rounded-2xl bg-white/10 px-3 py-2.5 backdrop-blur-sm">
-                          <row.Icon className="mt-0.5 h-4 w-4 shrink-0 text-white/80" strokeWidth={2} />
+                        <div
+                          key={row.label}
+                          className="flex items-start gap-2.5 rounded-2xl bg-white/10 px-3 py-2.5 backdrop-blur-sm"
+                          style={posterPal ? { background: posterPal.soft } : undefined}
+                        >
+                          <row.Icon className="mt-0.5 h-4 w-4 shrink-0 text-white/80" strokeWidth={2} style={posterPal ? { color: posterPal.cream } : undefined} />
                           <div className="min-w-0">
-                            <p className="text-[9px] font-bold uppercase tracking-wider text-white/50">{row.label}</p>
-                            <p className="text-[12px] font-bold leading-snug text-white lg:text-[13px]">{row.val}</p>
+                            <p className="text-[9px] font-bold uppercase tracking-wider text-white/50" style={posterPal ? { color: posterPal.muted } : undefined}>{row.label}</p>
+                            <p className="text-[12px] font-bold leading-snug text-white lg:text-[13px]" style={posterPal ? { color: posterPal.cream } : undefined}>{row.val}</p>
                           </div>
                         </div>
                       ))}
@@ -1715,7 +1722,7 @@ export default function EventDetail() {
               </div>
             : <div className="w-full h-full" style={{ background: `linear-gradient(135deg, ${g.from}, ${g.to})` }} />
           }
-          <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, transparent 45%, rgba(0,0,0,0.65) 100%)" }} />
+          <div className="absolute inset-0" style={{ background: posterPal ? posterPal.scrim : "linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, transparent 45%, rgba(0,0,0,0.65) 100%)" }} />
 
           {/* Nav */}
           <div className="absolute top-4 left-4 right-4 flex justify-between items-center">
@@ -1727,7 +1734,7 @@ export default function EventDetail() {
 
           {/* Bottom title: HP saja — di desktop nama event tampil di panel kanan */}
           <div className="absolute bottom-0 left-0 right-0 px-5 pb-5 sm:hidden">
-            <span className="inline-block text-[10px] font-extrabold px-2.5 py-1 rounded-full text-white mb-2 uppercase tracking-wide" style={{ background: `${g.from}cc` }}>
+            <span className="inline-block text-[10px] font-extrabold px-2.5 py-1 rounded-full text-white mb-2 uppercase tracking-wide" style={posterPal ? { background: posterPal.accent, color: posterPal.onAccent } : { background: `${g.from}cc` }}>
               {event.category}
             </span>
             <p className="text-xl font-extrabold text-white leading-tight drop-shadow-sm">{event.name}</p>
