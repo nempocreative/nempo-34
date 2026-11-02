@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   CAFE_TABLES,
   CAFE_ZONES,
+  EVENT_RESERVATION_WA_NUMBER,
   cafeBestSpotTables,
   cafeJamRange,
   cafeReservationMessage,
@@ -68,7 +69,8 @@ describe("denah meja Good Story Cafe", () => {
     expect(msg).toContain("Meja dipilih: belum dipilih — mohon dibantu posisi terbaik");
   });
 
-  it("tautan menuju WhatsApp resmi Nempo dengan pesan terisi", () => {
+  it("reservasi event menuju nomor 08211612930 dengan pesan terisi", () => {
+    expect(EVENT_RESERVATION_WA_NUMBER).toBe("08211612930");
     const url = cafeReservationUrl({
       eventName: "MusiComedy Night",
       eventDate: "2026-11-04",
@@ -77,7 +79,8 @@ describe("denah meja Good Story Cafe", () => {
       location: "Good Story Cafe",
       table: "VIP 1",
     });
-    expect(url.startsWith("https://wa.me/6285724981356?text=")).toBe(true);
+    expect(new URL(url).pathname).toBe("/628211612930");
+    expect(new URL(url).origin).toBe("https://wa.me");
     expect(decodeURIComponent(url)).toContain("Meja dipilih: VIP 1 (VIP)");
   });
 
