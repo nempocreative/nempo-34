@@ -258,6 +258,7 @@ export function NempoCreatorTeamCard() {
                   className="nempo-creator-team__card"
                   key={`${profile.name}-${index}`}
                   aria-hidden={isClone}
+                  style={{ "--role-color": profile.color } as React.CSSProperties}
                 >
                   <div className="nempo-creator-team__portrait">
                     <img
