@@ -1850,6 +1850,17 @@ export default function Home() {
           <Link
             href="/event/musicomedy-night"
             className="group block w-full overflow-hidden rounded-3xl border border-border bg-card shadow-sm"
+            style={{
+              willChange: "transform",
+              animation: "cafe-zigzag 3.8s ease-in-out infinite",
+              "--cafe-arc-y": "0px",
+              "--cafe-arc-r": "0deg",
+              "--cafe-zigzag-y": "6px",
+              "--cafe-zigzag-x": "3px",
+              "--cafe-zigzag-x-negative": "-3px",
+              "--cafe-zigzag-r": "0.6deg",
+              "--cafe-zigzag-r-negative": "-0.6deg",
+            } as React.CSSProperties}
           >
             <div className="flex flex-col sm:h-[360px] sm:flex-row">
               <div className="relative aspect-[3/4] w-full shrink-0 overflow-hidden sm:h-full sm:w-auto">
