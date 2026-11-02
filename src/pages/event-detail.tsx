@@ -1597,20 +1597,6 @@ export default function EventDetail() {
   );
 
   const g      = catMeta[event.category] ?? DEFAULT_G;
-
-  // Warna bingkai acara diambil dari posternya sendiri, supaya panel keterangan
-  // ikut satu nada dengan poster dan tidak terlihat pudar di bawah lapisan hitam.
-  const posterRef = useRef<HTMLImageElement | null>(null);
-  const [posterPal, setPosterPal] = useState<PosterPalette | null>(null);
-
-  useEffect(() => {
-    setPosterPal(null);
-    const img = posterRef.current;
-    if (img?.complete) {
-      const palette = extractPosterPalette(img);
-      if (palette) setPosterPal(palette);
-    }
-  }, [event.image]);
   const isTemuTarung = !!(event.name?.toLowerCase().includes("temu tarung") || event.name?.toLowerCase().includes("temu-tarung"));
 
   const _today = new Date().toISOString().slice(0, 10);
