@@ -231,4 +231,4 @@
 - [x] Tablet potret: bilah ikon bawah kini tampil (sebelumnya hanya HP) — muncul di 390, 768, dan 834; tetap hilang di tablet lanskap 1024 dan komputer 1280; ruang bawah halaman/footer disesuaikan supaya teks terakhir tidak tertutup bilah; diperiksa pada 5 ukuran dan halaman /voucherlist.
 - [x] Panel keterangan acara di desktop tidak lagi pudar: warna panel, kartu info, dan lapisan atas bingkai diambil dari warna posternya sendiri (maroon/cokelat tua untuk MusiComedy Night); diukur kontrasnya di pratinjau (label 6,7, isi 8,1, judul 11,2 — semua di atas 4,5), 7 tes warna baru lulus, 232 tes lulus.
 
-- [ ] Tim: samakan baju (jas navy + kaos putih) dan pose tangan dilipat di semua 15 foto; label jabatan jangan menutupi foto.
+- [x] Tim: semua 15 foto diseragamkan (jas navy + kaos putih polos, tangan dilipat, latar biru muda) — M01, M02, M03, M04, M11 diperbaiki; label jabatan dipindah ke bawah foto, tidak menutupi wajah (tumpang tindih 0 px, 30 kartu, 15 foto, 0 gambar rusak, 232 tes lulus).
