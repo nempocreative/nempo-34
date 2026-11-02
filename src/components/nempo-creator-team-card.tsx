@@ -13,6 +13,8 @@ import teamMember10 from "@/assets/team/team-member-10.jpg";
 import teamMember11 from "@/assets/team/team-member-11.jpg";
 import teamMember12 from "@/assets/team/team-member-12.jpg";
 import teamMember13 from "@/assets/team/team-member-13.jpg";
+import teamMember14 from "@/assets/team/team-member-14.jpg";
+import teamMember15 from "@/assets/team/team-member-15.jpg";
 import { NEMPO_CONSULT_URL } from "@/lib/contact";
 import "./nempo-creator-team-card.css";
 
@@ -40,6 +42,8 @@ const realTeamProfiles: TeamProfile[] = [
   { image: teamMember11, name: "Tim Nempo", field: "Content Creator", color: "linear-gradient(135deg, #2563eb, #1d4ed8)" },
   { image: teamMember12, name: "Tim Nempo", field: "Event Creator", color: "linear-gradient(135deg, #d97706, #b45309)" },
   { image: teamMember13, name: "Tim Nempo", field: "Wedding Creator", color: "linear-gradient(135deg, #e11d48, #be123c)" },
+  { image: teamMember14, name: "Tim Nempo", field: "Photographer", color: "linear-gradient(135deg, #db2777, #be185d)" },
+  { image: teamMember15, name: "Tim Nempo", field: "Event Creator", color: "linear-gradient(135deg, #d97706, #b45309)" },
 ];
 
 const teamProfiles: TeamProfile[] = realTeamProfiles;
