@@ -1,5 +1,8 @@
 # Roadmap
 
+- [x] Pengamanan awal: backup dikunci sampai otorisasi admin tersedia, pengaturan situs dan kontak pengirim berita tidak bisa dibaca publik, hanya tiket aktif dapat dibaca, unggahan pendaftaran langsung dikunci; perlindungan browser aktif, 8 tes lulus, akses tanpa izin ditolak dan beranda diperiksa.
+- [ ] Tinjau hasil pemeriksaan keamanan menyeluruh — menunggu hasil pemindaian yang sedang berjalan; dua peringatan baca publik (talent dan voucher) masih tercatat.
+
 - [ ] Kompres foto unggahan baru ke WebP dan periksa jalur unggahan serta ukuran hasilnya.
 
 - [x] Pulihkan data MusiComedy Night setelah remix, betulkan alamat API dan daftar tiket; klik beranda → detail, banner, tanggal, Saduli Ragap serta daftar event berhasil diperiksa.

@@ -51,6 +51,11 @@ function BackupPage() {
     setError("");
     try {
       const res = await fetch("/api/backup", { cache: "no-store" });
+      if (res.status === 401 || res.status === 403) {
+        setFile(null);
+        setError("Akses backup dikunci. Login administrator terverifikasi belum diaktifkan.");
+        return;
+      }
       if (res.status === 503) {
         setFile(null);
         setError("Database belum terhubung, jadi belum ada data untuk dibackup.");
@@ -92,8 +97,8 @@ function BackupPage() {
           </p>
 
           <div className="mt-5 flex flex-wrap gap-3">
-            <Button asChild size="lg">
-              <a href="/api/backup?download=1" download>
+            <Button asChild size="lg" disabled={!file}>
+              <a href={file ? "/api/backup?download=1" : undefined} aria-disabled={!file} download>
                 <Download className="h-4 w-4" />
                 Unduh Backup Sekarang
               </a>
