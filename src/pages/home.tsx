@@ -775,6 +775,8 @@ export default function Home() {
   const diskonTouchX = useRef(0);
   const [infoBannerIdx, setInfoBannerIdx] = useState(0);
   const infoBannerTouchX = useRef(0);
+  const bpTrackRef = useRef<HTMLDivElement>(null);
+  const bpDrag = useRef({ x: 0, offset: 0, dragging: false });
   const [showCafeModal, setShowCafeModal] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [typedPlaceholder, setTypedPlaceholder] = useState("");
@@ -808,6 +810,28 @@ export default function Home() {
 
     return () => window.clearInterval(timer);
   }, []);
+
+  // Brand-partner marquee: auto-scrolls, and can be dragged/swiped on touch.
+  useEffect(() => {
+    const track = bpTrackRef.current;
+    if (!track) return;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let raf = 0;
+    let last = performance.now();
+    const step = (now: number) => {
+      const dt = Math.min(now - last, 50);
+      last = now;
+      const half = track.scrollWidth / 2;
+      if (half > 0) {
+        if (!bpDrag.current.dragging && !reduceMotion) bpDrag.current.offset += dt * 0.045;
+        bpDrag.current.offset = ((bpDrag.current.offset % half) + half) % half;
+        track.style.transform = `translateX(${-bpDrag.current.offset}px)`;
+      }
+      raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
+  }, [partnersDb]);
 
   useEffect(() => {
     const load = (path: string, setter: (d: ApiItem[]) => void) =>
@@ -2414,11 +2438,9 @@ export default function Home() {
           return (
             <div className="home-section-partners relative overflow-hidden py-2">
               <style>{`
-                @keyframes bp-scroll {
-                  from { transform: translateX(0); }
-                  to   { transform: translateX(-50%); }
-                }
-                .bp-track { animation: bp-scroll 32s linear infinite; }
+                .bp-track { will-change: transform; }
+                .bp-viewport { touch-action: pan-y; cursor: grab; }
+                .bp-viewport:active { cursor: grabbing; }
                 .bp-brand {
                   display: inline-flex;
                   align-items: baseline;
@@ -2458,8 +2480,23 @@ export default function Home() {
                 <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500">Mitra Kami</span>
               </div>
 
-              {/* marquee */}
-              <div className="relative overflow-hidden py-3">
+              {/* marquee — auto-scrolls, swipeable on touch */}
+              <div
+                className="bp-viewport relative overflow-hidden py-3"
+                onPointerDown={(e) => {
+                  bpDrag.current.dragging = true;
+                  bpDrag.current.x = e.clientX;
+                  e.currentTarget.setPointerCapture(e.pointerId);
+                }}
+                onPointerMove={(e) => {
+                  if (!bpDrag.current.dragging) return;
+                  const dx = e.clientX - bpDrag.current.x;
+                  bpDrag.current.x = e.clientX;
+                  bpDrag.current.offset -= dx;
+                }}
+                onPointerUp={() => { bpDrag.current.dragging = false; }}
+                onPointerCancel={() => { bpDrag.current.dragging = false; }}
+              >
                 <div
                   className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 z-10"
                   style={{ background: "linear-gradient(to right, white, transparent)" }}
@@ -2469,7 +2506,7 @@ export default function Home() {
                   style={{ background: "linear-gradient(to left, white, transparent)" }}
                 />
 
-                <div className="bp-track flex items-center px-4" style={{ width: "max-content", gap: "36px" }}>
+                <div ref={bpTrackRef} className="bp-track flex items-center px-4" style={{ width: "max-content", gap: "36px" }}>
                   {items.map((b, i) => {
                     const parts = b.name.split(" ");
                     const thin = parts.length > 1 ? parts.slice(0, -1).join(" ") : null;
