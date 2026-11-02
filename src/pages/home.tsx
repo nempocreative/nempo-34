@@ -1524,6 +1524,7 @@ export default function Home() {
         .home-section-events { order: 50; }
         .home-section-service-promos { order: 20; }
         .home-section-facts { order: 11; }
+        .home-section-upcoming { order: 12; }
         .home-section-partnership { order: 90; }
         .home-section-organizer { order: 110; }
         .home-section-partners { order: 120; }
@@ -1836,7 +1837,7 @@ export default function Home() {
         <NempoFactsSection factIdx={factIdx} onFactChange={setFactIdx} />
 
         {/* ── Event Mendatang spotlight ── */}
-        <section className="relative">
+        <section className="home-section-upcoming relative">
           <div className="flex items-center gap-3 mb-3">
             <div className="w-10 h-10 rounded-2xl flex items-center justify-center shrink-0 bg-primary text-primary-foreground">
               <CalendarDays className="w-5 h-5" strokeWidth={1.75} />
