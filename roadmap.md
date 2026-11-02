@@ -1,4 +1,6 @@
 # Roadmap
+- [x] Setelah remix: set migrasi sudah kosong (jurnal kosong, tanpa file SQL/snapshot) dan 20 tabel lama jadi dasar; 43 foto/audio/video dipindahkan ke penyimpanan proyek ini (ukuran byte identik, 0 gagal), 43 rujukan dialihkan tanpa sisa, arsip 41 entri dicocokkan ulang dan sama persis dengan catatan di basis data, acara MusiComedy Night dipulihkan (15.00–23.00, poster baru); beranda 56/57 gambar dan halaman acara 6/6 gambar tampil tanpa gambar rusak, 232 tes lulus, build lulus.
+
 - [x] Setelah remix: set migrasi sudah kosong (jurnal kosong, tanpa file SQL/snapshot) dan 20 tabel lama jadi dasar; 43 foto/audio/video dipindahkan ke penyimpanan proyek ini (ukuran byte identik, 0 masalah), 84 rujukan dialihkan tanpa sisa, catatan arsip 41 entri dicocokkan ulang dan sama persis, acara MusiComedy Night dipulihkan (15.00–23.00, poster baru); beranda 53 gambar dan halaman acara 0 gambar rusak, 225 tes lulus, build lulus.
 - [x] QRIS saweran NEMPO GARUT dipasang khusus MusiComedy Night; gambar tampil di HP/komputer, perbesar berhasil, unduhan JPEG asli 89.565 byte berhasil, tanpa verifikasi pembayaran otomatis.
 - [x] Peta acara Good Story Cafe: embed kiriman pengguna, ukuran adaptif, dan tombol arah; pemeriksaan tampilan Google Maps langsung perlu dilakukan pengguna.
