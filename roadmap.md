@@ -211,4 +211,4 @@
 
 - [x] Header: logo dikembalikan seperti semula; nama "Kala Muda Community" dipasang sebagai tombol di samping lonceng notifikasi dan membuka halaman Nempo Community (/komunitas); diperiksa di preview.
 
-- [ ] "Event mendatang" diklik memunculkan "event tidak ditemukan"; dicari sumbernya dan diperbaiki.
+- [x] "Event mendatang" diklik memunculkan "event tidak ditemukan" karena tabel event kosong setelah remix; data MusiComedy Night dipasang kembali (4 November, Good Story Cafe, gratis, Saduli Ragap) dan klik beranda → detail diperiksa.
