@@ -208,3 +208,5 @@
 
 - [x] Event detail banner: full width on desktop, uncropped
 - [x] Remix 2 Nov (ulang): file SQL salinan 0000_nempo_schema + snapshot dihapus, jurnal dikosongkan, drizzle-kit check lolos; database tetap 19 tabel sebagai baseline.
+
+- [x] Header: logo dikembalikan seperti semula; nama "Kala Muda Community" dipasang sebagai tombol di samping lonceng notifikasi dan membuka halaman Nempo Community (/komunitas); diperiksa di preview.
