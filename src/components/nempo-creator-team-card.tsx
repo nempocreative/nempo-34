@@ -48,6 +48,10 @@ const realTeamProfiles: TeamProfile[] = [
 
 const teamProfiles: TeamProfile[] = realTeamProfiles;
 
+/* Warna solid dari gradasi peran — dipakai untuk cahaya berkeliling di tepi kartu. */
+const accentFrom = (gradient: string) => gradient.match(/#[0-9a-f]{6}/i)?.[0] ?? "#0891b2";
+
+
 /* Daftar digandakan supaya jalannya otomatis terasa tanpa putus. */
 const loopProfiles = [...teamProfiles, ...teamProfiles];
 
@@ -258,7 +262,7 @@ export function NempoCreatorTeamCard() {
                   className="nempo-creator-team__card"
                   key={`${profile.name}-${index}`}
                   aria-hidden={isClone}
-                  style={{ "--role-color": profile.color, "--card-delay": `${(index % teamProfiles.length) * 0.12}s` } as React.CSSProperties}
+                  style={{ "--role-color": profile.color, "--role-ink": accentFrom(profile.color), "--card-delay": `${(index % teamProfiles.length) * 0.34}s` } as React.CSSProperties}
                 >
                   <div className="nempo-creator-team__portrait">
                     <img
@@ -267,11 +271,6 @@ export function NempoCreatorTeamCard() {
                       loading="eager"
                       draggable={false}
                     />
-                    <span className="nempo-creator-team__door nempo-creator-team__door--left" aria-hidden="true" />
-                    <span className="nempo-creator-team__door nempo-creator-team__door--right" aria-hidden="true" />
-                    <span className="nempo-creator-team__shine" aria-hidden="true" />
-                    <span className="nempo-creator-team__spark nempo-creator-team__spark--a" aria-hidden="true" />
-                    <span className="nempo-creator-team__spark nempo-creator-team__spark--b" aria-hidden="true" />
                   </div>
                   <span
                     className="nempo-creator-team__role-flag"
