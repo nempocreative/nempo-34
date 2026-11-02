@@ -2442,7 +2442,9 @@ export default function Home() {
                   from { transform: translateX(0); }
                   to   { transform: translateX(-50%); }
                 }
-                .bp-track { animation: bp-scroll 32s linear infinite; }
+                .bp-track { will-change: transform; }
+                .bp-viewport { touch-action: pan-y; cursor: grab; }
+                .bp-viewport:active { cursor: grabbing; }
                 .bp-brand {
                   display: inline-flex;
                   align-items: baseline;
@@ -2482,8 +2484,23 @@ export default function Home() {
                 <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500">Mitra Kami</span>
               </div>
 
-              {/* marquee */}
-              <div className="relative overflow-hidden py-3">
+              {/* marquee — auto-scrolls, swipeable on touch */}
+              <div
+                className="bp-viewport relative overflow-hidden py-3"
+                onPointerDown={(e) => {
+                  bpDrag.current.dragging = true;
+                  bpDrag.current.x = e.clientX;
+                  e.currentTarget.setPointerCapture(e.pointerId);
+                }}
+                onPointerMove={(e) => {
+                  if (!bpDrag.current.dragging) return;
+                  const dx = e.clientX - bpDrag.current.x;
+                  bpDrag.current.x = e.clientX;
+                  bpDrag.current.offset -= dx;
+                }}
+                onPointerUp={() => { bpDrag.current.dragging = false; }}
+                onPointerCancel={() => { bpDrag.current.dragging = false; }}
+              >
                 <div
                   className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 z-10"
                   style={{ background: "linear-gradient(to right, white, transparent)" }}
@@ -2493,7 +2510,7 @@ export default function Home() {
                   style={{ background: "linear-gradient(to left, white, transparent)" }}
                 />
 
-                <div className="bp-track flex items-center px-4" style={{ width: "max-content", gap: "36px" }}>
+                <div ref={bpTrackRef} className="bp-track flex items-center px-4" style={{ width: "max-content", gap: "36px" }}>
                   {items.map((b, i) => {
                     const parts = b.name.split(" ");
                     const thin = parts.length > 1 ? parts.slice(0, -1).join(" ") : null;
