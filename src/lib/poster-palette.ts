@@ -108,7 +108,8 @@ export function paletteFromPixels(pixels: ArrayLike<number>): PosterPalette | nu
   const pool = significant.length ? significant : ranked;
 
   let base = pool.reduce((best, bin) => (luminance(bin.color) < luminance(best.color) ? bin : best), pool[0]!).color;
-  if (luminance(base) > 0.5) base = mix(base, BLACK, 0.55);
+  // Dark enough that white text on the panel still reads comfortably.
+  if (luminance(base) > 0.22) base = mix(base, BLACK, 0.7);
 
   let cream = pool.reduce((best, bin) => (luminance(bin.color) > luminance(best.color) ? bin : best), pool[0]!).color;
   if (luminance(cream) < 0.4) cream = mix(base, WHITE, 0.75);
@@ -127,7 +128,7 @@ export function paletteFromPixels(pixels: ArrayLike<number>): PosterPalette | nu
     soft: rgbToHex(mix(base, cream, 0.14)),
     accent: rgbToHex(accent),
     cream: rgbToHex(cream),
-    muted: rgbToHex(mix(base, cream, 0.45)),
+    muted: rgbToHex(mix(base, cream, 0.72)),
     onAccent: luminance(accent) > 0.45 ? rgbToHex(mix(baseDeep, BLACK, 0.2)) : "#ffffff",
     panel: `linear-gradient(150deg, ${rgbToHex(baseDeep)} 0%, ${rgbToHex(base)} 100%)`,
     scrim: `linear-gradient(to bottom, ${rgba(baseDeep, 0.3)} 0%, transparent 42%, ${rgba(baseDeep, 0.78)} 100%)`,
