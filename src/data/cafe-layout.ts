@@ -3,7 +3,8 @@
 // meja 53-57 di strip bar, dan catatan "Nomor Meja Tambahan: 58-65").
 // Nomor meja dan zona diambil apa adanya dari denah — jangan mengarang nomor baru.
 
-import { NEMPO_WA_URL } from "@/lib/contact";
+export const EVENT_RESERVATION_WA_NUMBER = "08211612930";
+export const EVENT_RESERVATION_WA_URL = "https://wa.me/628211612930";
 
 export interface CafeZone {
   id: string;
@@ -95,7 +96,7 @@ export function cafeReservationMessage(input: CafeReservationInput): string {
   return lines.join("\n");
 }
 
-/** Tautan WhatsApp resmi Nempo dengan pesan reservasi sudah terisi. */
+/** Tautan WhatsApp khusus reservasi event dengan pesan sudah terisi. */
 export function cafeReservationUrl(input: CafeReservationInput): string {
-  return `${NEMPO_WA_URL}?text=${encodeURIComponent(cafeReservationMessage(input))}`;
+  return `${EVENT_RESERVATION_WA_URL}?text=${encodeURIComponent(cafeReservationMessage(input))}`;
 }

@@ -1,9 +1,8 @@
 import { useMemo, useState } from "react";
 import { Armchair, ArrowUpRight, Check, ChevronDown, Clock, Map, MessageCircle, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { NEMPO_WA_NUMBER } from "@/lib/contact";
 import denahAsset from "@/assets/denah-good-story-cafe.jpg.asset.json";
-import { CAFE_ZONES, cafeBestSpotTables, cafeJamRange, cafeReservationUrl, cafeZoneOf } from "@/data/cafe-layout";
+import { CAFE_ZONES, EVENT_RESERVATION_WA_NUMBER, cafeBestSpotTables, cafeJamRange, cafeReservationUrl, cafeZoneOf } from "@/data/cafe-layout";
 
 interface Props {
   eventName: string;
@@ -82,7 +81,7 @@ export function CafeReservation({ eventName, eventDate, timeStart, timeEnd, loca
           {table && <Button variant="ghost" size="sm" className="ml-auto shrink-0" onClick={() => setTable(null)}>Batal</Button>}
         </div>
         <Button asChild className="w-full min-h-12 whitespace-normal text-center font-bold"><a href={waHref} target="_blank" rel="noopener noreferrer"><MessageCircle />{table ? `Reservasi ${table} via WhatsApp` : "Reservasi via WhatsApp"}<ArrowUpRight /></a></Button>
-        <p className="text-center text-xs text-muted-foreground mt-2">NEMPO · {NEMPO_WA_NUMBER}</p>
+        <p className="text-center text-xs text-muted-foreground mt-2">Reservasi Event · {EVENT_RESERVATION_WA_NUMBER}</p>
         <p className="text-xs text-muted-foreground mt-3 leading-relaxed">Pilihan meja adalah permintaan reservasi. Ketersediaan dan posisi kursi dikonfirmasi oleh tim melalui WhatsApp.</p>
       </footer>
     </section>
