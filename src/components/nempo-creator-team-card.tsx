@@ -258,7 +258,7 @@ export function NempoCreatorTeamCard() {
                   className="nempo-creator-team__card"
                   key={`${profile.name}-${index}`}
                   aria-hidden={isClone}
-                  style={{ "--role-color": profile.color } as React.CSSProperties}
+                  style={{ "--role-color": profile.color, "--card-delay": `${(index % teamProfiles.length) * 0.12}s` } as React.CSSProperties}
                 >
                   <div className="nempo-creator-team__portrait">
                     <img
@@ -267,6 +267,11 @@ export function NempoCreatorTeamCard() {
                       loading="eager"
                       draggable={false}
                     />
+                    <span className="nempo-creator-team__door nempo-creator-team__door--left" aria-hidden="true" />
+                    <span className="nempo-creator-team__door nempo-creator-team__door--right" aria-hidden="true" />
+                    <span className="nempo-creator-team__shine" aria-hidden="true" />
+                    <span className="nempo-creator-team__spark nempo-creator-team__spark--a" aria-hidden="true" />
+                    <span className="nempo-creator-team__spark nempo-creator-team__spark--b" aria-hidden="true" />
                   </div>
                   <span
                     className="nempo-creator-team__role-flag"
