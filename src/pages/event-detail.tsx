@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout";
 import { CafeReservation } from "@/components/cafe-reservation";
+import { EventShare } from "@/components/event-share";
 import { cafeJamRange } from "@/data/cafe-layout";
 import { SEO } from "@/components/seo";
 import { useState, useEffect, useRef } from "react";
@@ -10,9 +11,8 @@ import { getTypeLabel, getAgeLabel, TYPE_COLORS, getMatchJam, streetFightDay1, s
 import { useMatchContext } from "@/contexts/match-context";
 import { usePancoContext } from "@/contexts/panco-context";
 import type { MatchItem, RundownItem } from "@/data/temu-tarung";
-import { useWishlist } from "@/lib/use-wishlist";
 import {
-  MapPin, Calendar, Share2, Heart, ArrowLeft, Ticket,
+  MapPin, Calendar, ArrowLeft, Ticket,
   Users, Star, ShieldAlert, Clock, Car, Train, Navigation,
   Crown, CheckCircle2, Info, Minus, Plus,
   Swords, HeartPulse, SearchX, Dumbbell, Flame, Moon,
@@ -1536,17 +1536,6 @@ export default function EventDetail() {
   const [event, setEvent]     = useState<ApiEvent | null>(null);
   const [tickets, setTickets] = useState<EventTicket[]>([]);
   const [loading, setLoading] = useState(true);
-  const [shareCopied, setShareCopied] = useState(false);
-
-  async function doShare(title: string) {
-    const url = window.location.href;
-    if (navigator.share) { try { await navigator.share({ title, url }); return; } catch {} }
-    try { await navigator.clipboard.writeText(url); } catch {
-      const el = document.createElement("textarea"); el.value = url;
-      document.body.appendChild(el); el.select(); document.execCommand("copy"); document.body.removeChild(el);
-    }
-    setShareCopied(true); setTimeout(() => setShareCopied(false), 2000);
-  }
   const [selTicket, setSel]   = useState<number | null>(null);
   const [qty, setQty]         = useState(0);
   const [showSticky, setShowSticky] = useState(false);
@@ -1554,8 +1543,6 @@ export default function EventDetail() {
   const [activeTab, setActiveTab] = useState<"info" | "fightcard" | "panco" | "street" | "malam">("info");
   const [rdDay, setRdDay] = useState<1|2>(1);
   const ticketRef = useRef<HTMLDivElement>(null);
-  const { toggle: wishlistToggle, isWishlisted: checkWishlisted } = useWishlist();
-  const wishlisted = event ? checkWishlisted(String(event.id), "event") : false;
 
   useEffect(() => {
     if (!params?.slug) return;
@@ -1711,20 +1698,7 @@ export default function EventDetail() {
             <button onClick={() => window.history.back()} className="h-10 w-10 rounded-full bg-white/90 backdrop-blur-sm shadow-lg flex items-center justify-center hover:bg-white transition-colors">
               <ArrowLeft className="h-5 w-5 text-gray-700" />
             </button>
-            <div className="flex gap-2">
-              <button
-                onClick={() => event && wishlistToggle({ id: String(event.id), type: "event", name: event.name, image: event.image, location: event.location, category: event.category })}
-                className="h-10 w-10 rounded-full bg-white/90 backdrop-blur-sm shadow-lg flex items-center justify-center hover:bg-white transition-colors"
-              >
-                <Heart className={`h-5 w-5 transition-all ${wishlisted ? "text-red-500 fill-red-500" : "text-gray-600"}`} />
-              </button>
-              <button onClick={() => doShare(event?.name ?? "Event")}
-                className="h-10 w-10 rounded-full backdrop-blur-sm shadow-lg flex items-center justify-center transition-all"
-                style={shareCopied ? { background: "#22c55e" } : { background: "rgba(255,255,255,0.9)" }}
-                title={shareCopied ? "Link disalin!" : "Bagikan"}>
-                <Share2 className={`h-5 w-5 ${shareCopied ? "text-white" : "text-gray-600"}`} />
-              </button>
-            </div>
+            <EventShare title={event.name} />
           </div>
 
           {/* Bottom title: HP saja — di desktop nama event tampil di panel kanan */}
