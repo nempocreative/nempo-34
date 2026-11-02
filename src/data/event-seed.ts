@@ -37,7 +37,7 @@ export const EVENT_SEEDS: EventSeed[] = [
     price: 0,
     guest_stars: [{ name: "Saduli Ragap", role: "Bintang Tamu" }],
     image:
-      "/__l5e/assets-v1/81c21e3c-7a1c-417c-abd4-4eeccbe00b4b/musicomedy-night-poster.webp",
+      "/__l5e/assets-v1/f1e49218-aeb5-4bd0-bb9f-055469beb200/musicomedy-night-poster.webp",
     active: true,
     featured: true,
   },
