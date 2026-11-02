@@ -39,3 +39,4 @@
 - The JSON API camelizes column names, so pages whose data types are snake_case must normalize each response with `toSnake` from `src/lib/api-keys.ts` before reading it; why: otherwise every multi-word column (guest stars, sale windows, payment info) arrives under a different name and silently renders nothing.
 
 - Rows the site must always have (the MusiComedy Night event) live in browser-safe  with , and are re-applied with the database query tool; why: a remix starts with empty tables, so pages like the event detail show "tidak ditemukan" unless the row is re-inserted from this one source.
+- Rows the site must always have (the MusiComedy Night event) live in browser-safe src/data/event-seed.ts with eventSeedInsertSql, and are re-applied with the database query tool; why: a remix starts with empty tables, so pages like the event detail show "tidak ditemukan" unless the row is re-inserted from this one source.
