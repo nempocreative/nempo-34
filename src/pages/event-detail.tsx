@@ -3,6 +3,7 @@ import { CafeReservation } from "@/components/cafe-reservation";
 import { EventShare } from "@/components/event-share";
 import { EventLocation } from "@/components/event-location";
 import { EventSaweran } from "@/components/event-saweran";
+import { Button } from "@/components/ui/button";
 import { GOOD_STORY_CAFE_MAP } from "@/data/event-location";
 import { cafeJamRange } from "@/data/cafe-layout";
 import { SEO } from "@/components/seo";
@@ -18,7 +19,7 @@ import {
   MapPin, Calendar, ArrowLeft, Ticket,
   Users, Star, ShieldAlert, Clock, Car, Train, Navigation,
   Crown, CheckCircle2, Info, Minus, Plus,
-  Swords, HeartPulse, SearchX, Dumbbell, Flame, Moon,
+  Swords, HeartPulse, SearchX, Dumbbell, Flame, Moon, HandHeart, ArrowDown,
 } from "lucide-react";
 
 const API = "/api";
@@ -1715,6 +1716,22 @@ export default function EventDetail() {
 
         {/* ── CONTENT ── */}
         <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-5 pb-32 lg:pb-12">
+
+          {event.slug === "musicomedy-night" && (
+            <div className="event-saweran mb-5 flex flex-wrap items-center justify-between gap-3 border-y border-border bg-card px-4 py-4 text-foreground">
+              <div className="min-w-0 flex-1 basis-48">
+                <p className="font-bold text-sm">Suka penampilannya? Yuk, sawer talent!</p>
+                <p className="mt-1 text-xs text-muted-foreground">Apresiasi kamu berarti untuk karya lokal.</p>
+              </div>
+              <Button asChild><a href="#saweran" onClick={(e) => {
+                const target = document.getElementById("saweran");
+                if (!target) return;
+                e.preventDefault();
+                target.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth", block: "start" });
+                target.focus({ preventScroll: true });
+              }}><HandHeart />Sawer Talent<ArrowDown /></a></Button>
+            </div>
+          )}
 
           {/* ── Thank You Banner (event selesai) ── */}
           {isPast && (
