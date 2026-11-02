@@ -1,27 +1,5 @@
 {
   "version": "7",
   "dialect": "postgresql",
-  "entries": [
-    {
-      "idx": 0,
-      "version": "7",
-      "when": 1793641684403,
-      "tag": "0000_protect_private_news_and_settings",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1793641757659,
-      "tag": "0001_restrict_inactive_tickets_and_application_writes",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1793642600422,
-      "tag": "0002_create_media_archive",
-      "breakpoints": true
-    }
-  ]
+  "entries": []
 }
