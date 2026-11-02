@@ -274,7 +274,7 @@ export default function ProfilePage() {
   return (
     <Layout>
       <SEO title="Profil Saya" noIndex />
-      <div className="pb-24 md:pb-8">
+      <div className="pb-24 lg:pb-8">
 
         {/* ── Hero Header ── */}
         <div className="relative bg-gradient-to-br from-[#001E6E] via-[#0046B8] to-[#0194f3] pt-8 pb-24 px-5">

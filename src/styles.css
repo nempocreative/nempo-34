@@ -1295,7 +1295,7 @@ html { transition: background-color 0.35s ease, color 0.35s ease; }
   padding-bottom: calc(6rem + env(safe-area-inset-bottom));
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .nempo-footer-shell {
     padding-bottom: 2rem;
   }

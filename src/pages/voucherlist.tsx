@@ -363,7 +363,7 @@ export default function VoucherListPage() {
   return (
     <Layout>
       <SEO title="Voucher & Diskon" noIndex />
-      <div className="pb-24 md:pb-8">
+      <div className="pb-24 lg:pb-8">
 
         {/* Header */}
         <div className="bg-gradient-to-br from-[#001E6E] via-[#0046B8] to-[#0194f3] pt-12 pb-16 px-5 relative overflow-hidden">
