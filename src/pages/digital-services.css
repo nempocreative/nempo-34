@@ -1,0 +1,394 @@
+.nempo-bold {
+  --ink: #172a3a;
+  --ink-soft: #2e4657;
+  --paper: #f5efe4;
+  --coral: #ee6a4d;
+  --sun: #f3c968;
+  --sea: #b9d8cf;
+  --lilac: #d8c8dd;
+  color: var(--ink);
+  font-family: "Bricolage Grotesque", "Trebuchet MS", ui-sans-serif, system-ui, sans-serif;
+  background: var(--paper);
+}
+.nempo-bold .mono { font-family: "Space Mono", "Courier New", monospace; }
+.nempo-bold .display { font-family: "Bricolage Grotesque", "Trebuchet MS", ui-sans-serif, sans-serif; font-variation-settings: "wdth" 92, "opsz" 48; }
+.nempo-bold .ruled { background-image: linear-gradient(to bottom, transparent 31px, rgba(23,42,58,.075) 32px); background-size: 100% 32px; }
+.nempo-bold .paper-noise { position: relative; isolation: isolate; }
+.nempo-bold .paper-noise::after { position:absolute; inset:0; z-index:-1; pointer-events:none; content:""; opacity:.15; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E"); mix-blend-mode:multiply; }
+.nempo-bold .hero-rule { position:relative; }
+.nempo-bold .hero-rule::before { position:absolute; top:0; bottom:0; left:1.25rem; width:1px; content:""; background:rgba(23,42,58,.2); }
+.nempo-bold .hero-rule::after { position:absolute; top:5.25rem; left:.94rem; width:.65rem; height:.65rem; content:""; border-radius:999px; background:var(--coral); box-shadow:0 0 0 5px var(--paper); }
+.nempo-bold .digital-hero-grid > .hero-rule { display:flex; align-items:center; }
+.nempo-bold .route-card { position:relative; height:100%; min-height:100%; overflow:hidden; border:1px solid rgba(245,239,228,.28); background:var(--ink); box-shadow:10px 12px 0 rgba(23,42,58,.14); }
+.nempo-bold .route-card::before { position:absolute; inset:0; content:""; opacity:.25; background-image:linear-gradient(90deg,transparent 49%,rgba(245,239,228,.14) 50%,transparent 51%); background-size:24px 24px; }
+.nempo-bold .route-map-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.75rem; padding:1.25rem; }
+.nempo-bold .route-map-item { min-height:7rem; border:1px solid rgba(245,239,228,.22); padding:.8rem; color:var(--paper); transition:transform .25s ease, background-color .25s ease; }
+.nempo-bold .route-map-item-wide { grid-column:1 / -1; min-height:5.5rem; }
+.nempo-bold .route-map-item:hover { transform:translateY(-3px); background:rgba(245,239,228,.08); }
+.nempo-bold .route-map-icon { display:grid; place-items:center; width:2rem; height:2rem; border:1px solid currentColor; }
+.nempo-bold .route-map-item.coral { color:var(--coral); }.nempo-bold .route-map-item.sun { color:var(--sun); }.nempo-bold .route-map-item.sea { color:var(--sea); }.nempo-bold .route-map-item.lilac { color:var(--lilac); }
+.nempo-bold .route-map-item p { color:var(--paper); }.nempo-bold .route-map-item > div:last-child p:last-child { color:currentColor; }
+.nempo-bold .preview-frame { border:2px solid var(--ink); background:#fffaf2; box-shadow:8px 8px 0 var(--ink); }.nempo-bold .preview-top { border-bottom:2px solid var(--ink); background:#f1e7d9; }.nempo-bold .preview-dots span { display:block; width:.45rem; height:.45rem; border-radius:50%; background:var(--ink); }
+.nempo-bold #platforms button,
+.nempo-bold #platforms > div > div > div { border-radius:0; border-color:var(--ink); }
+.nempo-bold #platforms > div > div > div { box-shadow:none; }
+.nempo-bold #platforms .rounded-3xl,
+.nempo-bold #platforms .rounded-\[2rem\],
+.nempo-bold #platforms .rounded-\[1\.5rem\] { border-radius:0; }
+.nempo-bold #platforms button { background:var(--paper); }
+.nempo-bold #platforms button[aria-pressed="true"] { background:var(--coral); color:var(--ink); }
+.nempo-bold .platform-enter { animation:platform-enter 380ms cubic-bezier(.22,1,.36,1) both; }.nempo-bold .rise-in { animation:rise-in 700ms cubic-bezier(.22,1,.36,1) both; }.nempo-bold .delay-2 { animation-delay:180ms; }
+.nempo-bold .hero-service-card { animation:hero-service-card-in 360ms cubic-bezier(.22,1,.36,1) both; }
+.nempo-bold .case-study-name { filter:blur(3.5px); user-select:none; }
+@keyframes platform-enter { from { opacity:0; transform:translateY(12px) } to { opacity:1; transform:translateY(0) } }
+@keyframes rise-in { from { opacity:0; transform:translateY(20px) } to { opacity:1; transform:translateY(0) } }
+@keyframes hero-service-card-in { from { opacity:0; transform:translateY(8px) scale(.98) } to { opacity:1; transform:translateY(0) scale(1) } }
+.services-carousel-scroll {
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.services-carousel-scroll::-webkit-scrollbar { display: none; }
+.services-carousel-track {
+  display: grid;
+  width: 100%;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(2, minmax(150px, 1fr));
+  grid-auto-columns: calc((100% - .75rem) / 2);
+  gap: .75rem;
+}
+.services-carousel-track > button {
+  box-sizing: border-box;
+  scroll-snap-align: start;
+}
+.digital-services-page .service-platform-card {
+  transform: translateZ(0);
+  transition: transform .24s cubic-bezier(.22,1,.36,1), box-shadow .24s ease, border-color .24s ease, background-color .24s ease;
+}
+.digital-services-page .service-platform-card:hover {
+  transform: translateY(-2px) translateZ(0);
+  box-shadow: 0 8px 16px rgba(15, 118, 110, .1);
+}
+.digital-services-page .service-platform-card:active {
+  transform: translateY(0) scale(.99) translateZ(0);
+}
+.digital-services-page .service-platform-card-active {
+  box-shadow: inset 0 0 0 2px rgba(165, 243, 252, .95), 0 8px 16px rgba(8, 145, 178, .1);
+}
+.digital-services-page .service-platform-card-active:hover {
+  box-shadow: inset 0 0 0 2px rgba(103, 232, 249, .95), 0 10px 20px rgba(8, 145, 178, .14);
+}
+.digital-services-page .service-platform-card:focus-visible {
+  outline: 3px solid rgba(34, 211, 238, .42);
+  outline-offset: 2px;
+}
+
+/* Pricing cards: a small, tactile 3D treatment keeps the promo section from
+   feeling like a static comparison table while preserving normal document flow. */
+.digital-services-page .pricing-card {
+  isolation: isolate;
+  overflow: hidden;
+  transform: translateZ(0);
+  transform-style: preserve-3d;
+  transition: transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease, border-color .3s ease;
+  animation: pricing-card-in .7s cubic-bezier(.22,1,.36,1) both;
+  animation-delay: var(--pricing-delay, 0ms);
+}
+.digital-services-page .pricing-card::after {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  content: "";
+  border-radius: inherit;
+  opacity: 0;
+  background: linear-gradient(120deg, transparent 18%, rgba(255,255,255,.8) 42%, transparent 62%);
+  transform: translateX(-120%) skewX(-12deg);
+  transition: opacity .2s ease;
+}
+.digital-services-page .pricing-card:hover {
+  z-index: 2;
+  transform: perspective(1000px) rotateX(2.5deg) rotateY(-2.5deg) translateY(-8px) scale(1.015);
+  box-shadow: 0 22px 38px rgba(15, 118, 110, .13), 0 8px 12px rgba(23, 42, 58, .06);
+}
+.digital-services-page .pricing-card:hover::after {
+  opacity: 1;
+  animation: pricing-card-shine .85s ease both;
+}
+.digital-services-page .pricing-card-featured {
+  box-shadow: 0 10px 28px rgba(8, 145, 178, .1);
+}
+.digital-services-page .pricing-card-featured:hover {
+  box-shadow: 0 26px 48px rgba(8, 145, 178, .2), 0 10px 15px rgba(8, 145, 178, .08);
+}
+.digital-services-page .pricing-card-glow {
+  position: absolute;
+  top: -5.5rem;
+  right: -4rem;
+  z-index: 0;
+  width: 11rem;
+  height: 11rem;
+  pointer-events: none;
+  border-radius: 50%;
+  opacity: .38;
+  background: radial-gradient(circle, rgba(34, 211, 238, .3), transparent 68%);
+  filter: blur(2px);
+  animation: pricing-glow-drift 5s ease-in-out infinite;
+}
+.digital-services-page .pricing-card:not(.pricing-card-featured) .pricing-card-glow {
+  background: radial-gradient(circle, rgba(251, 146, 60, .22), transparent 68%);
+}
+.digital-services-page .pricing-card-orbit {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  border: 1px solid rgba(8, 145, 178, .11);
+  border-radius: 50%;
+  transform: rotate(-26deg);
+}
+.digital-services-page .pricing-card-orbit-one {
+  top: 1.55rem;
+  right: -2.8rem;
+  width: 8rem;
+  height: 3.2rem;
+  animation: pricing-orbit 8s linear infinite;
+}
+.digital-services-page .pricing-card-orbit-two {
+  top: 1rem;
+  right: -1.8rem;
+  width: 6rem;
+  height: 2.2rem;
+  opacity: .7;
+  transform: rotate(25deg);
+  animation: pricing-orbit-reverse 6s linear infinite;
+}
+.digital-services-page .pricing-card > *:not(.pricing-card-glow):not(.pricing-card-orbit):not(.pricing-card-badge) {
+  position: relative;
+  z-index: 1;
+}
+.digital-services-page .pricing-card-badge {
+  z-index: 3;
+}
+.digital-services-page .pricing-card-icon-wrap,
+.digital-services-page .pricing-card-price,
+.digital-services-page .pricing-card-first-month,
+.digital-services-page .pricing-card-features,
+.digital-services-page .pricing-card-cta {
+  transform: translateZ(10px);
+  transition: transform .45s cubic-bezier(.22,1,.36,1);
+}
+.digital-services-page .pricing-card:hover .pricing-card-icon-wrap {
+  transform: translateZ(28px) translateY(-2px);
+}
+.digital-services-page .pricing-card:hover .pricing-card-price {
+  transform: translateZ(22px);
+}
+.digital-services-page .pricing-card:hover .pricing-card-first-month {
+  transform: translateZ(18px);
+}
+.digital-services-page .pricing-card:hover .pricing-card-features {
+  transform: translateZ(13px);
+}
+.digital-services-page .pricing-card-icon {
+  box-shadow: 0 8px 14px rgba(8, 145, 178, .16);
+  transition: transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease;
+}
+.digital-services-page .pricing-card:hover .pricing-card-icon {
+  transform: rotate(-8deg) translateY(-3px);
+  box-shadow: 0 12px 20px rgba(8, 145, 178, .22);
+}
+.digital-services-page .pricing-card-badge {
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  box-shadow: 0 5px 12px rgba(249, 115, 22, .14);
+  animation: pricing-badge-float 3.5s ease-in-out infinite;
+}
+.digital-services-page .pricing-card-featured .pricing-card-badge {
+  box-shadow: 0 6px 14px rgba(8, 145, 178, .22);
+}
+.digital-services-page .pricing-card-badge-dot {
+  width: .3rem;
+  height: .3rem;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: .75;
+  animation: pricing-dot-pulse 1.8s ease-in-out infinite;
+}
+.digital-services-page .pricing-card-saving {
+  transition: transform .3s ease;
+}
+.digital-services-page .pricing-card:hover .pricing-card-saving {
+  transform: translateX(2px);
+}
+@keyframes pricing-card-in {
+  from { opacity: 0; transform: translateY(24px) rotateX(-5deg); }
+  to { opacity: 1; transform: translateY(0) rotateX(0); }
+}
+@keyframes pricing-card-shine {
+  from { transform: translateX(-120%) skewX(-12deg); }
+  to { transform: translateX(150%) skewX(-12deg); }
+}
+@keyframes pricing-glow-drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-10px, 8px, 0) scale(1.08); }
+}
+@keyframes pricing-orbit {
+  from { transform: rotate(-26deg) translateX(0); }
+  to { transform: rotate(334deg) translateX(4px); }
+}
+@keyframes pricing-orbit-reverse {
+  from { transform: rotate(25deg) translateX(0); }
+  to { transform: rotate(-335deg) translateX(-4px); }
+}
+@keyframes pricing-badge-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+@keyframes pricing-dot-pulse {
+  0%, 100% { opacity: .45; transform: scale(.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+@media (max-width:1023px) {
+  .nempo-bold .digital-hero-grid > .hero-rule { align-items:flex-start; }
+  .nempo-bold .route-card { height:auto; min-height:0; }
+}
+@media (min-width:640px) {
+  .services-carousel-track { grid-auto-columns: calc((100% - 1.5rem) / 3); }
+}
+@media (min-width:1024px) {
+  .services-carousel-track { grid-auto-columns: calc((100% - 3rem) / 5); }
+}
+@media (max-width:639px) {
+  .nempo-bold .route-map-grid { grid-template-columns:1fr; gap:.5rem; padding:.75rem; }
+  .nempo-bold .route-map-item,
+  .nempo-bold .route-map-item-wide { grid-column:auto; min-height:5.5rem; padding:.7rem; }
+  .nempo-bold .route-map-item-wide { min-height:5.5rem; }
+  .nempo-bold .ticketing-preview,
+  .nempo-bold .kasir-preview { grid-template-columns:1fr; }
+  .nempo-bold .ticketing-preview > aside,
+  .nempo-bold .kasir-preview > aside { border-right:0; border-top:1px solid rgba(255,255,255,.1); }
+  .nempo-bold .ticketing-preview > aside { order:2; }
+}
+@media (prefers-reduced-motion:reduce) { .nempo-bold .platform-enter,.nempo-bold .rise-in,.nempo-bold .hero-service-card { animation:none; } }
+@media (prefers-reduced-motion:reduce) {
+  .digital-services-page .pricing-card,
+  .digital-services-page .pricing-card-glow,
+  .digital-services-page .pricing-card-orbit,
+  .digital-services-page .pricing-card-badge,
+  .digital-services-page .pricing-card-badge-dot { animation: none; }
+  .digital-services-page .pricing-card,
+  .digital-services-page .pricing-card:hover { transform: none; }
+  .digital-services-page .pricing-card::after { display: none; }
+}
+@media (hover: none) {
+  .digital-services-page .pricing-card:hover { transform: none; }
+  .digital-services-page .pricing-card:active { transform: scale(.99); }
+}
+
+/* ── SUPER APP PALETTE ──
+   Keep the Digi Nempo landing page visually connected to the Business Super
+   App demo while leaving each product preview's own accent color intact. */
+.digital-services-page {
+  --super-ink: #183b43;
+  --super-ink-soft: #365b60;
+  --super-teal: #0f766e;
+  --super-teal-dark: #0b625c;
+  --super-mist: #f2f8f7;
+  --super-surface: #f9fbfb;
+  --super-border: #e3eeed;
+  background-color: #f4f7f7;
+  color: var(--super-ink);
+}
+
+.digital-services-page .bg-gray-50 { background-color: var(--super-surface) !important; }
+.digital-services-page .border-gray-100 { border-color: var(--super-border) !important; }
+.digital-services-page .border-gray-200 { border-color: #dce8e7 !important; }
+.digital-services-page .text-gray-900 { color: var(--super-ink) !important; }
+.digital-services-page .text-gray-800 { color: #244950 !important; }
+.digital-services-page .text-gray-700 { color: var(--super-ink-soft) !important; }
+.digital-services-page .text-gray-600 { color: #547377 !important; }
+.digital-services-page .text-gray-500 { color: #6f898d !important; }
+.digital-services-page .text-gray-400 { color: #8aa1a3 !important; }
+.digital-services-page .text-gray-300 { color: #9aadaf !important; }
+
+/* Cyan was the former Digi Nempo primary. Map it to the exact teal family
+   used by the super app so old utility classes remain easy to read. */
+.digital-services-page .text-cyan-600 { color: var(--super-teal) !important; }
+.digital-services-page .text-cyan-700 { color: var(--super-teal-dark) !important; }
+.digital-services-page .text-cyan-800 { color: #24575b !important; }
+.digital-services-page .text-cyan-900 { color: var(--super-ink) !important; }
+.digital-services-page .bg-cyan-50 { background-color: #e6f6f3 !important; }
+.digital-services-page .bg-cyan-50\/70 { background-color: rgba(230, 246, 243, .7) !important; }
+.digital-services-page .bg-cyan-600 { background-color: var(--super-teal) !important; }
+.digital-services-page .bg-cyan-700 { background-color: var(--super-teal-dark) !important; }
+.digital-services-page .border-cyan-100 { border-color: #dcecea !important; }
+.digital-services-page .border-cyan-200 { border-color: #b9ded8 !important; }
+.digital-services-page .border-cyan-300 { border-color: #9bc9c5 !important; }
+.digital-services-page .ring-cyan-100 { --tw-ring-color: #d4efeb !important; }
+.digital-services-page .shadow-cyan-600\/20 { --tw-shadow-color: rgba(15, 118, 110, .2) !important; }
+
+.digital-services-page .hover\:bg-cyan-50:hover { background-color: var(--super-mist) !important; }
+.digital-services-page .hover\:bg-cyan-700:hover { background-color: var(--super-teal-dark) !important; }
+.digital-services-page .hover\:border-cyan-200:hover { border-color: #b9ded8 !important; }
+.digital-services-page .hover\:text-cyan-700:hover { color: var(--super-teal-dark) !important; }
+.digital-services-page .hover\:text-cyan-900:hover { color: var(--super-ink) !important; }
+
+/* Amber in the super app is used for attention states and promotions. */
+.digital-services-page .bg-orange-50 { background-color: #fff1dd !important; }
+.digital-services-page .bg-orange-50\/70 { background-color: rgba(255, 241, 221, .7) !important; }
+.digital-services-page .text-orange-600 { color: #b97820 !important; }
+.digital-services-page .text-orange-700 { color: #a56b17 !important; }
+.digital-services-page .bg-orange-500 { background-color: #d8942f !important; }
+.digital-services-page .hover\:bg-orange-600:hover { background-color: #b97820 !important; }
+.digital-services-page .border-orange-100 { border-color: #f5e1bf !important; }
+
+/* Keep the landing page stable between narrow phones, tablets, and desktop.
+   The service strip remains horizontally browsable on touch devices while
+   every surrounding section stays inside the viewport. */
+.digital-services-page .services-carousel-scroll {
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.digital-services-page .services-carousel-track {
+  min-width: 100%;
+}
+
+.digital-services-page button,
+.digital-services-page a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 639px) {
+  .digital-services-page .services-carousel-track {
+    grid-auto-columns: minmax(8.75rem, calc((100% - .75rem) / 2));
+  }
+
+  .digital-services-page .pricing-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .digital-services-page .pricing-card:hover .pricing-card-icon-wrap,
+  .digital-services-page .pricing-card:hover .pricing-card-price,
+  .digital-services-page .pricing-card:hover .pricing-card-first-month,
+  .digital-services-page .pricing-card:hover .pricing-card-features,
+  .digital-services-page .pricing-card:hover .pricing-card-icon,
+  .digital-services-page .pricing-card:hover .pricing-card-saving {
+    transform: none;
+  }
+
+  .digital-services-page .pricing-card::after,
+  .digital-services-page .pricing-card-badge {
+    animation: none;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .digital-services-page .services-carousel-track {
+    grid-auto-columns: calc((100% - 1.5rem) / 3);
+  }
+}

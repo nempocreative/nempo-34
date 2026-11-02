@@ -1,0 +1,782 @@
+/* Shared palette for all Digi Nempo product demos. */
+
+.nempo-pos,
+.nempo-ticketing-preview,
+.nempo-ticketing-gate,
+.nempo-marketing-preview,
+.nempo-marketing-gate,
+.nempo-invitation-preview,
+.nempo-invitation-gate,
+.nempo-company-preview,
+.nempo-company-gate,
+.nempo-yearbook-preview,
+.nempo-yearbook-gate,
+.nempo-qr-menu-preview,
+.nempo-qr-menu-gate,
+.nempo-crm-preview,
+.nempo-crm-gate,
+.nempo-invoice-preview,
+.nempo-invoice-gate,
+.nempo-dapur-stock-preview,
+.nempo-dapur-stock-gate,
+.nempo-hpp-preview,
+.nempo-hpp-gate,
+.nempo-recipe-preview,
+.nempo-recipe-gate,
+.nempo-hr-preview,
+.nempo-hr-gate,
+.nempo-queue-preview,
+.nempo-queue-gate,
+.nempo-loyalty-preview,
+.nempo-loyalty-gate,
+.nempo-warehouse-preview,
+.nempo-warehouse-gate,
+.nempo-link-bio-preview,
+.nempo-link-bio-gate,
+.nempo-booking-preview,
+.nempo-booking-gate,
+.nempo-purchasing-preview,
+.nempo-purchasing-gate {
+  --demo-ink: #183b43;
+  --demo-ink-soft: #365b60;
+  --demo-teal: #0f766e;
+  --demo-teal-dark: #0b625c;
+  --demo-mist: #f2f8f7;
+  --demo-surface: #f9fbfb;
+  --demo-border: #e3eeed;
+  --demo-muted: #8aa1a3;
+}
+
+.nempo-ticketing-preview {
+  --ticket-ink: var(--demo-ink);
+  --ticket-muted: var(--demo-muted);
+  --ticket-border: var(--demo-border);
+  --ticket-paper: #fff;
+  --ticket-paper-muted: var(--demo-mist);
+  --ticket-coffee: var(--demo-teal);
+  --ticket-coffee-dark: var(--demo-teal-dark);
+  --ticket-green: var(--demo-teal);
+}
+
+/* The preview gates carry their background/text utility on the root element,
+   so they need root-level overrides rather than descendant selectors. */
+.nempo-pos[class~="bg-[#f5f0e9]"],
+.nempo-ticketing-gate[class~="bg-[#f3eee7]"],
+.nempo-ticketing-preview[class~="bg-[#f5f0e9]"],
+.nempo-marketing-gate[class~="bg-[#f5f0e9]"],
+.nempo-marketing-preview[class~="bg-[#f5f0e9]"] {
+  background-color: #f4f7f7 !important;
+}
+.nempo-invitation-gate[class~="bg-[#f3eee7]"],
+.nempo-invitation-preview[class~="bg-[#f3eee7]"],
+.nempo-company-gate[class~="bg-[#f1f0eb]"],
+.nempo-company-preview[class~="bg-[#f3f1ea]"],
+.nempo-yearbook-gate[class~="bg-[#f1f2fb]"],
+.nempo-yearbook-preview[class~="bg-[#f5f4fb]"],
+.nempo-qr-menu-gate[class~="bg-[#f4f7f7]"],
+.nempo-qr-menu-preview[class~="bg-[#f4f7f7]"],
+.nempo-crm-gate[class~="bg-[#f4f7f7]"],
+.nempo-crm-preview[class~="bg-[#f4f7f7]"],
+.nempo-invoice-gate[class~="bg-[#f4f7f7]"],
+.nempo-invoice-preview[class~="bg-[#f4f7f7]"],
+.nempo-dapur-stock-gate[class~="bg-[#f4f7f7]"],
+.nempo-dapur-stock-preview[class~="bg-[#f4f7f7]"],
+.nempo-hpp-gate[class~="bg-[#f4f7f7]"],
+.nempo-hpp-preview[class~="bg-[#f4f7f7]"],
+.nempo-recipe-gate[class~="bg-[#f4f7f7]"],
+.nempo-recipe-preview[class~="bg-[#f4f7f7]"],
+.nempo-hr-gate[class~="bg-[#f4f7f7]"],
+.nempo-hr-preview[class~="bg-[#f4f7f7]"],
+.nempo-queue-gate[class~="bg-[#f4f7f7]"],
+.nempo-queue-preview[class~="bg-[#f4f7f7]"],
+.nempo-warehouse-gate[class~="bg-[#f4f7f7]"],
+.nempo-warehouse-preview[class~="bg-[#f4f7f7]"] {
+  background-color: #f4f7f7 !important;
+}
+
+.nempo-link-bio-gate[class~="bg-[#f4f7f7]"],
+.nempo-link-bio-preview[class~="bg-[#f4f7f7]"] {
+  background-color: #f4f7f7 !important;
+}
+
+.nempo-booking-gate[class~="bg-[#f4f7f7]"],
+.nempo-booking-preview[class~="bg-[#f4f7f7]"] {
+  background-color: #f4f7f7 !important;
+}
+
+.nempo-booking-gate[class~="text-[#183b43]"],
+.nempo-booking-preview[class~="text-[#183b43]"] {
+  color: var(--demo-ink) !important;
+}
+
+/* Shared mobile guardrails for every Digi Nempo product workspace. */
+@media (max-width: 1023px) {
+  .nempo-pos,
+  .nempo-ticketing-preview,
+  .nempo-ticketing-gate,
+  .nempo-marketing-preview,
+  .nempo-marketing-gate,
+  .nempo-invitation-preview,
+  .nempo-invitation-gate,
+  .nempo-company-preview,
+  .nempo-company-gate,
+  .nempo-yearbook-preview,
+  .nempo-yearbook-gate,
+  .nempo-qr-menu-preview,
+  .nempo-qr-menu-gate,
+  .nempo-crm-preview,
+  .nempo-crm-gate,
+  .nempo-invoice-preview,
+  .nempo-invoice-gate,
+  .nempo-dapur-stock-preview,
+  .nempo-dapur-stock-gate,
+  .nempo-hpp-preview,
+  .nempo-hpp-gate,
+  .nempo-recipe-preview,
+  .nempo-recipe-gate,
+  .nempo-hr-preview,
+  .nempo-hr-gate,
+  .nempo-queue-preview,
+  .nempo-queue-gate,
+  .nempo-loyalty-preview,
+  .nempo-loyalty-gate,
+  .nempo-warehouse-preview,
+  .nempo-warehouse-gate,
+  .nempo-link-bio-preview,
+  .nempo-link-bio-gate,
+  .nempo-booking-preview,
+  .nempo-booking-gate,
+  .nempo-purchasing-preview,
+  .nempo-purchasing-gate,
+  .nempo-yearbook-preview {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .nempo-pos table,
+  .nempo-ticketing-preview table,
+  .nempo-marketing-preview table,
+  .nempo-invitation-preview table,
+  .nempo-company-preview table,
+  .nempo-yearbook-preview table,
+  .nempo-qr-menu-preview table,
+  .nempo-crm-preview table,
+  .nempo-invoice-preview table,
+  .nempo-dapur-stock-preview table,
+  .nempo-hpp-preview table,
+  .nempo-recipe-preview table,
+  .nempo-hr-preview table,
+  .nempo-queue-preview table,
+  .nempo-loyalty-preview table,
+  .nempo-warehouse-preview table,
+  .nempo-link-bio-preview table,
+  .nempo-booking-preview table,
+  .nempo-purchasing-preview table {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  [class*="min-h-[790px]"],
+  [class*="min-h-[720px]"],
+  [class*="min-h-[700px]"],
+  [class*="min-h-[650px]"],
+  [class*="min-h-[620px]"] {
+    min-height: 0 !important;
+  }
+}
+
+.nempo-purchasing-gate[class~="bg-[#f4f7f7]"],
+.nempo-purchasing-preview[class~="bg-[#f4f7f7]"] {
+  background-color: #f4f7f7 !important;
+}
+
+.nempo-purchasing-gate[class~="text-[#183b43]"],
+.nempo-purchasing-preview[class~="text-[#183b43]"] {
+  color: var(--demo-ink) !important;
+}
+
+/* Procurement stays operational: teal is the product identity, while amber,
+   blue, violet, and rose remain reserved for status meaning. */
+.nempo-purchasing-preview .super-app-card:hover {
+  border-color: #c9e2df;
+  box-shadow: 0 10px 24px rgba(27, 78, 80, .06);
+  transform: translateY(-2px);
+}
+
+.nempo-purchasing-preview .purchasing-report-bar {
+  transform-origin: bottom;
+  animation: purchasing-bar-in 700ms cubic-bezier(.22, 1, .36, 1) both;
+}
+
+@keyframes purchasing-bar-in {
+  from { opacity: .2; transform: scaleY(0); }
+  to { opacity: 1; transform: scaleY(1); }
+}
+
+.nempo-link-bio-gate[class~="text-[#183b43]"],
+.nempo-link-bio-preview[class~="text-[#183b43]"] {
+  color: var(--demo-ink) !important;
+}
+.nempo-queue-gate[class~="text-[#183b43]"],
+.nempo-queue-preview[class~="text-[#183b43]"],
+.nempo-loyalty-gate[class~="text-[#183b43]"],
+.nempo-loyalty-preview[class~="text-[#183b43]"] {
+  color: var(--demo-ink) !important;
+}
+
+.nempo-warehouse-gate[class~="text-[#183b43]"],
+.nempo-warehouse-preview[class~="text-[#183b43]"] {
+  color: var(--demo-ink) !important;
+}
+
+.nempo-recipe-gate[class~="text-[#183b43]"],
+.nempo-recipe-preview[class~="text-[#183b43]"] {
+  color: var(--demo-ink) !important;
+}
+
+.nempo-recipe-preview .recipe-report-bar {
+  transform-origin: bottom;
+  animation: recipe-bar-in 650ms ease-out both;
+}
+
+.nempo-recipe-preview .recipe-report-bar:nth-child(2) { animation-delay: 40ms; }
+.nempo-recipe-preview .recipe-report-bar:nth-child(3) { animation-delay: 80ms; }
+.nempo-recipe-preview .recipe-report-bar:nth-child(4) { animation-delay: 120ms; }
+.nempo-recipe-preview .recipe-report-bar:nth-child(5) { animation-delay: 160ms; }
+.nempo-recipe-preview .recipe-report-bar:nth-child(6) { animation-delay: 200ms; }
+.nempo-recipe-preview .recipe-report-bar:nth-child(7) { animation-delay: 240ms; }
+
+.nempo-link-bio-preview .link-bio-chart-bar {
+  transform-origin: bottom;
+  animation: link-bio-bar-in 650ms ease-out both;
+}
+
+.nempo-booking-preview .booking-report-bar {
+  transform-origin: bottom;
+  animation: booking-bar-in 650ms ease-out both;
+}
+
+.nempo-booking-preview .booking-report-bar:nth-child(2) { animation-delay: 40ms; }
+.nempo-booking-preview .booking-report-bar:nth-child(3) { animation-delay: 80ms; }
+.nempo-booking-preview .booking-report-bar:nth-child(4) { animation-delay: 120ms; }
+.nempo-booking-preview .booking-report-bar:nth-child(5) { animation-delay: 160ms; }
+.nempo-booking-preview .booking-report-bar:nth-child(6) { animation-delay: 200ms; }
+.nempo-booking-preview .booking-report-bar:nth-child(7) { animation-delay: 240ms; }
+
+.nempo-purchasing-preview .purchasing-report-bar {
+  transform-origin: bottom;
+  animation: purchasing-bar-in 650ms ease-out both;
+}
+
+.nempo-purchasing-preview .purchasing-report-bar:nth-child(2) { animation-delay: 40ms; }
+.nempo-purchasing-preview .purchasing-report-bar:nth-child(3) { animation-delay: 80ms; }
+.nempo-purchasing-preview .purchasing-report-bar:nth-child(4) { animation-delay: 120ms; }
+.nempo-purchasing-preview .purchasing-report-bar:nth-child(5) { animation-delay: 160ms; }
+.nempo-purchasing-preview .purchasing-report-bar:nth-child(6) { animation-delay: 200ms; }
+.nempo-purchasing-preview .purchasing-report-bar:nth-child(7) { animation-delay: 240ms; }
+
+@keyframes purchasing-bar-in {
+  from { transform: scaleY(0); opacity: .25; }
+  to { transform: scaleY(1); opacity: 1; }
+}
+
+@keyframes booking-bar-in {
+  from { transform: scaleY(0); opacity: .25; }
+  to { transform: scaleY(1); opacity: 1; }
+}
+
+.nempo-link-bio-preview .link-bio-chart-bar:nth-child(2n) { animation-delay: 90ms; }
+
+@keyframes link-bio-bar-in {
+  from { transform: scaleY(0); opacity: .25; }
+  to { transform: scaleY(1); opacity: 1; }
+}
+
+@keyframes recipe-bar-in {
+  from { transform: scaleY(0); opacity: .25; }
+  to { transform: scaleY(1); opacity: 1; }
+}
+
+.nempo-loyalty-preview .loyalty-report-bar {
+  transform-origin: bottom;
+  animation: loyalty-bar-in 650ms ease-out both;
+}
+
+.nempo-warehouse-preview .warehouse-report-bar {
+  transform-origin: bottom;
+  animation: warehouse-bar-in 650ms ease-out both;
+}
+
+.nempo-warehouse-preview .warehouse-report-bar:nth-child(2) { animation-delay: 40ms; }
+.nempo-warehouse-preview .warehouse-report-bar:nth-child(3) { animation-delay: 80ms; }
+.nempo-warehouse-preview .warehouse-report-bar:nth-child(4) { animation-delay: 120ms; }
+.nempo-warehouse-preview .warehouse-report-bar:nth-child(5) { animation-delay: 160ms; }
+.nempo-warehouse-preview .warehouse-report-bar:nth-child(6) { animation-delay: 200ms; }
+.nempo-warehouse-preview .warehouse-report-bar:nth-child(7) { animation-delay: 240ms; }
+
+@keyframes warehouse-bar-in {
+  from { transform: scaleY(0); opacity: .25; }
+  to { transform: scaleY(1); opacity: 1; }
+}
+
+.nempo-loyalty-preview .loyalty-report-bar:nth-child(2) { animation-delay: 40ms; }
+.nempo-loyalty-preview .loyalty-report-bar:nth-child(3) { animation-delay: 80ms; }
+.nempo-loyalty-preview .loyalty-report-bar:nth-child(4) { animation-delay: 120ms; }
+.nempo-loyalty-preview .loyalty-report-bar:nth-child(5) { animation-delay: 160ms; }
+.nempo-loyalty-preview .loyalty-report-bar:nth-child(6) { animation-delay: 200ms; }
+.nempo-loyalty-preview .loyalty-report-bar:nth-child(7) { animation-delay: 240ms; }
+
+@keyframes loyalty-bar-in {
+  from { transform: scaleY(0); opacity: .25; }
+  to { transform: scaleY(1); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nempo-loyalty-preview .loyalty-report-bar,
+  .nempo-warehouse-preview .warehouse-report-bar,
+  .nempo-recipe-preview .recipe-report-bar,
+  .nempo-link-bio-preview .link-bio-chart-bar { animation: none; }
+}
+.nempo-pos[class~="text-[#2f2925]"],
+.nempo-ticketing-gate[class~="text-[#382c25]"],
+.nempo-marketing-gate[class~="text-[#2f2925]"],
+.nempo-marketing-preview[class~="text-[#2f2925]"],
+.nempo-invitation-gate[class~="text-[#382c25]"],
+.nempo-invitation-preview[class~="text-[#382c25]"],
+.nempo-company-gate[class~="text-[#173f3a]"],
+.nempo-company-preview[class~="text-[#173f3a]"],
+.nempo-yearbook-gate[class~="text-[#272b59]"],
+.nempo-yearbook-preview[class~="text-[#272b59]"] {
+  color: var(--demo-ink) !important;
+}
+
+/* Kasir uses the neutral Nempo palette: cool white surfaces, deep blue ink,
+   and the shared teal-blue accent used across the business demos. */
+.nempo-pos {
+  --pos-bg: #f2f7fc;
+  --pos-surface: #ffffff;
+  --pos-surface-raised: #eef5fc;
+  --pos-surface-soft: #e1effd;
+  --pos-border: #d0e0f2;
+  --pos-border-soft: #a9c9eb;
+  --pos-ink: #163c65;
+  --pos-ink-soft: #355d83;
+  --pos-muted: #6b88a3;
+  --pos-accent: #0064d2;
+  --pos-accent-dark: #004fa8;
+  --pos-accent-pale: #eaf3ff;
+}
+
+.nempo-pos[class~="bg-[#f5f0e9]"] { background-color: var(--pos-bg) !important; }
+.nempo-pos[class~="text-[#2f2925]"] { color: var(--pos-ink) !important; }
+.nempo-pos [class~="bg-[#f5f0e9]"],
+.nempo-pos [class~="bg-[#fbfaf7]"],
+.nempo-pos [class~="bg-[#fffaf5]"],
+.nempo-pos [class~="bg-[#fffdf9]"],
+.nempo-pos [class~="bg-[#f8f4ef]"],
+.nempo-pos [class~="bg-white"] { background-color: var(--pos-surface) !important; }
+.nempo-pos [class~="bg-[#f5ede5]"],
+.nempo-pos [class~="bg-[#f3e9df]"],
+.nempo-pos [class~="bg-[#f7ede4]"],
+.nempo-pos [class~="bg-[#eee3d7]"] { background-color: var(--pos-surface-raised) !important; }
+.nempo-pos [class~="bg-[#e5d7ca]"],
+.nempo-pos [class~="bg-[#dfc8b4]"],
+.nempo-pos [class~="bg-[#e8dfd6]"],
+.nempo-pos [class~="bg-[#e1eee3]"],
+.nempo-pos [class~="bg-[#e8eee8]"] { background-color: var(--pos-surface-soft) !important; }
+.nempo-pos [class~="bg-[#f0dfd0]"],
+.nempo-pos [class~="bg-[#d6b393]"],
+.nempo-pos [class~="bg-[#c58d62]"] { background-color: #c9ddf3 !important; }
+.nempo-pos [class~="bg-[#805538]"],
+.nempo-pos [class~="bg-[#0f766e]"] { background-color: var(--pos-accent) !important; }
+.nempo-pos [class~="bg-[#47705d]"] { background-color: #2f8a5b !important; }
+.nempo-pos [class~="bg-[#4b3428]"] { background-color: var(--pos-ink) !important; }
+.nempo-pos [class~="bg-[#e6f6f3]"],
+.nempo-pos [class~="bg-[#f4fbfa]"] { background-color: var(--pos-accent-pale) !important; }
+
+.nempo-pos [class~="text-[#805538]"],
+.nempo-pos [class~="text-[#0f766e]"] { color: var(--pos-accent) !important; }
+.nempo-pos [class~="text-[#4b3428]"] { color: var(--pos-ink) !important; }
+.nempo-pos [class~="text-[#fffaf5]"] { color: #ffffff !important; }
+.nempo-pos [class~="text-[#183b43]"] { color: var(--pos-ink) !important; }
+.nempo-pos [class~="text-[#5d7d80]"] { color: var(--pos-ink-soft) !important; }
+.nempo-pos [class~="text-[#2f2925]"],
+.nempo-pos [class~="text-[#392d27]"],
+.nempo-pos [class~="text-slate-900"],
+.nempo-pos [class~="text-slate-800"],
+.nempo-pos [class~="text-slate-700"],
+.nempo-pos [class~="text-gray-900"],
+.nempo-pos [class~="text-gray-800"] { color: var(--pos-ink) !important; }
+.nempo-pos [class~="text-[#59483e]"],
+.nempo-pos [class~="text-[#4a3930]"],
+.nempo-pos [class~="text-[#66564c]"],
+.nempo-pos [class~="text-slate-600"],
+.nempo-pos [class~="text-slate-500"],
+.nempo-pos [class~="text-gray-700"] { color: var(--pos-ink-soft) !important; }
+.nempo-pos [class~="text-[#8c7768]"],
+.nempo-pos [class~="text-[#98877a]"],
+.nempo-pos [class~="text-[#9b8778]"],
+.nempo-pos [class~="text-[#a58e7d]"],
+.nempo-pos [class~="text-[#b4a293]"],
+.nempo-pos [class~="text-[#a18d7e]"],
+.nempo-pos [class~="text-[#8e7b6d]"],
+.nempo-pos [class~="text-[#846f61]"],
+.nempo-pos [class~="text-slate-400"],
+.nempo-pos [class~="text-slate-300"],
+.nempo-pos [class~="text-gray-500"],
+.nempo-pos [class~="text-gray-400"] { color: var(--pos-muted) !important; }
+.nempo-pos [class~="text-[#47705d]"],
+.nempo-pos [class~="text-emerald-600"],
+.nempo-pos [class~="text-emerald-700"] { color: var(--pos-accent) !important; }
+.nempo-pos [class~="text-[#e3cfc0]"],
+.nempo-pos [class~="text-[#e7bd96]"] { color: #9bd2d3 !important; }
+
+.nempo-pos [class~="border-[#e5dbd0]"],
+.nempo-pos [class~="border-[#dfd2c5]"],
+.nempo-pos [class~="border-[#eee5dc]"],
+.nempo-pos [class~="border-[#d9c8b8]"],
+.nempo-pos [class~="border-slate-100"],
+.nempo-pos [class~="border-slate-200"],
+.nempo-pos [class~="border-gray-200"] { border-color: var(--pos-border) !important; }
+.nempo-pos [class~="border-[#ad7651]"],
+.nempo-pos [class~="border-[#bd8a68]"],
+.nempo-pos [class~="border-[#dfc3aa]"],
+.nempo-pos [class~="border-[#d7c5b4]"],
+.nempo-pos [class~="border-[#d1bcaa]"],
+.nempo-pos [class~="border-[#e7cdb7]"],
+.nempo-pos [class~="border-[#b9ded8]"],
+.nempo-pos [class~="border-orange-100"],
+.nempo-pos [class~="border-orange-200"] { border-color: var(--pos-border-soft) !important; }
+.nempo-pos [class~="bg-[#6f947b]"] { background-color: #4a9a73 !important; }
+
+.nempo-pos [class~="bg-orange-500"] { background-color: var(--pos-accent) !important; }
+.nempo-pos [class~="bg-orange-100"],
+.nempo-pos [class~="bg-orange-50"] { background-color: var(--pos-accent-pale) !important; }
+.nempo-pos [class~="text-orange-600"],
+.nempo-pos [class~="text-orange-700"] { color: var(--pos-accent) !important; }
+.nempo-pos [class~="focus:border-[#9b6240]"]:focus,
+.nempo-pos [class~="focus:border-[#c99e78]"]:focus,
+.nempo-pos [class~="focus:border-orange-400"]:focus,
+.nempo-pos [class~="focus-within:border-[#9b6240]"]:focus-within { border-color: var(--pos-accent) !important; }
+.nempo-pos [class~="focus:ring-[#c99e78]/25"]:focus,
+.nempo-pos [class~="focus:ring-[#c99e78]/25"]:focus-visible,
+.nempo-pos [class~="focus:ring-orange-100"]:focus { --tw-ring-color: rgba(15, 118, 110, .2) !important; }
+
+.nempo-pos [class~="bg-slate-50"],
+.nempo-pos [class~="bg-gray-50"] { background-color: var(--pos-surface-raised) !important; }
+.nempo-pos [class~="bg-slate-900"],
+.nempo-pos [class~="bg-gray-900"] { background-color: var(--pos-ink) !important; color: #ffffff !important; }
+.nempo-pos [class~="bg-red-50"] { background-color: #fff2ef !important; }
+.nempo-pos [class~="text-red-500"],
+.nempo-pos [class~="text-red-600"],
+.nempo-pos [class~="text-red-400"] { color: #bd6b5b !important; }
+.nempo-pos [class~="bg-emerald-50"] { background-color: var(--pos-accent-pale) !important; }
+.nempo-pos [class~="bg-emerald-600"] { background-color: var(--pos-accent) !important; }
+
+.nempo-pos [class~="hover:bg-[#6f472f]"]:hover,
+.nempo-pos [class~="hover:bg-[#68432d]"]:hover,
+.nempo-pos [class~="hover:bg-[#0b625c]"]:hover,
+.nempo-pos [class~="hover:bg-orange-600"]:hover { background-color: var(--pos-accent-dark) !important; }
+.nempo-pos [class~="hover:bg-[#f5ede5]"]:hover,
+.nempo-pos [class~="hover:bg-slate-50"]:hover,
+.nempo-pos [class~="hover:bg-gray-50"]:hover { background-color: var(--pos-accent-pale) !important; }
+.nempo-pos [class~="hover:text-[#805538]"]:hover,
+.nempo-pos [class~="hover:text-[#0b625c]"]:hover,
+.nempo-pos [class~="hover:text-[#0f766e]"]:hover,
+.nempo-pos [class~="hover:text-orange-600"]:hover { color: var(--pos-accent-dark) !important; }
+.nempo-pos [class~="shadow-[#4b3428]/20"] { --tw-shadow-color: rgba(0, 100, 210, .2) !important; }
+
+/* Override the older POS refinement rules that still use warm paper values. */
+.nempo-pos {
+  background:
+    radial-gradient(circle at 8% 0%, rgba(0, 100, 210, 0.08), transparent 32rem),
+    var(--pos-bg) !important;
+}
+.nempo-pos .pos-topbar {
+  border-color: var(--pos-border) !important;
+  box-shadow: 0 10px 24px rgba(22, 60, 101, 0.08) !important;
+}
+.nempo-pos .pos-brand-mark {
+  box-shadow: inset 0 -3px 0 rgba(0, 55, 125, 0.2) !important;
+}
+.nempo-pos .pos-operations > * {
+  box-shadow: 0 2px 8px rgba(22, 60, 101, 0.06) !important;
+}
+.nempo-pos .pos-queue {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.72), transparent 54%),
+    var(--pos-surface-raised) !important;
+}
+
+/* The Kasir gate follows the stronger blue used by its workspace. */
+.digital-preview-gate-blue[class~="bg-[#eef7f5]"] { background-color: #f2f7fc !important; color: #163c65 !important; }
+.digital-preview-gate-blue [class~="bg-[#0f766e]"] { background-color: #0064d2 !important; }
+.digital-preview-gate-blue [class~="text-[#0f766e]"],
+.digital-preview-gate-blue [class~="text-[#0f9b8e]"] { color: #0064d2 !important; }
+.digital-preview-gate-blue [class~="text-[#183b43]"] { color: #163c65 !important; }
+.digital-preview-gate-blue [class~="text-[#5d7d80]"],
+.digital-preview-gate-blue [class~="text-[#648084]"],
+.digital-preview-gate-blue [class~="text-[#789496]"] { color: #5c7898 !important; }
+.digital-preview-gate-blue [class~="bg-[#bfe9df]"] { background-color: #cfe2f8 !important; }
+.digital-preview-gate-blue [class~="bg-[#e2f5f1]"],
+.digital-preview-gate-blue [class~="bg-[#eaf7f4]"],
+.digital-preview-gate-blue [class~="bg-[#f4fbf9]"],
+.digital-preview-gate-blue [class~="bg-[#f7fcfb]"] { background-color: #eaf3ff !important; }
+.digital-preview-gate-blue [class~="border-[#c7e9e2]"],
+.digital-preview-gate-blue [class~="border-[#d5ebe7]"],
+.digital-preview-gate-blue [class~="border-[#dcefea]"],
+.digital-preview-gate-blue [class~="border-[#dcebea]"] { border-color: #c1d9f2 !important; }
+.digital-preview-gate-blue [class~="focus-within:border-[#0f766e]"]:focus-within { border-color: #0064d2 !important; }
+.digital-preview-gate-blue [class~="focus-within:ring-[#d9f1ed]"]:focus-within { --tw-ring-color: rgba(0, 100, 210, .18) !important; }
+.digital-preview-gate-blue [class~="hover:bg-[#f1f8f6]"]:hover { background-color: #eaf3ff !important; }
+.digital-preview-gate-blue [class~="hover:text-[#0f766e]"]:hover { color: #004fa8 !important; }
+.digital-preview-gate-blue [class~="bg-[#0f766e]"].group:hover { background-color: #004fa8 !important; }
+.digital-preview-gate-blue [class~="shadow-[#0f766e]\/20"] { --tw-shadow-color: rgba(0, 100, 210, .2) !important; }
+.digital-preview-gate-blue [class~="shadow-[#0f766e]\/25"] { --tw-shadow-color: rgba(0, 100, 210, .25) !important; }
+
+/* Ticketing and Marketing use a lighter dashboard shell but had older warm
+   defaults in their entry states and dashboard chrome. */
+.nempo-ticketing-gate [class~="bg-[#f3eee7]"],
+.nempo-ticketing-preview [class~="bg-[#f5f0e9]"],
+.nempo-marketing-gate [class~="bg-[#f5f0e9]"],
+.nempo-marketing-preview [class~="bg-[#f5f0e9]"] { background-color: #f4f7f7 !important; }
+.nempo-ticketing-gate [class~="text-[#382c25]"],
+.nempo-ticketing-preview [class~="text-[#382c25]"],
+.nempo-marketing-gate [class~="text-[#2f2925]"],
+.nempo-marketing-preview [class~="text-[#2f2925]"] { color: var(--demo-ink) !important; }
+.nempo-ticketing-preview [class~="bg-[#ee6a4d]"],
+.nempo-ticketing-gate [class~="bg-[#f8e2d8]"],
+.nempo-marketing-gate [class~="bg-[#f8e2d8]"],
+.nempo-marketing-preview [class~="bg-[#f8e2d8]"] { background-color: #e6f6f3 !important; }
+.nempo-ticketing-preview [class~="text-[#ee6a4d]"],
+.nempo-ticketing-preview [class~="text-[#805538]"],
+.nempo-ticketing-gate [class~="text-[#9b6240]"],
+.nempo-ticketing-gate [class~="text-[#805538]"],
+.nempo-marketing-gate [class~="text-[#d96c3f]"],
+.nempo-marketing-preview [class~="text-[#d96c3f]"],
+.nempo-marketing-preview [class~="text-[#bd5e37]"] { color: var(--demo-teal) !important; }
+.nempo-ticketing-preview [class~="bg-[#805538]"],
+.nempo-ticketing-gate [class~="bg-[#805538]"],
+.nempo-marketing-gate [class~="bg-[#d96c3f]"],
+.nempo-marketing-preview [class~="bg-[#d96c3f]"] { background-color: var(--demo-teal) !important; }
+.nempo-ticketing-preview [class~="bg-[#211b45]"] { background-color: #123f47 !important; }
+.nempo-ticketing-preview [class~="text-[#805538]"],
+.nempo-ticketing-gate [class~="text-[#805538]"] { color: var(--demo-teal) !important; }
+.nempo-ticketing-preview [class~="border-[#dfd2c5]"],
+.nempo-ticketing-gate [class~="border-[#dfd2c5]"],
+.nempo-ticketing-gate [class~="bg-[#fffdfa]"],
+.nempo-marketing-preview [class~="border-[#e5ddd3]"],
+.nempo-marketing-preview [class~="border-[#e4ddd3]"],
+.nempo-marketing-preview [class~="border-[#eee8df]"],
+.nempo-marketing-preview [class~="border-[#ebe5dc]"],
+.nempo-marketing-gate [class~="border-[#e4ddd3]"],
+.nempo-marketing-gate [class~="bg-[#fffdfa]"] { border-color: var(--demo-border) !important; background-color: #fff !important; }
+.nempo-ticketing-gate [class~="text-[#392d27]"] { color: var(--demo-ink) !important; }
+.nempo-ticketing-gate [class~="text-[#7f6d60]"],
+.nempo-ticketing-gate [class~="text-[#a58e7d]"],
+.nempo-ticketing-gate [class~="text-[#b4a293]"] { color: var(--demo-muted) !important; }
+.nempo-ticketing-gate [class~="focus-within:border-[#9b6240]"]:focus-within,
+.nempo-marketing-gate [class~="focus-within:border-[#d96c3f]"]:focus-within { border-color: #56b8ae !important; }
+.nempo-ticketing-preview [class~="bg-cyan-600"],
+.nempo-marketing-preview [class~="bg-[#d96c3f]"] { background-color: var(--demo-teal) !important; }
+.nempo-ticketing-preview [class~="text-cyan-600"],
+.nempo-ticketing-preview [class~="text-cyan-700"],
+.nempo-marketing-preview [class~="text-[#4d7f78]"] { color: var(--demo-teal) !important; }
+.nempo-ticketing-preview [class~="hover:bg-cyan-700"]:hover,
+.nempo-marketing-preview [class~="hover:bg-[#d96c3f]"]:hover { background-color: var(--demo-teal-dark) !important; }
+.nempo-marketing-preview [class~="bg-[#fcfaf7]"] { background-color: #fbfdfd !important; }
+.nempo-marketing-preview [class~="text-[#a19385]"],
+.nempo-marketing-preview [class~="text-[#75695f]"],
+.nempo-marketing-preview [class~="text-[#988d82]"],
+.nempo-marketing-preview [class~="text-[#a59a8d]"] { color: var(--demo-muted) !important; }
+.nempo-marketing-gate [class~="text-[#2f2925]"] { color: var(--demo-ink) !important; }
+.nempo-marketing-gate [class~="text-[#7f6d60]"],
+.nempo-marketing-gate [class~="text-[#a58e7d]"],
+.nempo-marketing-gate [class~="text-[#b4a293]"] { color: var(--demo-muted) !important; }
+.nempo-marketing-preview [class~="text-[#27263b]"] { color: var(--demo-ink) !important; }
+.nempo-marketing-preview [class~="bg-[#f4d5c6]"]:hover { background-color: #d4efeb !important; }
+
+/* Marketing workspace uses the same operational Super App identity as POS
+   and ticketing. Keep the chart motion subtle so the dashboard still reads
+   as a tool, not a promotional landing page. */
+.nempo-marketing-preview {
+  --marketing-teal: #0f766e;
+  --marketing-teal-dark: #0b625c;
+  --marketing-mint: #e6f6f3;
+}
+.nempo-marketing-preview .marketing-bar {
+  transform-origin: bottom;
+  animation: marketing-bar-in 650ms ease-out both;
+}
+.nempo-marketing-preview .marketing-bar:nth-child(2) { animation-delay: 40ms; }
+.nempo-marketing-preview .marketing-bar:nth-child(3) { animation-delay: 80ms; }
+.nempo-marketing-preview .marketing-bar:nth-child(4) { animation-delay: 120ms; }
+.nempo-marketing-preview .marketing-bar:nth-child(5) { animation-delay: 160ms; }
+.nempo-marketing-preview .marketing-bar:nth-child(6) { animation-delay: 200ms; }
+.nempo-marketing-preview .marketing-bar:nth-child(7) { animation-delay: 240ms; }
+@keyframes marketing-bar-in {
+  from { transform: scaleY(0); opacity: .25; }
+  to { transform: scaleY(1); opacity: 1; }
+}
+
+/* Product-demo normalization: older demo-specific accents should not
+   override the shared Super App identity. */
+.nempo-ticketing-preview [class*="bg-cyan-50"],
+.nempo-ticketing-preview [class*="bg-cyan-100"],
+.nempo-ticketing-preview [class*="bg-violet-50"],
+.nempo-ticketing-preview [class*="bg-violet-100"],
+.nempo-ticketing-preview [class*="bg-indigo-50"],
+.nempo-ticketing-preview [class*="bg-indigo-100"],
+.nempo-invitation-preview [class*="bg-orange-50"],
+.nempo-invitation-preview [class*="bg-orange-100"],
+.nempo-invitation-preview [class*="bg-rose-50"],
+.nempo-invitation-preview [class*="bg-rose-100"],
+.nempo-company-preview [class*="bg-orange-50"],
+.nempo-company-preview [class*="bg-orange-100"],
+.nempo-yearbook-preview [class*="bg-indigo-50"],
+.nempo-yearbook-preview [class*="bg-indigo-100"],
+.nempo-yearbook-preview [class*="bg-purple-50"],
+.nempo-yearbook-preview [class*="bg-purple-100"] {
+  background-color: #e6f6f3 !important;
+}
+
+.nempo-ticketing-preview [class*="bg-cyan-500"],
+.nempo-ticketing-preview [class*="bg-cyan-600"],
+.nempo-ticketing-preview [class*="bg-cyan-700"],
+.nempo-ticketing-preview [class*="bg-violet-500"],
+.nempo-ticketing-preview [class*="bg-violet-600"],
+.nempo-ticketing-preview [class*="bg-indigo-500"],
+.nempo-ticketing-preview [class*="bg-indigo-600"],
+.nempo-invitation-preview [class*="bg-orange-500"],
+.nempo-invitation-preview [class*="bg-orange-600"],
+.nempo-invitation-preview [class*="bg-rose-500"],
+.nempo-invitation-preview [class*="bg-rose-600"],
+.nempo-company-preview [class*="bg-orange-500"],
+.nempo-company-preview [class*="bg-orange-600"],
+.nempo-yearbook-preview [class*="bg-indigo-500"],
+.nempo-yearbook-preview [class*="bg-indigo-600"],
+.nempo-yearbook-preview [class*="bg-purple-500"],
+.nempo-yearbook-preview [class*="bg-purple-600"] {
+  background-color: var(--demo-teal) !important;
+}
+
+.nempo-ticketing-preview [class*="text-cyan-"],
+.nempo-ticketing-preview [class*="text-violet-"],
+.nempo-ticketing-preview [class*="text-indigo-"],
+.nempo-invitation-preview [class*="text-orange-"],
+.nempo-invitation-preview [class*="text-rose-"],
+.nempo-company-preview [class*="text-orange-"],
+.nempo-yearbook-preview [class*="text-indigo-"],
+.nempo-yearbook-preview [class*="text-purple-"] {
+  color: var(--demo-teal) !important;
+}
+
+.nempo-ticketing-preview [class*="border-cyan-"],
+.nempo-ticketing-preview [class*="border-violet-"],
+.nempo-ticketing-preview [class*="border-indigo-"],
+.nempo-invitation-preview [class*="border-orange-"],
+.nempo-invitation-preview [class*="border-rose-"],
+.nempo-company-preview [class*="border-orange-"],
+.nempo-yearbook-preview [class*="border-indigo-"],
+.nempo-yearbook-preview [class*="border-purple-"] {
+  border-color: var(--demo-border) !important;
+}
+
+.nempo-ticketing-preview [class*="hover:bg-cyan-"]:hover,
+.nempo-ticketing-preview [class*="hover:bg-violet-"]:hover,
+.nempo-ticketing-preview [class*="hover:bg-indigo-"]:hover,
+.nempo-invitation-preview [class*="hover:bg-orange-"]:hover,
+.nempo-invitation-preview [class*="hover:bg-rose-"]:hover,
+.nempo-company-preview [class*="hover:bg-orange-"]:hover,
+.nempo-yearbook-preview [class*="hover:bg-indigo-"]:hover,
+.nempo-yearbook-preview [class*="hover:bg-purple-"]:hover {
+  background-color: var(--demo-teal-dark) !important;
+}
+
+.nempo-invitation-preview [class*="bg-[#805538]"],
+.nempo-invitation-preview [class*="bg-[#6f472f]"],
+.nempo-invitation-preview [class*="bg-[#a65d4c]"],
+.nempo-invitation-preview [class*="bg-[#a65d4c]"],
+.nempo-company-preview [class*="bg-[#d27b54]"],
+.nempo-yearbook-preview [class*="bg-[#5968b7]"],
+.nempo-yearbook-preview [class*="bg-[#b75c6f]"],
+.nempo-yearbook-preview [class*="bg-[#f3c5ad]"],
+.nempo-ticketing-preview [class*="bg-[#805538]"],
+.nempo-ticketing-preview [class*="bg-[#b16a48]"],
+.nempo-ticketing-preview [class*="bg-[#211b45]"] {
+  background-color: var(--demo-teal) !important;
+}
+
+.nempo-invitation-preview [class*="text-[#805538]"],
+.nempo-invitation-preview [class*="text-[#6f472f]"],
+.nempo-invitation-preview [class*="text-[#a65d4c]"],
+.nempo-invitation-preview [class*="text-[#594136]"],
+.nempo-invitation-preview [class*="text-[#3a2922]"],
+.nempo-company-preview [class*="text-[#d27b54]"],
+.nempo-yearbook-preview [class*="text-[#5968b7]"],
+.nempo-yearbook-preview [class*="text-[#b75c6f]"],
+.nempo-yearbook-preview [class*="text-[#272b59]"],
+.nempo-ticketing-preview [class*="text-[#805538]"],
+.nempo-ticketing-preview [class*="text-[#392d27]"] {
+  color: var(--demo-ink) !important;
+}
+
+.nempo-invitation-preview [class*="border-[#dfd2c5]"],
+.nempo-invitation-preview [class*="border-[#d9c4b4]"],
+.nempo-invitation-preview [class*="border-[#a65d4c]"],
+.nempo-company-preview [class*="border-[#d27b54]"],
+.nempo-yearbook-preview [class*="border-[#5968b7]"],
+.nempo-yearbook-preview [class*="border-[#d9dcf0]"],
+.nempo-ticketing-preview [class*="border-[#dfd2c5]"] {
+  border-color: var(--demo-border) !important;
+}
+
+.nempo-invitation-preview [class*="bg-[#f3eee7]"],
+.nempo-invitation-preview [class*="bg-[#fffaf5]"],
+.nempo-invitation-preview [class*="bg-[#fffdf9]"],
+.nempo-invitation-preview [class*="bg-[#fbfaf7]"],
+.nempo-company-preview [class*="bg-[#f1f0eb]"],
+.nempo-company-preview [class*="bg-[#f3f1ea]"],
+.nempo-company-preview [class*="bg-[#f7f5ed]"],
+.nempo-yearbook-preview [class*="bg-[#f1f2fb]"],
+.nempo-yearbook-preview [class*="bg-[#f5f4fb]"],
+.nempo-yearbook-preview [class*="bg-[#f8f7ff]"] {
+  background-color: #fff !important;
+}
+
+.nempo-invitation-preview [class*="bg-[#eadfd5]"],
+.nempo-invitation-preview [class*="bg-[#f7f0e8]"],
+.nempo-invitation-preview [class*="bg-[#f4e7dd]"],
+.nempo-company-preview [class*="bg-[#c8d994]"],
+.nempo-company-preview [class*="bg-[#f6ded3]"],
+.nempo-yearbook-preview [class*="bg-[#f3c5ad]"],
+.nempo-yearbook-preview [class*="bg-[#d9dcf0]"],
+.nempo-yearbook-preview [class*="bg-[#dce7df]"] {
+  background-color: #e6f6f3 !important;
+}
+
+.nempo-invitation-preview [class*="text-[#92735e]"],
+.nempo-invitation-preview [class*="text-[#8c7768]"],
+.nempo-invitation-preview [class*="text-[#806f63]"],
+.nempo-invitation-preview [class*="text-[#7f6d60]"],
+.nempo-invitation-preview [class*="text-[#b4a293]"],
+.nempo-company-preview [class*="text-[#78938b]"],
+.nempo-company-preview [class*="text-[#91a8a0]"],
+.nempo-yearbook-preview [class*="text-[#737ba5]"],
+.nempo-yearbook-preview [class*="text-[#8e98ca]"],
+.nempo-yearbook-preview [class*="text-[#aeb5d2]"] {
+  color: var(--demo-muted) !important;
+}
+
+.nempo-invitation-preview [class*="hover:bg-[#6f472f]"]:hover,
+.nempo-invitation-preview [class*="hover:bg-[#805538]"]:hover,
+.nempo-company-preview [class*="hover:bg-[#d27b54]"]:hover,
+.nempo-yearbook-preview [class*="hover:bg-[#5968b7]"]:hover {
+  background-color: var(--demo-teal-dark) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nempo-booking-preview .booking-report-bar,
+  .nempo-purchasing-preview .purchasing-report-bar { animation: none; }
+}

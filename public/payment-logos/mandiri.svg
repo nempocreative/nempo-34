@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 48">
+  <rect width="120" height="48" rx="6" fill="white"/>
+  <circle cx="16" cy="24" r="12" fill="#003082"/>
+  <path d="M10 24 Q16 14 22 24 Q16 34 10 24Z" fill="#f5a623"/>
+  <text x="34" y="20" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#003082">Bank</text>
+  <text x="34" y="34" font-family="Arial Black,Arial" font-weight="900" font-size="13" fill="#003082">Mandiri</text>
+</svg>

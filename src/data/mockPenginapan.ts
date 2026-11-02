@@ -1,0 +1,135 @@
+export interface Penginapan {
+  id: string;
+  name: string;
+  type: string;
+  rating: number;
+  reviewCount: number;
+  pricePerNight: number;
+  image: string;
+  location: string;
+  facilities: string[];
+  description: string;
+  featured?: boolean;
+  breakfastIncluded?: boolean;
+  distanceKm?: number;
+}
+
+export const mockPenginapan: Penginapan[] = [
+  {
+    id: "1",
+    name: "Kampung Sampireun Resort",
+    type: "Resort",
+    rating: 4.8,
+    reviewCount: 342,
+    pricePerNight: 1500000,
+    image: "",
+    location: "Samarang, Garut",
+    facilities: ["Kolam Renang", "Spa", "Restoran", "WiFi", "Parkir"],
+    description: "Resort mewah di atas danau dengan saung-saung tradisional Sunda, suasana alam yang tenang dan romantis.",
+    featured: true,
+    breakfastIncluded: true,
+    distanceKm: 8,
+  },
+  {
+    id: "2",
+    name: "Danau Dariza Resort",
+    type: "Resort",
+    rating: 4.6,
+    reviewCount: 218,
+    pricePerNight: 850000,
+    image: "",
+    location: "Tarogong Kaler, Garut",
+    facilities: ["Kolam Renang", "Restoran", "Taman Bermain", "WiFi"],
+    description: "Resort keluarga dengan danau buatan dan berbagai wahana air, cocok untuk liburan bersama anak-anak.",
+    featured: true,
+    breakfastIncluded: true,
+    distanceKm: 5,
+  },
+  {
+    id: "3",
+    name: "Favehotel Cimanuk",
+    type: "Hotel",
+    rating: 4.4,
+    reviewCount: 186,
+    pricePerNight: 550000,
+    image: "",
+    location: "Tarogong Kidul, Garut",
+    facilities: ["AC", "TV", "Restoran", "Gym", "WiFi"],
+    description: "Hotel bintang 3 modern di pusat kota Garut, dekat pusat perbelanjaan dan kuliner khas Garut.",
+    featured: true,
+    breakfastIncluded: false,
+    distanceKm: 1,
+  },
+  {
+    id: "4",
+    name: "Villa Hijau Garut",
+    type: "Villa",
+    rating: 4.7,
+    reviewCount: 94,
+    pricePerNight: 1200000,
+    image: "",
+    location: "Cilawu, Garut",
+    facilities: ["Dapur", "Ruang Keluarga", "Taman Luas", "BBQ", "Parkir"],
+    description: "Villa pribadi dengan view pegunungan yang memukau, lengkap dengan taman luas dan area BBQ.",
+    featured: true,
+    breakfastIncluded: false,
+    distanceKm: 12,
+  },
+  {
+    id: "5",
+    name: "Homestay Pak Asep",
+    type: "Homestay",
+    rating: 4.5,
+    reviewCount: 67,
+    pricePerNight: 200000,
+    image: "",
+    location: "Bayongbong, Garut",
+    facilities: ["Sarapan", "WiFi", "Parkir", "Dapur Bersama"],
+    description: "Homestay nyaman di desa dengan suasana pedesaan autentik, pemilik yang ramah dan sarapan lezat.",
+    featured: true,
+    breakfastIncluded: true,
+    distanceKm: 15,
+  },
+  {
+    id: "6",
+    name: "The Valley Hotel Papandayan",
+    type: "Hotel",
+    rating: 4.3,
+    reviewCount: 129,
+    pricePerNight: 650000,
+    image: "",
+    location: "Cisurupan, Garut",
+    facilities: ["AC", "TV", "Restoran", "Hot Spring", "WiFi"],
+    description: "Hotel dekat kawasan wisata Gunung Papandayan dengan pemandian air panas alami.",
+    breakfastIncluded: true,
+    distanceKm: 22,
+  },
+  {
+    id: "7",
+    name: "Villa Puncak Darajat",
+    type: "Villa",
+    rating: 4.9,
+    reviewCount: 55,
+    pricePerNight: 2000000,
+    image: "",
+    location: "Pasirwangi, Garut",
+    facilities: ["Private Pool", "Jacuzzi", "Dapur", "BBQ", "Parkir"],
+    description: "Villa premium dengan private pool dan jacuzzi menghadap kawah Darajat, pengalaman menginap terbaik.",
+    breakfastIncluded: false,
+    distanceKm: 18,
+  },
+  {
+    id: "8",
+    name: "Saung Tirta Cisarua",
+    type: "Homestay",
+    rating: 4.2,
+    reviewCount: 43,
+    pricePerNight: 175000,
+    image: "",
+    location: "Cisarua, Garut",
+    facilities: ["Sarapan", "WiFi", "Taman"],
+    description: "Penginapan tradisional di tepi sungai dengan suasana alam yang asri dan tenang.",
+    breakfastIncluded: true,
+    distanceKm: 20,
+  },
+];

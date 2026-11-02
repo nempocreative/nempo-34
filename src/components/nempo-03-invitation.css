@@ -1,0 +1,33 @@
+.nempo-three{--background:#fafaf7;--foreground:#2e423a;--primary:#526d5a;--primary-border:#526d5a;--primary-foreground:#fffdf9;--border:#d3dcd0;--input:var(--border);--ring:var(--primary);--muted-foreground:#66786a;--inv-soft:#eaf0e8;--inv-white:#fffdf9;--inv-shade:#203d30;--n03-peach:#f2d9cd;--n03-rose:#a96c58;--n03-overlay:#20342d;--n03-shadow:0 12px 40px -24px var(--inv-shade);letter-spacing:0}
+.nempo-three .n01-label{letter-spacing:0}
+.nempo-three .n03-cover{min-height:94svh;position:relative;display:flex;align-items:flex-end;justify-content:center;isolation:isolate;padding:90px 24px 65px;color:var(--inv-white)}
+.nempo-three .n03-cover-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%;z-index:-2}
+.nempo-three .n03-cover::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,color-mix(in srgb,var(--n03-overlay) 15%,transparent),transparent 35%,color-mix(in srgb,var(--n03-overlay) 88%,transparent))}
+.nempo-three .n03-cover-content{max-width:680px;text-align:center;width:100%}
+.nempo-three .n03-title{font-size:60px;line-height:1.1;font-weight:400}
+.nempo-three .n03-cover .n03-title{font-style:italic;margin:18px 0}
+.nempo-three .n03-back{position:absolute;top:24px;left:24px;color:var(--inv-white);font-family:sans-serif;font-size:12px;display:flex;gap:8px;align-items:center}
+.nempo-three .n03-peach{background:var(--n03-peach)}
+.nempo-three .n03-rose{color:var(--n03-rose)}
+.nempo-three .n03-divider{width:70px;border-top:1px solid currentColor;margin:22px auto;opacity:.5}
+.nempo-three .n03-arch{width:100%;aspect-ratio:2/3;object-fit:cover;border-radius:240px 240px 4px 4px;box-shadow:var(--n03-shadow)}
+.nempo-three .n03-photo{width:100%;object-fit:cover;display:block}
+.nempo-three .n03-story-photo{aspect-ratio:3/2;border-radius:4px}
+.nempo-three .n03-event{border:1px solid var(--border);border-radius:4px;background:var(--background);padding:30px 24px}
+.nempo-three .n03-gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.nempo-three .n03-gallery button{padding:0;height:auto;border:0;display:block;overflow:hidden;border-radius:4px}
+.nempo-three .n03-gallery img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.nempo-three .n03-gallery button:hover img{transform:scale(1.03)}
+.nempo-three .n03-gallery button:first-child{aspect-ratio:2/3}
+.nempo-three .n03-gallery button:last-child{aspect-ratio:3/2;margin-top:60px}
+.nempo-three .n03-nav{background:var(--background);border-top:1px solid var(--border);box-shadow:var(--n03-shadow);display:flex;align-items:center;justify-content:center;gap:26px;position:fixed;inset:auto 0 0;z-index:40;padding:12px}
+.nempo-three .n03-nav a,.nempo-three .n03-nav button{display:flex;flex-direction:column;gap:4px;align-items:center;font-family:sans-serif;font-size:10px;color:var(--primary);height:42px;min-width:42px;padding:0}
+.nempo-three .n03-reveal{animation:n03-rise .8s ease both}
+.nempo-three .n03-leaf{color:var(--primary);animation:n03-sway 7s ease-in-out infinite}
+.nempo-three .n03-lightbox{background:color-mix(in srgb,var(--n03-overlay) 96%,transparent);color:var(--inv-white);position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:50px 24px}
+.nempo-three .n03-lightbox img{max-width:100%;max-height:85svh;object-fit:contain}
+@keyframes n03-rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes n03-sway{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@media(min-width:900px){.nempo-three .n03-cover-photo{object-position:50% 40%}.nempo-three .n03-cover{min-height:94svh}.nempo-three .n03-cover-content{padding-top:200px}}
+@media(max-width:639px){.nempo-three .n03-title{font-size:44px}.nempo-three .n03-cover{padding:80px 22px 42px}.nempo-three .n03-nav{gap:10px}.nempo-three .n03-gallery{gap:10px}.nempo-three .n03-gallery button:last-child{margin-top:35px}}
+@media(prefers-reduced-motion:reduce){.nempo-three .n03-reveal,.nempo-three .n03-leaf{animation:none}.nempo-three .n03-gallery img{transition:none}}

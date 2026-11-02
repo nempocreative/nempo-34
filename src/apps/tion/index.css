@@ -1,0 +1,918 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@font-face {
+  font-family: 'Lazy Arie';
+  src: url('./assets/lazy-arie.otf') format('opentype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Super Chips';
+  src: url('./assets/super-chips.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gossamer Noon Sans';
+  src: url('./assets/gossamer-noon-sans.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Heyam';
+  src: url('./assets/heyam.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Taste Bread Display';
+  src: url('./assets/taste-bread-display.otf') format('opentype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Taste Bread Handwriting';
+  src: url('./assets/taste-bread-handwriting.otf') format('opentype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-popover-border: hsl(var(--popover-border));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-border: var(--primary-border);
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-secondary-border: var(--secondary-border);
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-muted-border: var(--muted-border);
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-accent-border: var(--accent-border);
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-destructive-border: var(--destructive-border);
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-primary-border: var(--sidebar-primary-border);
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-accent-border: var(--sidebar-accent-border);
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  --font-sans: var(--app-font-sans);
+  --font-serif: var(--app-font-serif);
+  --font-mono: var(--app-font-mono);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: #f1f3f4;
+  color: #062f4d;
+  font-family: 'DM Sans', 'Inter', sans-serif;
+}
+
+.slide-eight-font-intro {
+  position: absolute;
+  z-index: 40;
+  inset: 0;
+  color: #fffaf4;
+  text-align: center;
+}
+
+.slide-eight-font-intro__content {
+  position: absolute;
+  top: 46%;
+  left: 5%;
+  width: 90%;
+}
+
+.slide-eight-font-intro__content h1 {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  color: #f6e7a1;
+  font-weight: 400;
+  line-height: 1;
+  text-shadow: 0 0.35cqi 1cqi rgba(0, 0, 0, 0.3);
+}
+
+.slide-eight-font-intro__content h1 span {
+  font-family: 'Lazy Arie', cursive;
+  font-size: 7.8cqi;
+  font-weight: 400;
+}
+
+.slide-eight-font-intro__first-line {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.12em;
+  white-space: nowrap;
+}
+
+.slide-eight-font-intro__display {
+  font-family: 'Taste Bread Display', cursive !important;
+}
+
+.slide-eight-font-intro__seru {
+  font-family: 'Heyam', cursive !important;
+}
+
+.slide-eight-font-intro__accent {
+  position: relative;
+  display: inline-flex;
+  align-self: center;
+  gap: 0.42em;
+  font-size: 7.1cqi !important;
+  font-family: 'Taste Bread Display', cursive !important;
+  white-space: nowrap;
+}
+
+.slide-eight-font-intro__accent::after {
+  position: absolute;
+  right: 8%;
+  bottom: -0.18em;
+  left: 19%;
+  height: 0.14em;
+  border-bottom: 0.72cqi solid rgba(246, 231, 161, 0.92);
+  border-radius: 50%;
+  content: '';
+  transform: rotate(-1.6deg);
+}
+
+.slide-eight-font-intro__accent > span {
+  font-family: 'Taste Bread Display', cursive !important;
+  font-size: 7.1cqi !important;
+}
+
+.slide-font-example {
+  position: absolute;
+  z-index: 40;
+  inset: 0;
+  color: #fffaf4;
+  text-align: center;
+}
+
+.slide-font-example__intro {
+  position: absolute;
+  top: 21%;
+  left: 6%;
+  width: 88%;
+  text-shadow: 0 0.5cqi 1.5cqi rgba(0, 0, 0, 0.75);
+}
+
+.slide-font-example__eyebrow {
+  display: inline-block;
+  margin: 0;
+  padding: 1.2cqi 2.8cqi;
+  border: 0.3cqi solid rgba(255, 250, 244, 0.64);
+  border-radius: 999px;
+  background: rgba(13, 36, 30, 0.42);
+  color: #ffe3a5;
+  font-size: 2.45cqi;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.slide-font-example__name {
+  margin: 2cqi 0 0;
+  font-size: 8.5cqi;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.slide-font-example__sample {
+  position: absolute;
+  top: 43%;
+  left: 5%;
+  width: 90%;
+  margin: 0;
+  font-size: 13cqi;
+  font-weight: 800;
+  line-height: 1.02;
+  text-shadow: 0 0.8cqi 2cqi rgba(0, 0, 0, 0.8);
+  white-space: pre-line;
+}
+
+.slide-font-example--anton .slide-font-example__name,
+.slide-font-example--anton .slide-font-example__sample {
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+}
+
+.slide-font-example--anton .slide-font-example__sample {
+  color: #ffe3a5;
+  font-size: 13.5cqi;
+}
+
+.slide-font-example--gossamer-noon-sans .slide-font-example__name,
+.slide-font-example--gossamer-noon-sans .slide-font-example__sample {
+  font-family: 'Gossamer Noon Sans', sans-serif;
+  font-weight: 400;
+}
+
+.slide-font-example--gossamer-noon-sans .slide-font-example__name {
+  color: #ffe3a5;
+  font-size: 8.3cqi;
+}
+
+.slide-font-example--gossamer-noon-sans .slide-font-example__intro {
+  top: 21%;
+}
+
+.slide-font-example--lazy-arie .slide-font-example__name,
+.slide-font-example--lazy-arie .slide-font-example__sample {
+  color: #ffe3a5;
+  font-family: 'Lazy Arie', cursive;
+  font-weight: 400;
+}
+
+.slide-font-example--lazy-arie .slide-font-example__name {
+  font-size: 8.5cqi;
+  margin-top: 1.5cqi;
+}
+
+.slide-font-example--lazy-arie .slide-font-example__intro {
+  top: 21%;
+}
+
+.slide-font-example--lazy-arie .slide-font-example__eyebrow {
+  padding: 0.9cqi 2.2cqi;
+  font-size: 2.2cqi;
+  letter-spacing: 0.12em;
+}
+
+.slide-font-example--lazy-arie .slide-font-example__specimen,
+.slide-font-example--gossamer-noon-sans .slide-font-example__specimen,
+.slide-font-example--super-chips .slide-font-example__specimen,
+.slide-font-example--heyam .slide-font-example__specimen {
+  position: absolute;
+  top: 32%;
+  left: 8%;
+  box-sizing: border-box;
+  width: 84%;
+  padding: 3cqi 4cqi 3.5cqi;
+  border: 0.35cqi solid rgba(255, 255, 255, 0.88);
+  border-radius: 3cqi;
+  background: rgba(255, 248, 231, 0.96);
+  box-shadow: 0 1cqi 3cqi rgba(0, 0, 0, 0.2);
+  color: #28483a;
+}
+
+.slide-font-example__specimen-label {
+  margin: 0;
+  color: #a75434;
+  font-size: 2.15cqi;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.slide-font-example--lazy-arie .slide-font-example__specimen .slide-font-example__sample,
+.slide-font-example--gossamer-noon-sans .slide-font-example__specimen .slide-font-example__sample,
+.slide-font-example--super-chips .slide-font-example__specimen .slide-font-example__sample,
+.slide-font-example--heyam .slide-font-example__specimen .slide-font-example__sample {
+  position: static;
+  width: auto;
+  margin: 1.4cqi 0 0;
+  color: #28483a;
+  font-size: 8.2cqi;
+  line-height: 1.06;
+  text-shadow: none;
+}
+
+.slide-font-example--lazy-arie .slide-font-example__tip--details,
+.slide-font-example--gossamer-noon-sans .slide-font-example__tip--details,
+.slide-font-example--super-chips .slide-font-example__tip--details,
+.slide-font-example--heyam .slide-font-example__tip--details {
+  top: 64%;
+  right: 8%;
+  bottom: 7%;
+  left: 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.5cqi;
+  padding: 2cqi 1cqi;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #fff8e7;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.72);
+  text-align: left;
+}
+
+.slide-font-example--lazy-arie .slide-font-example__tip--details,
+.slide-font-example--lazy-arie .slide-font-example__tip--details *,
+.slide-font-example--gossamer-noon-sans .slide-font-example__tip--details,
+.slide-font-example--gossamer-noon-sans .slide-font-example__tip--details *,
+.slide-font-example--super-chips .slide-font-example__tip--details,
+.slide-font-example--super-chips .slide-font-example__tip--details *,
+.slide-font-example--heyam .slide-font-example__tip--details,
+.slide-font-example--heyam .slide-font-example__tip--details * {
+  animation: none !important;
+  opacity: 1;
+  transition: none !important;
+}
+
+.slide-font-example--lazy-arie .slide-font-example__tip-label,
+.slide-font-example--gossamer-noon-sans .slide-font-example__tip-label,
+.slide-font-example--super-chips .slide-font-example__tip-label,
+.slide-font-example--heyam .slide-font-example__tip-label {
+  color: #f2c778;
+  font-size: 2.65cqi;
+  letter-spacing: 0.08em;
+}
+
+.slide-font-example__quick-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6cqi;
+}
+
+.slide-font-example__detail {
+  display: grid;
+  grid-template-columns: 32% minmax(0, 1fr);
+  align-items: baseline;
+  gap: 2cqi;
+}
+
+.slide-font-example__detail + .slide-font-example__detail {
+  padding-top: 1.6cqi;
+  border-top: 0.25cqi solid rgba(255, 248, 231, 0.32);
+}
+
+.slide-font-example--lazy-arie .slide-font-example__description,
+.slide-font-example--gossamer-noon-sans .slide-font-example__description,
+.slide-font-example--super-chips .slide-font-example__description,
+.slide-font-example--heyam .slide-font-example__description {
+  margin-top: 0;
+  color: #fffaf0;
+  font-size: 3cqi;
+  font-weight: 800;
+  line-height: 1.25;
+  text-shadow: 0 0.35cqi 1.4cqi rgba(0, 0, 0, 0.9);
+  text-align: left;
+}
+
+.slide-font-example__micro-note {
+  margin: 0;
+  padding-top: 1.8cqi;
+  border-top: 0.25cqi solid rgba(255, 248, 231, 0.28);
+  color: #f4e6ca;
+  font-size: 2.7cqi;
+  font-weight: 700;
+  line-height: 1.2;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.72);
+  text-align: center;
+}
+
+.slide-font-example--super-chips .slide-font-example__name,
+.slide-font-example--super-chips .slide-font-example__sample {
+  font-family: 'Super Chips', cursive;
+}
+
+.slide-font-example--super-chips .slide-font-example__name {
+  color: #ffe3a5;
+  font-size: 8.5cqi;
+}
+
+.slide-font-example--super-chips .slide-font-example__sample {
+  color: #15d1d1;
+  font-size: 14cqi;
+}
+
+.slide-font-example--heyam .slide-font-example__name,
+.slide-font-example--heyam .slide-font-example__sample {
+  font-family: 'Heyam', cursive;
+  font-weight: 400;
+}
+
+.slide-font-example--heyam .slide-font-example__name {
+  color: #ffe3a5;
+  font-size: 8cqi;
+}
+
+.slide-font-example--heyam .slide-font-example__specimen .slide-font-example__sample {
+  font-size: 6.8cqi;
+}
+
+.slide-font-example__tip {
+  position: absolute;
+  right: 8%;
+  bottom: 8%;
+  left: 8%;
+  padding: 3.3cqi 4cqi;
+  border: 0.35cqi solid rgba(255, 255, 255, 0.84);
+  border-radius: 3cqi;
+  background: rgba(255, 248, 231, 0.95);
+  box-shadow: 0 1cqi 3cqi rgba(0, 0, 0, 0.22);
+  color: #28483a;
+}
+
+.slide-font-example__tip-label {
+  margin: 0;
+  color: #a75434;
+  font-size: 2.4cqi;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+}
+
+.slide-font-example__use-case {
+  margin: 0.8cqi 0 0;
+  font-size: 3.1cqi;
+  font-weight: 900;
+  line-height: 1.12;
+}
+
+.slide-font-example__description {
+  margin: 0.8cqi 0 0;
+  font-size: 2.65cqi;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.drink-straw {
+  position: absolute;
+  top: 55%;
+  width: 2.5%;
+  height: 18%;
+  border: 1px solid rgba(255, 250, 225, 0.8);
+  border-radius: 999px;
+  background: repeating-linear-gradient(
+    180deg,
+    #fff4d5 0 8px,
+    #b64c36 8px 13px,
+    #fff4d5 13px 19px
+  );
+  box-shadow: 1px 2px 5px rgba(29, 22, 13, 0.25);
+  transform: translateX(-50%) rotate(2deg);
+}
+
+.drink-straw--coffee {
+  transform: translateX(-50%) rotate(-2deg);
+}
+
+.drink-straw--pistachio {
+  transform: translateX(-50%) rotate(4deg);
+}
+
+.drink-ticket {
+  position: absolute;
+  top: 58%;
+  display: flex;
+  width: 22%;
+  aspect-ratio: 2.55 / 1;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5cqi;
+  border: 0.45cqi solid #9e6145;
+  border-radius: 1.1cqi;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.35), transparent 62%),
+    #f2e2bf;
+  box-shadow:
+    0 0 0 0.55cqi #ead1a5,
+    0 0.7cqi 2cqi rgba(41, 25, 12, 0.28);
+  color: #28483a;
+  transform: translate(-50%, -50%) rotate(-3deg);
+}
+
+.drink-ticket::after {
+  position: absolute;
+  inset: 0.9cqi;
+  border: 0.3cqi dashed rgba(153, 91, 61, 0.42);
+  border-radius: 0.6cqi;
+  content: '';
+  pointer-events: none;
+}
+
+.drink-ticket:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(2deg);
+}
+
+.drink-ticket:nth-child(3) {
+  transform: translate(-50%, -50%) rotate(-1deg);
+}
+
+.drink-ticket__currency {
+  align-self: center;
+  color: #9e5239;
+  font-size: 2.1cqi;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.drink-ticket__price {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 5.4cqi;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  line-height: 0.9;
+  white-space: nowrap;
+}
+
+.drink-caption {
+  position: absolute;
+  display: flex;
+  width: 29%;
+  min-height: 6cqi;
+  overflow: hidden;
+  border: 0.5cqi solid #f4e5c4;
+  border-radius: 1.6cqi;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2cqi;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.12), transparent 55%),
+    #f2e2bf;
+  padding: 0.55cqi 0.6cqi;
+  color: #28483a;
+  box-shadow:
+    0 0 0 0.45cqi #9e6145,
+    0 1cqi 2cqi rgba(41, 25, 12, 0.3);
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.drink-caption__family {
+  color: #99573b;
+  font-size: 1.45cqi;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 0.95;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.drink-caption__name {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 2.55cqi;
+  font-weight: 900;
+  line-height: 0.95;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* LIGHT MODE */
+:root {
+  --button-outline: rgba(0, 0, 0, 0.1);
+  --badge-outline: rgba(0, 0, 0, 0.05);
+
+  /* Automatic computation of border around primary / danger buttons */
+  --opaque-button-border-intensity: -8; /* In terms of percentages */
+
+  /* Backgrounds applied on top of other backgrounds when hovered/active */
+  --elevate-1: rgba(0, 0, 0, 0.03);
+  --elevate-2: rgba(0, 0, 0, 0.08);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  --app-font-sans: 'Inter', sans-serif;
+  --app-font-serif: Georgia, serif;
+  --app-font-mono: Menlo, monospace;
+  --radius: 0.5rem; /* 8px */
+  --shadow-2xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0); /*replace with H S L */
+  --shadow-xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0); /*replace with H S L */
+  --shadow-sm:
+    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
+    0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0);
+  --shadow:
+    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
+    0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0);
+  --shadow-md:
+    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
+    0px 2px 4px -1px hsl(202.8169 89.1213% 53.1373% / 0);
+  --shadow-lg:
+    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
+    0px 4px 6px -1px hsl(202.8169 89.1213% 53.1373% / 0);
+  --shadow-xl:
+    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
+    0px 8px 10px -1px hsl(202.8169 89.1213% 53.1373% / 0);
+  --shadow-2xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+
+  /* Automatically computed borders - intensity can be controlled by the user by the --opaque-button-border-intensity setting */
+
+  /* Fallback for older browsers */
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-primary-border: hsl(
+    from hsl(var(--sidebar-primary)) h s
+      calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+
+  /* Fallback for older browsers */
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --sidebar-accent-border: hsl(
+    from hsl(var(--sidebar-accent)) h s
+      calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+
+  /* Fallback for older browsers */
+  --primary-border: hsl(var(--primary));
+  --primary-border: hsl(
+    from hsl(var(--primary)) h s
+      calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+
+  /* Fallback for older browsers */
+  --secondary-border: hsl(var(--secondary));
+  --secondary-border: hsl(
+    from hsl(var(--secondary)) h s
+      calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+
+  /* Fallback for older browsers */
+  --muted-border: hsl(var(--muted));
+  --muted-border: hsl(
+    from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) /
+      alpha
+  );
+
+  /* Fallback for older browsers */
+  --accent-border: hsl(var(--accent));
+  --accent-border: hsl(
+    from hsl(var(--accent)) h s
+      calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+
+  /* Fallback for older browsers */
+  --destructive-border: hsl(var(--destructive));
+  --destructive-border: hsl(
+    from hsl(var(--destructive)) h s
+      calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+}
+
+.dark {
+  --button-outline: rgba(255, 255, 255, 0.1);
+  --badge-outline: rgba(255, 255, 255, 0.05);
+
+  --opaque-button-border-intensity: 9; /* In terms of percentages */
+
+  /* Backgrounds applied on top of other backgrounds when hovered/active */
+  --elevate-1: rgba(255, 255, 255, 0.04);
+  --elevate-2: rgba(255, 255, 255, 0.09);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Used as the border around inputs. Dark mode: Should be a border that is light enough to have high contrast when rendered on a --card background. More contrast than standard --border */
+
+  --shadow-2xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0);
+  --shadow-xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0);
+  --shadow-sm:
+    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
+    0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0);
+  --shadow:
+    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
+    0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0);
+  --shadow-md:
+    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
+    0px 2px 4px -1px hsl(202.8169 89.1213% 53.1373% / 0);
+  --shadow-lg:
+    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
+    0px 4px 6px -1px hsl(202.8169 89.1213% 53.1373% / 0);
+  --shadow-xl:
+    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
+    0px 8px 10px -1px hsl(202.8169 89.1213% 53.1373% / 0);
+  --shadow-2xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/**
+ * Using the elevate system.
+ * Automatic contrast adjustment.
+ *
+ * <element className="hover-elevate" />
+ * <element className="active-elevate-2" />
+ *
+ * // Using the tailwind utility when a data attribute is "on"
+ * <element className="toggle-elevate data-[state=on]:toggle-elevated" />
+ * // Or manually controlling the toggle state
+ * <element className="toggle-elevate toggle-elevated" />
+ *
+ * Elevation systems have to handle many states.
+ * - not-hovered, vs. hovered vs. active  (three mutually exclusive states)
+ * - toggled or not
+ * - focused or not (this is not handled with these utilities)
+ *
+ * Even without handling focused or not, this is six possible combinations that
+ * need to be distinguished from eachother visually.
+ */
+@layer utilities {
+  /* Hide ugly search cancel button in Chrome until we can style it properly */
+  input[type='search']::-webkit-search-cancel-button {
+    @apply hidden;
+  }
+
+  /* Placeholder styling for contentEditable div */
+  [contenteditable][data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+    color: hsl(var(--muted-foreground));
+    pointer-events: none;
+  }
+
+  /* .no-default-hover-elevate/no-default-active-elevate is an escape hatch so consumers of
+   * buttons/badges can remove the automatic brightness adjustment on interactions
+   * and program their own. */
+  .no-default-hover-elevate {
+  }
+
+  .no-default-active-elevate {
+  }
+
+  /**
+   * Toggleable backgrounds go behind the content. Hoverable/active goes on top.
+   * This way they can stack/compound. Both will overlap the parent's borders!
+   * So borders will be automatically adjusted both on toggle, and hover/active,
+   * and they will be compounded.
+   */
+  .toggle-elevate::before,
+  .toggle-elevate-2::before {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    /*border-radius: inherit;   match rounded corners */
+    border-radius: inherit;
+    z-index: -1;
+    /* sits behind content but above backdrop */
+  }
+
+  .toggle-elevate.toggle-elevated::before {
+    background-color: var(--elevate-2);
+  }
+
+  /* If there's a 1px border, adjust the inset so that it covers that parent's border */
+  .border.toggle-elevate::before {
+    inset: -1px;
+  }
+
+  /* Does not work on elements with overflow:hidden! */
+  .hover-elevate:not(.no-default-hover-elevate),
+  .active-elevate:not(.no-default-active-elevate),
+  .hover-elevate-2:not(.no-default-hover-elevate),
+  .active-elevate-2:not(.no-default-active-elevate) {
+    position: relative;
+    z-index: 0;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate)::after,
+  .active-elevate:not(.no-default-active-elevate)::after,
+  .hover-elevate-2:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:not(.no-default-active-elevate)::after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    /*border-radius: inherit;   match rounded corners */
+    border-radius: inherit;
+    z-index: 999;
+    /* sits in front of content */
+  }
+
+  .hover-elevate:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-1);
+  }
+
+  .hover-elevate-2:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-2);
+  }
+
+  /* If there's a 1px border, adjust the inset so that it covers that parent's border */
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate-2:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate-2:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
+    inset: -1px;
+  }
+}

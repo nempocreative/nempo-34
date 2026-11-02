@@ -1,0 +1,164 @@
+.nempo-ticketing-preview {
+  --ticket-ink: var(--demo-ink);
+  --ticket-muted: var(--demo-muted);
+  --ticket-border: var(--demo-border);
+  --ticket-paper: #fff;
+  --ticket-paper-muted: var(--demo-mist);
+  --ticket-coffee: var(--demo-teal);
+  --ticket-coffee-dark: var(--demo-teal-dark);
+  --ticket-green: var(--demo-teal);
+}
+
+.nempo-ticketing-preview .ticketing-frame {
+  border-color: var(--ticket-border) !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 18px 42px rgba(18, 63, 71, 0.08) !important;
+}
+
+.nempo-ticketing-preview [class*="rounded-3xl"],
+.nempo-ticketing-preview [class*="rounded-2xl"],
+.nempo-ticketing-preview [class*="rounded-xl"],
+.nempo-ticketing-preview [class*="rounded-lg"] {
+  border-radius: 0.875rem !important;
+}
+
+.nempo-ticketing-preview [class*="bg-gray-50"] {
+  background-color: var(--ticket-paper-muted) !important;
+}
+
+.nempo-ticketing-preview [class*="bg-white"] {
+  background-color: var(--ticket-paper) !important;
+}
+
+.nempo-ticketing-preview [class*="border-gray-"] {
+  border-color: var(--ticket-border) !important;
+}
+
+.nempo-ticketing-preview [class*="text-gray-900"],
+.nempo-ticketing-preview [class*="text-gray-800"] {
+  color: var(--ticket-ink) !important;
+}
+
+.nempo-ticketing-preview [class*="text-gray-700"],
+.nempo-ticketing-preview [class*="text-gray-600"],
+.nempo-ticketing-preview [class*="text-gray-500"] {
+  color: #66564c !important;
+}
+
+.nempo-ticketing-preview [class*="text-gray-400"],
+.nempo-ticketing-preview [class*="text-gray-300"] {
+  color: var(--ticket-muted) !important;
+}
+
+.nempo-ticketing-preview [class*="bg-cyan-50"] {
+  background-color: #e6f6f3 !important;
+}
+
+.nempo-ticketing-preview [class*="bg-cyan-600"],
+.nempo-ticketing-preview [class*="bg-cyan-700"] {
+  background-color: var(--ticket-coffee) !important;
+}
+
+.nempo-ticketing-preview [class*="text-cyan-"] {
+  color: var(--ticket-coffee) !important;
+}
+
+.nempo-ticketing-preview [class*="border-cyan-"] {
+  border-color: #b9ded8 !important;
+}
+
+.nempo-ticketing-preview [class*="hover\\:bg-cyan-"]:hover {
+  background-color: var(--ticket-coffee-dark) !important;
+}
+
+.nempo-ticketing-preview [class*="focus\\:border-cyan-"]:focus {
+  border-color: var(--ticket-coffee) !important;
+}
+
+.nempo-ticketing-preview [class*="focus\\:ring-cyan-"]:focus {
+  --tw-ring-color: rgba(128, 85, 56, 0.18) !important;
+}
+
+.nempo-ticketing-preview [class*="bg-emerald-50"] {
+  background-color: #e6f6f3 !important;
+}
+
+.nempo-ticketing-preview [class*="text-emerald-"] {
+  color: #087f72 !important;
+}
+
+.nempo-ticketing-preview [class*="bg-amber-"] {
+  background-color: #fff1dd !important;
+}
+
+.nempo-ticketing-preview [class*="text-amber-"] {
+  color: #a56b17 !important;
+}
+
+.nempo-ticketing-preview [class*="bg-violet-"],
+.nempo-ticketing-preview [class*="bg-cyan-500"],
+.nempo-ticketing-preview [class*="bg-[#ee6a4d]"] {
+  background-color: var(--ticket-coffee) !important;
+}
+
+.nempo-ticketing-preview [class*="text-violet-"],
+.nempo-ticketing-preview [class*="text-[#ee6a4d]"] {
+  color: var(--ticket-coffee) !important;
+}
+
+.nempo-ticketing-preview [class*="border-violet-"] {
+  border-color: var(--ticket-border) !important;
+}
+
+.nempo-ticketing-preview [class*="bg-[#211b45]"] {
+  background-color: #123f47 !important;
+}
+
+.nempo-ticketing-preview [class*="bg-[#805538]"] {
+  background-color: var(--ticket-coffee) !important;
+}
+
+.nempo-ticketing-preview [class*="bg-[#b16a48]"] {
+  background-color: #d4efeb !important;
+}
+
+.nempo-ticketing-preview [class*="bg-[#c9972c]"] {
+  background-color: #fff1dd !important;
+}
+
+.nempo-ticketing-preview input,
+.nempo-ticketing-preview select {
+  border-color: var(--ticket-border) !important;
+  background-color: #fffdfa !important;
+  color: var(--ticket-ink) !important;
+}
+
+.nempo-ticketing-preview button {
+  transition-duration: 160ms;
+}
+
+.nempo-ticketing-preview .ticketing-frame > div:first-child {
+  background-color: var(--ticket-paper) !important;
+  border-color: var(--ticket-border) !important;
+}
+
+.nempo-ticketing-preview .ticketing-integration-card {
+  border-color: var(--demo-border);
+  background: linear-gradient(135deg, #f2f8f7 0%, #ffffff 72%);
+}
+
+.nempo-ticketing-preview .ticketing-integration-card:hover {
+  border-color: #b9ded8;
+  box-shadow: 0 10px 24px rgba(15, 118, 110, 0.08);
+  transform: translateY(-1px);
+}
+
+.nempo-ticketing-preview .ticketing-progress-bar {
+  background: linear-gradient(90deg, #0f766e, #56b8ae);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nempo-ticketing-preview .ticketing-integration-card {
+    transition: none;
+  }
+}

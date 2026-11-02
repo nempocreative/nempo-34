@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 48">
+  <rect width="120" height="48" rx="6" fill="white"/>
+  <path d="M18 6 L30 18 L18 30 L6 18Z" fill="#0063ae"/>
+  <path d="M18 18 L30 30 L18 42 L6 30Z" fill="#0063ae" opacity="0.5"/>
+  <text x="36" y="21" font-family="Arial Black,Arial" font-weight="900" font-size="9" fill="#0063ae">Permata</text>
+  <text x="36" y="33" font-family="Arial Black,Arial" font-weight="900" font-size="9" fill="#0063ae">Bank</text>
+</svg>

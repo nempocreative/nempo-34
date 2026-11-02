@@ -1,24 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { NempoShell } from "@/components/nempo-shell";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Nempo Garut — Event Organizer, Wedding & Layanan Kreatif" },
+      {
+        name: "description",
+        content:
+          "Bikin bareng Nempo: wedding & event organizer, undangan digital, kelola sosmed, website, desain, talent, dan sistem usaha. Ayo bikin acara bareng kita!",
+      },
+      { property: "og:title", content: "Nempo Garut — Event Organizer, Wedding & Layanan Kreatif" },
+      {
+        property: "og:description",
+        content:
+          "Wujudkan acara dan kontenmu bareng Nempo: wedding, event, sosmed, website, desain, talent, dan sistem usaha di Garut dan Jawa Barat.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: NempoShell,
 });
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}

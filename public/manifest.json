@@ -1,0 +1,87 @@
+{
+  "name": "Nempo Garut",
+  "short_name": "Nempo",
+  "description": "Bikin bareng Nempo: wedding & event organizer, undangan digital, kelola sosmed, website, desain, talent, dan sistem usaha di Garut.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0A4EBD",
+  "orientation": "portrait-primary",
+  "lang": "id",
+  "categories": [
+    "business",
+    "lifestyle",
+    "entertainment"
+  ],
+  "icons": [
+    {
+      "src": "/favicon-16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/opengraph.jpg",
+      "type": "image/jpeg",
+      "sizes": "1200x630",
+      "form_factor": "wide",
+      "label": "Nempo Garut — Beranda"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Event Mendatang",
+      "short_name": "Event",
+      "description": "Lihat event terbaru bareng Nempo",
+      "url": "/event",
+      "icons": [
+        {
+          "src": "/icon-event.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Portofolio Nempo",
+      "short_name": "Portofolio",
+      "description": "Event, sosmed, dan undangan digital karya Nempo",
+      "url": "/portofolio",
+      "icons": [
+        {
+          "src": "/favicon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Join Komunitas",
+      "short_name": "Recruitment",
+      "description": "Ayo join tim kreatif Nempo",
+      "url": "/recruitment",
+      "icons": [
+        {
+          "src": "/favicon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}
