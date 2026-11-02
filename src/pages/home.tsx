@@ -775,6 +775,8 @@ export default function Home() {
   const diskonTouchX = useRef(0);
   const [infoBannerIdx, setInfoBannerIdx] = useState(0);
   const infoBannerTouchX = useRef(0);
+  const bpTrackRef = useRef<HTMLDivElement>(null);
+  const bpDrag = useRef({ x: 0, offset: 0, dragging: false });
   const [showCafeModal, setShowCafeModal] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [typedPlaceholder, setTypedPlaceholder] = useState("");
@@ -808,6 +810,28 @@ export default function Home() {
 
     return () => window.clearInterval(timer);
   }, []);
+
+  // Brand-partner marquee: auto-scrolls, and can be dragged/swiped on touch.
+  useEffect(() => {
+    const track = bpTrackRef.current;
+    if (!track) return;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let raf = 0;
+    let last = performance.now();
+    const step = (now: number) => {
+      const dt = Math.min(now - last, 50);
+      last = now;
+      const half = track.scrollWidth / 2;
+      if (half > 0) {
+        if (!bpDrag.current.dragging && !reduceMotion) bpDrag.current.offset += dt * 0.045;
+        bpDrag.current.offset = ((bpDrag.current.offset % half) + half) % half;
+        track.style.transform = `translateX(${-bpDrag.current.offset}px)`;
+      }
+      raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
+  }, [partnersDb]);
 
   useEffect(() => {
     const load = (path: string, setter: (d: ApiItem[]) => void) =>
