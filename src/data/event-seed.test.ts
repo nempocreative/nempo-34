@@ -38,6 +38,8 @@ describe("event seed data", () => {
     const sql = eventSeedInsertSql(EVENT_SEEDS[0]);
     expect(sql).toContain("'musicomedy-night'");
     expect(sql).toContain("'2026-11-04'");
+    expect(sql).toContain("'15:00'");
+    expect(sql).toContain("'23:00'");
     expect(sql).toContain("Malam musik dan komedi bareng NEMPO.ID × Kala Muda");
     expect(sql).toContain("Saduli Ragap");
     expect(sql).toContain("::jsonb");
