@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "78e2073b-6c57-44bd-9792-0bbf245be3f8",
-  "project_id": "61b5283b-9551-48cb-8a8b-2c2b4113d628",
-  "url": "/__l5e/assets-v1/78e2073b-6c57-44bd-9792-0bbf245be3f8/music-comedy-night-frame.png",
-  "r2_key": "a/v1/61b5283b-9551-48cb-8a8b-2c2b4113d628/78e2073b-6c57-44bd-9792-0bbf245be3f8/music-comedy-night-frame.png",
-  "original_filename": "music-comedy-night-frame.png",
-  "size": 2821706,
   "content_type": "image/png",
-  "created_at": "2026-11-02T19:14:30Z"
+  "created_at": "2026-11-02T19:14:30Z",
+  "original_filename": "music-comedy-night-frame.png",
+  "project_id": "72b748e1-cd73-484a-a5a9-54f70599bcc3",
+  "r2_key": "a/v1/72b748e1-cd73-484a-a5a9-54f70599bcc3/78e2073b-6c57-44bd-9792-0bbf245be3f8/music-comedy-night-frame.png",
+  "size": 2821706,
+  "url": "/__l5e/assets-v1/78e2073b-6c57-44bd-9792-0bbf245be3f8/music-comedy-night-frame.png",
+  "version": 1
 }
