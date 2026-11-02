@@ -1,0 +1,30 @@
+.nempo-one{--background:#f5f8fa;--foreground:#284653;--primary:#416b85;--primary-border:#416b85;--primary-foreground:#fff;--border:#cbdce4;--inv-soft:#e4eef3;--inv-white:#fff;--inv-shade:#182f40;background:var(--background);color:var(--foreground);font-family:var(--font-wed-serif),Georgia,serif}
+.nempo-one .pointer-events-none{max-width:90px;opacity:.12}
+.nempo-one .n01-soft{background:var(--inv-soft)}
+.nempo-one .n01-blue{color:var(--primary)}
+.nempo-one .n01-light{color:var(--inv-white)}
+.nempo-one .n01-line{border-color:var(--border)}
+.nempo-one .n01-shade{background:linear-gradient(180deg,transparent 15%,color-mix(in srgb,var(--inv-shade) 25%,transparent) 45%,color-mix(in srgb,var(--inv-shade) 90%,transparent) 100%)}
+.nempo-one .n01-label{font-family:sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.16em}
+.nempo-one .n01-body{font-family:sans-serif}
+.nempo-one .n01-nav{background:var(--background)}
+.nempo-one button.n01-nav{position:fixed;z-index:40}
+.nempo-one .n01-enter{animation:n01-enter .8s ease-out both}
+.nempo-one{--input:var(--border);--ring:var(--primary);--muted-foreground:#617680;--inv-overlay:#142b3de8}
+.nempo-one .n01-reveal{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease}
+.nempo-one .n01-visible{opacity:1;transform:none}
+.nempo-one .n01-timeline-dot{background:var(--primary);border:4px solid var(--background)}
+.nempo-one .n01-lightbox{background:var(--inv-overlay)}
+.nempo-one .n01-gallery img{transition:transform .8s ease}
+.nempo-one .n01-gallery:hover img{transform:scale(1.025)}
+.nempo-one .n01-petals{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:10}
+.nempo-one .n01-petal{position:absolute;top:-40px;color:var(--primary);opacity:0;animation:n01-fall 17s linear infinite}
+.nempo-one .n01-petal svg{width:17px;height:17px}
+.nempo-one .n01-petal-0{left:5%;animation-delay:0s}.nempo-one .n01-petal-1{left:18%;animation-delay:3s}.nempo-one .n01-petal-2{left:32%;animation-delay:8s}.nempo-one .n01-petal-3{left:45%;animation-delay:12s}.nempo-one .n01-petal-4{left:58%;animation-delay:5s}.nempo-one .n01-petal-5{left:72%;animation-delay:10s}.nempo-one .n01-petal-6{left:85%;animation-delay:2s}.nempo-one .n01-petal-7{left:96%;animation-delay:14s}
+.nempo-one section>div>h1{animation:n01-enter 1.3s ease both}
+.nempo-one section>a[aria-label="Lihat mempelai"]{animation:n01-sway 3s ease-in-out infinite}
+.nempo-one .n01-blue.pointer-events-none{animation:n01-sway 7s ease-in-out infinite;transform-origin:bottom right}
+@keyframes n01-fall{0%{transform:translate3d(0,-40px,0) rotate(0);opacity:0}10%{opacity:.2}90%{opacity:.15}100%{transform:translate3d(-45px,105vh,0) rotate(160deg);opacity:0}}
+@keyframes n01-sway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+@keyframes n01-enter{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.nempo-one .n01-enter,.nempo-one .n01-petal,.nempo-one .n01-blue.pointer-events-none,.nempo-one section>div>h1{animation:none}.nempo-one .n01-reveal{opacity:1;transform:none;transition:none}.nempo-one .n01-gallery img{transition:none}}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 48">
+  <rect width="120" height="48" rx="6" fill="white"/>
+  <rect x="6" y="8" width="50" height="32" rx="4" fill="#003f7f"/>
+  <text x="10" y="30" font-family="Arial Black,Arial" font-weight="900" font-size="18" fill="white">btn</text>
+  <text x="63" y="22" font-family="Arial,sans-serif" font-size="8" fill="#003f7f">Bank</text>
+  <text x="63" y="33" font-family="Arial,sans-serif" font-size="8" fill="#003f7f">Tabungan</text>
+  <text x="63" y="44" font-family="Arial,sans-serif" font-size="8" fill="#003f7f">Negara</text>
+</svg>

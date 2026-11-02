@@ -1,0 +1,38 @@
+.nempo-two{--background:#f7f4ec;--foreground:#22384f;--primary:#2f5e8a;--primary-border:#2f5e8a;--inv-soft:#e9eff4;--inv-shade:#1b2f45;--border:#c9d6e0;--inv-gold:#b8975a;--inv-paper:#fffdf7}
+.nempo-two .n02-gold{color:var(--inv-gold)}
+.nempo-two .n02-paper{background:var(--inv-paper)}
+.nempo-two .n02-cover{background:radial-gradient(circle at 50% 30%,var(--inv-paper) 0%,var(--background) 55%,var(--inv-soft) 100%)}
+.nempo-two .n02-frame{border:1px solid var(--border);outline:1px solid var(--border);outline-offset:6px}
+.nempo-two .n02-monogram{width:118px;height:118px;border:1px solid var(--inv-gold);border-radius:999px;display:grid;place-items:center;position:relative}
+.nempo-two .n02-monogram::after{content:"";position:absolute;inset:6px;border:1px dashed var(--border);border-radius:999px;animation:n02-spin 40s linear infinite}
+.nempo-two .n02-seal{width:64px;height:64px;border-radius:999px;background:var(--primary);color:var(--inv-paper);display:grid;place-items:center;box-shadow:0 6px 18px -6px var(--inv-shade);animation:n02-pulse 2.6s ease-in-out infinite}
+.nempo-two .n02-arch{border-radius:999px 999px 18px 18px;border:1px solid var(--border);background:var(--inv-paper)}
+.nempo-two .n02-swatch{width:44px;height:44px;border-radius:999px;border:3px solid var(--inv-paper);box-shadow:0 0 0 1px var(--border)}
+.nempo-two .n02-bloom{position:absolute;color:var(--primary);opacity:.22;pointer-events:none;animation:n01-sway 8s ease-in-out infinite}
+.nempo-two .n02-bloom-tl{top:-18px;left:-18px;transform-origin:top left}
+.nempo-two .n02-bloom-br{bottom:-18px;right:-18px;transform-origin:bottom right}
+.nempo-two .n02-opening{animation:n02-open 1s ease-in both}
+.nempo-two .n02-back{background:color-mix(in srgb,var(--inv-paper) 88%,transparent);border:1px solid var(--border);border-radius:999px;padding:6px 12px}
+.nempo-two .n02-stage{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.nempo-two .n02-stage::before{content:"";position:absolute;inset:40px;border:1px solid var(--border);opacity:.55}
+.nempo-two .n02-corner{position:absolute;width:58px;height:58px;border:1px solid var(--inv-gold);opacity:.8}
+.nempo-two .n02-corner-tl{top:32px;left:32px;border-right:0;border-bottom:0}
+.nempo-two .n02-corner-tr{top:32px;right:32px;border-left:0;border-bottom:0}
+.nempo-two .n02-corner-bl{bottom:32px;left:32px;border-right:0;border-top:0}
+.nempo-two .n02-corner-br{bottom:32px;right:32px;border-left:0;border-top:0}
+.nempo-two .n02-sprig{position:absolute;top:50%;width:210px;height:210px;margin-top:-105px;color:var(--primary);opacity:.13}
+.nempo-two .n02-sprig-l{left:5%;transform:scaleX(-1) rotate(-8deg)}
+.nempo-two .n02-sprig-r{right:5%;transform:rotate(-8deg)}
+.nempo-two .n02-watermark{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--font-wed-serif),Georgia,serif;font-style:italic;font-size:clamp(200px,32vw,430px);line-height:1;color:var(--primary);opacity:.06;white-space:nowrap}
+@media(max-width:639px){.nempo-two .n02-sprig{display:none}.nempo-two .n02-stage::before{inset:16px}.nempo-two .n02-corner{width:34px;height:34px}.nempo-two .n02-corner-tl,.nempo-two .n02-corner-tr{top:10px}.nempo-two .n02-corner-bl,.nempo-two .n02-corner-br{bottom:10px}.nempo-two .n02-corner-tl,.nempo-two .n02-corner-bl{left:10px}.nempo-two .n02-corner-tr,.nempo-two .n02-corner-br{right:10px}}
+.nempo-two .n02-illu{overflow:hidden;border:1px solid var(--inv-gold);outline:1px solid var(--border);outline-offset:4px;background:var(--inv-paper);animation:n02-float 7s ease-in-out infinite}
+.nempo-two .n02-illu img{display:block;width:100%;height:100%;object-fit:cover;animation:n02-breathe 9s ease-in-out infinite}
+.nempo-two .n02-illu-cover{width:150px;height:190px;border-radius:999px 999px 14px 14px}
+.nempo-two .n02-illu-arch{width:170px;height:220px;border-radius:999px 999px 18px 18px;box-shadow:0 14px 30px -18px var(--inv-shade)}
+@media(max-width:639px){.nempo-two .n02-illu-cover{width:120px;height:152px}.nempo-two .n02-illu-arch{width:140px;height:180px}}
+@keyframes n02-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes n02-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+@keyframes n02-spin{to{transform:rotate(360deg)}}
+@keyframes n02-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+@keyframes n02-open{to{opacity:0;transform:translateY(-40px) scale(.96)}}
+@media(prefers-reduced-motion:reduce){.nempo-two .n02-monogram::after,.nempo-two .n02-seal,.nempo-two .n02-bloom,.nempo-two .n02-opening,.nempo-two .n02-illu,.nempo-two .n02-illu img{animation:none}}

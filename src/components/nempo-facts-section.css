@@ -1,0 +1,146 @@
+@keyframes nempoMascotBob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(1deg);
+  }
+}
+
+@keyframes nempoFactEnter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes factFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes factGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 var(--glow);
+  }
+  50% {
+    box-shadow: 0 0 16px 3px var(--glow);
+  }
+}
+
+.nempo-mascot-float {
+  animation: nempoMascotBob 4.2s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+.nempo-fact-enter {
+  animation: nempoFactEnter 280ms ease-out both;
+}
+
+.fact-icon {
+  animation: factFloat 3s ease-in-out infinite;
+}
+
+.fact-icon-wrap {
+  animation: factGlow 3s ease-in-out infinite;
+}
+
+.fact-card {
+  transition:
+    transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 240ms ease;
+}
+
+.fact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(27, 91, 129, 0.12);
+}
+
+@keyframes nempoOrgShimmer {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes nempoOrgDraw {
+  0%,
+  18% {
+    stroke-dashoffset: 100;
+  }
+  45%,
+  72% {
+    stroke-dashoffset: 0;
+  }
+  88%,
+  100% {
+    stroke-dashoffset: 100;
+  }
+}
+
+/* kata "Organizer" di judul Fakta Menarik — gradien bergeser + coretan tangan menggambar sendiri */
+.nempo-org-word {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(90deg, #0194f3, #22d3ee, #6366f1, #0194f3, #38bdf8);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #0194f3;
+  animation: nempoOrgShimmer 5s ease-in-out infinite;
+}
+
+.nempo-org-underline {
+  position: absolute;
+  left: -2%;
+  bottom: -7px;
+  width: 104%;
+  height: 10px;
+  overflow: visible;
+}
+
+.nempo-org-underline path {
+  stroke: #38bdf8;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: nempoOrgDraw 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nempo-mascot-float,
+  .nempo-fact-enter,
+  .fact-icon,
+  .fact-icon-wrap {
+    animation: none;
+  }
+
+  .nempo-org-word,
+  .nempo-org-underline path {
+    animation: none;
+  }
+
+  .nempo-org-underline path {
+    stroke-dashoffset: 0;
+  }
+
+  .fact-card {
+    transition: none;
+  }
+}

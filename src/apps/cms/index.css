@@ -1,0 +1,55 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@plugin "@tailwindcss/typography";
+
+:root {
+  --background: 39 34% 96%;
+  --foreground: 24 30% 17%;
+  --card: 38 33% 99%;
+  --card-foreground: 24 30% 17%;
+  --popover: 38 33% 99%;
+  --popover-foreground: 24 30% 17%;
+  --primary: 25 47% 43%;
+  --primary-foreground: 38 33% 99%;
+  --secondary: 38 35% 91%;
+  --secondary-foreground: 25 47% 25%;
+  --muted: 38 30% 92%;
+  --muted-foreground: 25 17% 46%;
+  --accent: 39 58% 89%;
+  --accent-foreground: 25 47% 25%;
+  --destructive: 0 65% 48%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 35 24% 86%;
+  --input: 35 25% 82%;
+  --ring: 25 47% 43%;
+  --radius: .75rem;
+  --app-font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --app-font-mono: 'Space Mono', ui-monospace, monospace;
+}
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --font-sans: var(--app-font-sans);
+  --font-mono: var(--app-font-mono);
+  --radius-lg: var(--radius);
+}
+* { box-sizing: border-box; }
+html, body, #root { min-height: 100%; width: 100%; margin: 0; }
+body { background: hsl(var(--background)); color: hsl(var(--foreground)); font-family: var(--app-font-sans); font-feature-settings: 'cv02','cv03','cv04'; -webkit-font-smoothing: antialiased; }
+button, input, textarea, select { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+::selection { background: #e8d5b5; color: #3c291a; }
+.mono { font-family: var(--app-font-mono); }
+.fade-up { animation: rise .42s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes rise { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: translateY(0); } }
+.scrollbar-thin { scrollbar-width: thin; scrollbar-color: #d7cbb9 transparent; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }

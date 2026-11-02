@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">
+
+  <!-- Beranda -->
+  <url>
+    <loc>https://nempo.id/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://nempo.id/opengraph.jpg</image:loc>
+      <image:title>Nempo Organizer — Platform Digital Pariwisata Jawa Barat</image:title>
+      <image:caption>Temukan wisata alam, kuliner khas, penginapan, dan event budaya terbaik di Jawa Barat.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Wisata -->
+  <url>
+    <loc>https://nempo.id/wisata</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Kuliner -->
+  <url>
+    <loc>https://nempo.id/kuliner</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Jajan YUK -->
+  <url>
+    <loc>https://nempo.id/jajan-yuk</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Penginapan -->
+  <url>
+    <loc>https://nempo.id/penginapan</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Event -->
+  <url>
+    <loc>https://nempo.id/event</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Berita -->
+  <url>
+    <loc>https://nempo.id/berita</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Jelajahi -->
+  <url>
+    <loc>https://nempo.id/jelajahi</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Tiket Wisata -->
+  <url>
+    <loc>https://nempo.id/tiket</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Kamus Sunda -->
+  <url>
+    <loc>https://nempo.id/kamus-sunda</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Donasi Bibit -->
+  <url>
+    <loc>https://nempo.id/donasi-bibit</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Komunitas -->
+  <url>
+    <loc>https://nempo.id/komunitas</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Peta Wisata -->
+  <url>
+    <loc>https://nempo.id/peta-wisata</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Cari -->
+  <url>
+    <loc>https://nempo.id/cari</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Sewa Mobil & Transportasi -->
+  <url>
+    <loc>https://nempo.id/transportasi</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Adventure Gear -->
+  <url>
+    <loc>https://nempo.id/adventure-gear</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Perlombaan -->
+  <url>
+    <loc>https://nempo.id/perlombaan</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Layanan Digital -->
+  <url>
+    <loc>https://nempo.id/digital-services</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Daftar Harga -->
+  <url>
+    <loc>https://nempo.id/price-list</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Event Detail: Temu Tarung Vol. 2 -->
+  <url>
+    <loc>https://nempo.id/event/9</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

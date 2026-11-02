@@ -1,0 +1,28 @@
+import { useEffect, useState } from 'react';
+import { Link } from '@/lib/wouter';
+import { Activity, AlertCircle, ArrowRight, CalendarDays, MapPinned, Newspaper, RefreshCw, Utensils } from 'lucide-react';
+import { request } from '@/apps/cms/lib/api';
+const quickLinks=[['Wisata','/wisata',MapPinned],['Kuliner','/kuliner',Utensils],['Agenda event','/events',CalendarDays],['Berita','/berita',Newspaper]] as const;
+const palette=['#805538','#71866c','#b17b54','#6f8190'];
+function label(key:string){return key.replaceAll('_',' ').replace(/\b\w/g,c=>c.toUpperCase());}
+export default function Dashboard(){
+  const [stats,setStats]=useState<Record<string,unknown>|null>(null);const [loading,setLoading]=useState(true);const [error,setError]=useState('');
+  async function load(){setLoading(true);setError('');try{const data=await request<unknown>('/api/admin/stats');setStats(data&&typeof data==='object'?data as Record<string,unknown>:{});}catch(e){setStats(null);setError(e instanceof Error?e.message:'Statistik tidak dapat dimuat.');}finally{setLoading(false);}}
+  useEffect(()=>{void load();},[]);
+  const counts=stats?Object.entries(stats).filter(([,v])=>typeof v==='number'||typeof v==='string').slice(0,6):[];
+  return <div className="fade-up space-y-7">
+    <header className="relative overflow-hidden rounded-2xl bg-[#3a2e25] px-6 py-7 text-[#fffaf3] sm:px-9 sm:py-9">
+      <div className="absolute -right-14 -top-24 h-72 w-72 rounded-full border border-[#d5b98e]/20"/><div className="absolute -right-2 -top-12 h-48 w-48 rounded-full border border-[#d5b98e]/20"/>
+      <div className="relative flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><div className="mb-4 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[.2em] text-[#d8bd92]"><span className="h-1.5 w-1.5 rounded-full bg-[#9dc19c]"/> Ruang kerja Garut</div><h1 className="text-3xl font-semibold tracking-[-.04em] sm:text-[38px]">Selamat bekerja.</h1><p className="mt-2 max-w-lg text-sm leading-6 text-[#d1c5b7]">Satu tempat untuk menjaga informasi publik Garut tetap jelas, relevan, dan terpercaya.</p></div><div className="flex items-center gap-2 self-start rounded-full border border-white/15 bg-white/5 px-3 py-2 text-[10px] text-[#d5c7b5] sm:self-auto"><Activity size={13} className="text-[#a9c6a7]"/> Status data mengikuti layanan API</div></div>
+    </header>
+    <section>
+      <div className="mb-3 flex items-end justify-between"><div><p className="text-[10px] font-bold uppercase tracking-[.18em] text-[#9a7653]">Ringkasan layanan</p><h2 className="mt-1 text-lg font-bold tracking-tight text-[#403125]">Gambaran CMS</h2></div><button onClick={()=>void load()} className="flex items-center gap-1.5 rounded-lg px-3 py-2 text-[10px] font-semibold text-[#8c7358] hover:bg-[#eee5d9]"><RefreshCw size={13} className={loading?'animate-spin':''}/> Perbarui</button></div>
+      {error?<div className="flex items-start gap-3 rounded-xl border border-[#ead4c8] bg-[#fcf2ed] p-4"><AlertCircle size={17} className="mt-0.5 text-[#a9593e]"/><div><p className="text-xs font-bold text-[#6a3c2d]">Statistik belum tersedia</p><p className="mt-1 break-all text-xs text-[#895e4e]">{error}</p></div></div>:
+      loading?<div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">{[1,2,3].map(n=><div key={n} className="h-28 animate-pulse rounded-xl border border-[#e6dccf] bg-[#fbf8f2]"/> )}</div>:
+      counts.length?<div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">{counts.map(([key,value],i)=><div key={key} className="rounded-xl border border-[#e6dccf] bg-[#fffdf9] p-4 shadow-[0_5px_18px_rgba(81,58,34,.035)]"><div className="flex items-center justify-between"><p className="text-[10px] font-bold uppercase tracking-[.12em] text-[#968572]">{label(key)}</p><span className="h-2 w-2 rounded-full" style={{background:palette[i%palette.length]}}/></div><p className="mt-4 font-mono text-3xl font-bold tracking-[-.05em] text-[#49372a]">{String(value)}</p><p className="mt-1 text-[10px] text-[#a59684]">Data langsung layanan CMS</p></div>)}</div>:
+      <div className="rounded-xl border border-dashed border-[#d9cbb9] bg-[#faf6ef] p-6 text-center"><p className="text-sm font-semibold text-[#66523d]">Belum ada ringkasan</p><p className="mt-1 text-xs text-[#9a8d7f]">Layanan tidak mengirim data statistik yang dapat ditampilkan.</p></div>}
+    </section>
+    <section><div className="mb-3"><p className="text-[10px] font-bold uppercase tracking-[.18em] text-[#9a7653]">Akses cepat</p><h2 className="mt-1 text-lg font-bold tracking-tight text-[#403125]">Lanjutkan pekerjaan</h2></div><div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">{quickLinks.map(([name,href,Icon],i)=><Link key={href} href={href} className="group flex items-center gap-3 rounded-xl border border-[#e6dccf] bg-[#fffdf9] p-4 transition hover:-translate-y-0.5 hover:border-[#cfb99c] hover:shadow-[0_8px_22px_rgba(81,58,34,.07)]"><span className="grid h-10 w-10 place-items-center rounded-xl" style={{background:`${palette[i]}17`,color:palette[i]}}><Icon size={18}/></span><span className="flex-1"><span className="block text-xs font-bold text-[#4e3d2d]">{name}</span><span className="mt-0.5 block text-[10px] text-[#998a78]">Buka ruang kerja</span></span><ArrowRight size={14} className="text-[#a99a87] transition group-hover:translate-x-1 group-hover:text-[#805538]"/></Link>)}</div></section>
+    <div className="rounded-xl border border-[#e6dccf] bg-[#f8f3eb] px-4 py-3 text-[11px] leading-5 text-[#897864]">Konten dan statistik hanya dimuat dari layanan CMS Nempo Organizer Garut yang dikonfigurasi. Tidak ada fallback ke data workspace atau data contoh.</div>
+  </div>;
+}
