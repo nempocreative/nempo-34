@@ -1,4 +1,5 @@
 # Roadmap
+- [x] Peta acara Good Story Cafe: embed kiriman pengguna, ukuran adaptif, dan tombol arah; pemeriksaan tampilan Google Maps langsung perlu dilakukan pengguna.
 
 - [x] Setelah remix: 42 foto/audio/video dipindahkan ke penyimpanan proyek baru (ukuran byte identik), semua rujukan dialihkan, arsip 41 entri dicocokkan ulang, acara dan arsip dipulihkan ke basis data; beranda 52 gambar tampil tanpa gambar rusak, halaman acara menampilkan poster + bagian reservasi; 225 tes lulus.
 
