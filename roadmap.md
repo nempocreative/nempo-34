@@ -1,5 +1,7 @@
 # Roadmap
 
+- [ ] Pulihkan 39 gambar dan 2 media yang masih merujuk proyek lama, simpan di Lovable Cloud dan catat daftar pemindahannya.
+
 - [x] Pengamanan awal: backup dikunci sampai otorisasi admin tersedia, pengaturan situs dan kontak pengirim berita tidak bisa dibaca publik, hanya tiket aktif dapat dibaca, unggahan pendaftaran langsung dikunci; perlindungan browser aktif, 8 tes lulus, akses tanpa izin ditolak dan beranda diperiksa.
 - [ ] Tinjau hasil pemeriksaan keamanan menyeluruh — menunggu hasil pemindaian yang sedang berjalan; dua peringatan baca publik (talent dan voucher) masih tercatat.
 
