@@ -530,6 +530,24 @@ export type Database = {
         }
         Relationships: []
       }
+      media_archive: {
+        Row: {
+          id: string
+          manifest: Json
+          updated_at: string
+        }
+        Insert: {
+          id: string
+          manifest?: Json
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          manifest?: Json
+          updated_at?: string
+        }
+        Relationships: []
+      }
       partners: {
         Row: {
           active: boolean | null

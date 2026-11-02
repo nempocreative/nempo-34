@@ -15,6 +15,13 @@
       "when": 1793641757659,
       "tag": "0001_restrict_inactive_tickets_and_application_writes",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1793642600422,
+      "tag": "0002_create_media_archive",
+      "breakpoints": true
     }
   ]
 }
