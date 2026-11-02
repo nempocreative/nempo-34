@@ -1,6 +1,7 @@
 # Roadmap
 
-- [x] Pastikan semua berkas ikut ke GitHub: 1558 berkas terlacak, tidak ada yang diabaikan, tidak ada berkas 10 MB ke atas, 42 pointer gambar milik penyimpanan proyek ini; penjaga otomatis repo-completeness ditambahkan, catatan arsip 41 berkas dipulihkan ke database, dan kunci publik tidak bisa lagi mengubah data; 216 tes lulus.
+- [x] Poster event di halaman detail di desktop tidak lagi seukuran layar: tinggi dibatasi 420–540 px dengan poster utuh di tengah dan versi blur di samping; di HP tetap penuh. Diukur di 1440, 890, dan 390.
+
 
 
 - [x] Perbaiki klik MusiComedy Night yang 404 karena tabel events kosong setelah impor; rincian dari beranda dipulihkan ke database, klik beranda → detail berhasil, gambar tampil, tanggal 4 November dan harga gratis terverifikasi, endpoint tiket 200 tanpa kuota rekaan.
