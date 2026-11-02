@@ -10,6 +10,7 @@
 <!-- LOVABLE:END -->
 
 ## Architecture rules
+- Event saweran uses the original uploaded QRIS asset in EventSaweran, scoped to MusiComedy Night, with same-origin download and enlargement; why: preserve payment-code integrity without implying automatic payment verification.
 - EventLocation renders provided map embeds with browser-safe venue destinations in event-location data; why: supplied venue links remain reproducible after remix without a new map provider.
 - Event sharing uses EventShare with native device sharing and explicit web destinations as fallback; why: sharing remains usable when the browser has no system share sheet.
 - Good Story Cafe reservations use the browser-safe cafe layout module for table identities, messages and their event-specific WhatsApp contact, with a locally scoped tool palette; why: event reservations must not change general service contacts or other event themes.
