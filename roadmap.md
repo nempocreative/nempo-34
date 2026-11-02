@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Setelah remix: 42 foto/audio/video dipindahkan ke penyimpanan proyek baru (ukuran byte identik), semua rujukan dialihkan, arsip 41 entri dicocokkan ulang, acara dan arsip dipulihkan ke basis data; beranda 52 gambar tampil tanpa gambar rusak, halaman acara menampilkan poster + bagian reservasi; 225 tes lulus.
+
 - [x] Hero desktop halaman detail event: poster di kiri, panel teks (kategori, nama, ringkasan, tanggal, lokasi, bintang tamu, harga) di kanan; di HP tetap poster penuh dengan judul di bawah. Diukur di 1440, 890, dan 390; build lulus.
 
 - [x] Poster event di halaman detail di desktop tidak lagi seukuran layar: tinggi dibatasi 420–540 px dengan poster utuh di tengah dan versi blur di samping; di HP tetap penuh. Diukur di 1440, 890, dan 390.
