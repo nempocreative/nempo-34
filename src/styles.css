@@ -6,7 +6,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /* The venue reservation tool keeps its palette local to the event page. */
-.cafe-reservation {
+.cafe-reservation, .event-location {
   --color-background: oklch(0.985 0.003 160);
   --color-foreground: oklch(0.25 0.018 160);
   --color-card: oklch(1 0 0);

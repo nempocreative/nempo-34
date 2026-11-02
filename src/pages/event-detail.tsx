@@ -1,6 +1,8 @@
 import { Layout } from "@/components/layout";
 import { CafeReservation } from "@/components/cafe-reservation";
 import { EventShare } from "@/components/event-share";
+import { EventLocation } from "@/components/event-location";
+import { GOOD_STORY_CAFE_MAP } from "@/data/event-location";
 import { cafeJamRange } from "@/data/cafe-layout";
 import { SEO } from "@/components/seo";
 import { useState, useEffect, useRef } from "react";
@@ -2108,22 +2110,12 @@ export default function EventDetail() {
               )}
 
               {/* Maps */}
-              {event.maps_url && (
-                <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-                  <div className="px-5 pt-5 pb-4 border-b border-gray-50 flex items-center gap-2.5">
-                    <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: g.light }}>
-                      <MapPin className="h-3.5 w-3.5" style={{ color: g.from }} />
-                    </div>
-                    <p className="font-extrabold text-gray-900 text-sm">Lokasi Acara</p>
-                  </div>
-                  <div className="relative" style={{ height: 220 }}>
-                    <iframe title="Lokasi" src={event.maps_url} width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="absolute inset-0 w-full h-full" />
-                  </div>
-                  <div className="px-5 py-3 border-t border-gray-50 flex items-center gap-2">
-                    <MapPin className="h-3.5 w-3.5 text-gray-300 shrink-0 mt-0.5" />
-                    <p className="text-gray-400 text-xs leading-snug">{event.location}</p>
-                  </div>
-                </div>
+              {(event.maps_url || event.slug === "musicomedy-night") && (
+                <EventLocation
+                  location={event.location}
+                  embedUrl={event.slug === "musicomedy-night" ? GOOD_STORY_CAFE_MAP.embedUrl : event.maps_url || ""}
+                  directionsUrl={event.slug === "musicomedy-night" ? GOOD_STORY_CAFE_MAP.directionsUrl : `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(event.location)}`}
+                />
               )}
 
               {/* Transportation */}
