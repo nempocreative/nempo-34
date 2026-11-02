@@ -58,7 +58,7 @@ describe("paletteFromPixels", () => {
 
   it("keeps a mostly-light poster dark enough to hold white text", () => {
     const palette = paletteFromPixels(
-      swatch([[[245, 245, 245] as Rgb, 700], [[120, 170, 230] as Rgb, 300]]),
+      swatch([[{ r: 245, g: 245, b: 245 }, 700], [{ r: 120, g: 170, b: 230 }, 300]]),
     );
     expect(palette).not.toBeNull();
     // Panel must be readable with white text, but still the poster's own blue.
@@ -70,7 +70,7 @@ describe("paletteFromPixels", () => {
 
   it("uses dark text when the accent tone is a light one", () => {
     const palette = paletteFromPixels(
-      swatch([[[30, 40, 60] as Rgb, 500], [[250, 220, 120] as Rgb, 500]]),
+      swatch([[{ r: 30, g: 40, b: 60 }, 500], [{ r: 250, g: 220, b: 120 }, 500]]),
     );
     expect(palette).not.toBeNull();
     expect(palette!.accent).toBe("#fadc78");
