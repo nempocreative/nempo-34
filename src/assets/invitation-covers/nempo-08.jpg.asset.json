@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "399539b6-f601-436d-9f58-5a60609bc964",
-  "project_id": "2176f28d-85b1-42d8-9877-0aa921f9ffd5",
-  "url": "/__l5e/assets-v1/399539b6-f601-436d-9f58-5a60609bc964/nempo-08-cover-preview.jpg",
-  "r2_key": "a/v1/2176f28d-85b1-42d8-9877-0aa921f9ffd5/399539b6-f601-436d-9f58-5a60609bc964/nempo-08-cover-preview.jpg",
-  "original_filename": "nempo-08-cover-preview.jpg",
-  "size": 228201,
   "content_type": "image/jpeg",
-  "created_at": "2026-11-02T18:47:27Z"
+  "created_at": "2026-11-02T18:47:27Z",
+  "original_filename": "nempo-08-cover-preview.jpg",
+  "project_id": "61b5283b-9551-48cb-8a8b-2c2b4113d628",
+  "r2_key": "a/v1/61b5283b-9551-48cb-8a8b-2c2b4113d628/399539b6-f601-436d-9f58-5a60609bc964/nempo-08-cover-preview.jpg",
+  "size": 228201,
+  "url": "/__l5e/assets-v1/399539b6-f601-436d-9f58-5a60609bc964/nempo-08-cover-preview.jpg",
+  "version": 1
 }

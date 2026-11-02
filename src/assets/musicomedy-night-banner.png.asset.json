@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "5fd6dd2c-593c-49b3-996d-51726b6740a5",
-  "project_id": "2176f28d-85b1-42d8-9877-0aa921f9ffd5",
-  "url": "/__l5e/assets-v1/5fd6dd2c-593c-49b3-996d-51726b6740a5/musicomedy-night-banner.png",
-  "r2_key": "a/v1/2176f28d-85b1-42d8-9877-0aa921f9ffd5/5fd6dd2c-593c-49b3-996d-51726b6740a5/musicomedy-night-banner.png",
-  "original_filename": "musicomedy-night-banner.png",
-  "size": 3369103,
   "content_type": "image/png",
-  "created_at": "2026-11-02T18:48:05Z"
+  "created_at": "2026-11-02T18:48:05Z",
+  "original_filename": "musicomedy-night-banner.png",
+  "project_id": "61b5283b-9551-48cb-8a8b-2c2b4113d628",
+  "r2_key": "a/v1/61b5283b-9551-48cb-8a8b-2c2b4113d628/5fd6dd2c-593c-49b3-996d-51726b6740a5/musicomedy-night-banner.png",
+  "size": 3369103,
+  "url": "/__l5e/assets-v1/5fd6dd2c-593c-49b3-996d-51726b6740a5/musicomedy-night-banner.png",
+  "version": 1
 }

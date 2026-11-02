@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "1172f880-28b9-4ab5-86d9-28bea09b12b2",
-  "project_id": "2176f28d-85b1-42d8-9877-0aa921f9ffd5",
-  "url": "/__l5e/assets-v1/1172f880-28b9-4ab5-86d9-28bea09b12b2/musicomedy-night-poster.webp",
-  "r2_key": "a/v1/2176f28d-85b1-42d8-9877-0aa921f9ffd5/1172f880-28b9-4ab5-86d9-28bea09b12b2/musicomedy-night-poster.webp",
-  "original_filename": "musicomedy-night-poster.webp",
-  "size": 280138,
   "content_type": "image/webp",
-  "created_at": "2026-11-02T18:48:14Z"
+  "created_at": "2026-11-02T18:48:14Z",
+  "original_filename": "musicomedy-night-poster.webp",
+  "project_id": "61b5283b-9551-48cb-8a8b-2c2b4113d628",
+  "r2_key": "a/v1/61b5283b-9551-48cb-8a8b-2c2b4113d628/1172f880-28b9-4ab5-86d9-28bea09b12b2/musicomedy-night-poster.webp",
+  "size": 280138,
+  "url": "/__l5e/assets-v1/1172f880-28b9-4ab5-86d9-28bea09b12b2/musicomedy-night-poster.webp",
+  "version": 1
 }
