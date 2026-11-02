@@ -62,7 +62,7 @@ export default function PoinPage() {
   return (
     <Layout>
       <SEO title="Poin & Reward" description="Lihat poin dan reward kamu di Nempo Organizer." noIndex />
-      <div className="pb-24 md:pb-8">
+      <div className="pb-24 lg:pb-8">
         {/* Header */}
         <div className={`bg-gradient-to-br ${meta.bg} pt-12 pb-20 px-5 relative overflow-hidden`}>
           <div className="absolute inset-0 opacity-10"
