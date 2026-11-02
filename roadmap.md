@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] Hero desktop halaman detail event: poster di kiri, panel teks (nama, tanggal, lokasi, bintang tamu, harga) di kanan supaya sisi samping tidak kosong; di HP tetap poster penuh.
+- [x] Hero desktop halaman detail event: poster di kiri, panel teks (kategori, nama, ringkasan, tanggal, lokasi, bintang tamu, harga) di kanan; di HP tetap poster penuh dengan judul di bawah. Diukur di 1440, 890, dan 390; build lulus.
 
 - [x] Poster event di halaman detail di desktop tidak lagi seukuran layar: tinggi dibatasi 420–540 px dengan poster utuh di tengah dan versi blur di samping; di HP tetap penuh. Diukur di 1440, 890, dan 390.
 
