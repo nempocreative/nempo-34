@@ -2438,10 +2438,6 @@ export default function Home() {
           return (
             <div className="home-section-partners relative overflow-hidden py-2">
               <style>{`
-                @keyframes bp-scroll {
-                  from { transform: translateX(0); }
-                  to   { transform: translateX(-50%); }
-                }
                 .bp-track { will-change: transform; }
                 .bp-viewport { touch-action: pan-y; cursor: grab; }
                 .bp-viewport:active { cursor: grabbing; }
